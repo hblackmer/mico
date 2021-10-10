@@ -1,70 +1,44 @@
-# Getting Started with Create React App
+<!-- Project Logo -->
+<br />
+<p align="center">
+  <a href="https://github.com/hblackmer/" target="_blank">
+    <img src="img/logo_circle.png" alt="Logo" width="80" height="80">
+  </a>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+  <h1 align="center">Mico</h1>
+</p>
 
-## Available Scripts
+<!-- ABOUT -->
+## About
 
-In the project directory, you can run:
+A study tool that utilizes randomized flash card style studying. Mico tests users on their knowledge by asking the user questions based on the web development and computer science categories they choose and provides a comprehensive report at the end of the test.
 
-### `yarn start`
+<!-- OBJECTIVE -->
+## Objective
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The website is not to teach topics or to just memorize questions and answers, but rather help solidify one’s own knowledge as well as help pinpoint weaknesses in knowledge. 
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<!-- Features -->
+## Features
+<h4>Customizable Flash Cards</h4>
+<ul>
+  <li> Choose from various categories and also the option to have questions from multiple categories in the same test run. </li>
+  <li> Questions will be randomized and can be filtered by difficulty. </li>
+  <li> Timer so users can keep track of how long they are taking for each question. </li>
+</ul>
+<h4>Comprehensive Test Report</h4>
+<ul>
+  <li> Report with all questions and answers for easy grading by the user or by a peer. </li>
+  <li> Displays time taken per question as well as the entire test so users can keep track of performance. </li>
+  <li> Rate the confidence of your answer to the question to affect the frequency of the question in future test runs. </li>
+  <li> Record your answers so you can compare your past answers. </li>
+  <li> Links to resources for the particular question. </li>
+</ul>
 
-### `yarn test`
+<!-- Advanced Features -->
+## Advanced Features
+Future features include personal user accounts with user submitted questions as well as the option to easily remove questions that they have either mastered already or perhaps questions that the user feels are not relevant to their course of study.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<!-- Project -->
+## Project
+Project Link: https://github.com/hblackmer/mico
