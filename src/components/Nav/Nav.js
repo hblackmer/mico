@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Navbar, NavbarBrand } from 'reactstrap';
 
-class App extends Component {
+class Nav extends Component {
     render() {
         return (
             <div className="App">
@@ -15,4 +15,4 @@ class App extends Component {
     }
 }
   
-export default App;  
+export default Nav;  
