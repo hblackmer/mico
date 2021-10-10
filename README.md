@@ -2,7 +2,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/hblackmer/" target="_blank">
-    <img src="img/logo_circle.png" alt="Logo" width="80" height="80">
+    <img src="src/img/logo_circle.png" alt="Logo" width="80" height="80">
   </a>
 
   <h1 align="center">Mico</h1>
@@ -41,4 +41,4 @@ Future features include personal user accounts with user submitted questions as 
 
 <!-- Project -->
 ## Project
-Project Link: https://github.com/hblackmer/mico
+Project Link: https://github.com/hblackmer/mico-react
