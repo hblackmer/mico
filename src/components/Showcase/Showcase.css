@@ -1,0 +1,38 @@
+/* 
+========================
+    MAIN IMAGE
+========================
+*/
+.showcase {
+    margin-top: -70px;
+    height: 102vh;
+    background: url("../../desktop.jpeg") bottom center / cover no-repeat;
+    position: relative;
+}
+
+#header {
+    z-index: 2;
+}
+
+#overlay {
+    background: rgba(0,0,0,0.15);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+#header-name {
+    font-size: 7.5em;
+}
+
+@media(max-width: 768px) {
+    .navbar {
+        background: var(--color-dark-grey);
+    }
+    #showcase {
+        min-height: 300px;
+    }
+}

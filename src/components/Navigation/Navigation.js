@@ -38,8 +38,8 @@ class Navigation extends Component {
     render() {
         return (
             <div className="App">
-                <Navbar dark sticky="top" color="primary" expand="md">
-                    <NavbarBrand className="ml-2" href="/">Mico</NavbarBrand>
+                <Navbar sticky="top" expand="md">
+                    <NavbarBrand className="ml-2" href="/"><strong>MICO</strong></NavbarBrand>
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav className="ml-auto" navbar>
