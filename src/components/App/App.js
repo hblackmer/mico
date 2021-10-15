@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
-import Navigation from '../Navigation/Navigation';
+import { BrowserRouter } from 'react-router-dom';
+import Main from '../Main/Main';
 import './App.css';
 
 class App extends Component {
   render() {
       return (
-          <div className="App">
-              <Navigation />
-          </div>
+        <BrowserRouter>
+            <div className="App">
+                <Main />
+            </div>
+        </BrowserRouter>
       );
   }
 }
