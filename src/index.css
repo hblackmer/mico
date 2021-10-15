@@ -11,3 +11,90 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+:root {
+  --color-extra-dark-blue: #003366;
+  --color-dark-blue: #0C2746;
+  --color-blue: #22476B;
+  --color-light-blue: #406E8E;
+  --color-extra-light-blue: #5B92AB;
+  --color-primary: #0275d8;
+  --color-pink: #a16e83;
+  --color-dark-grey: #1f1f1f;
+  --color-green: #52cc00;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: linear-gradient( var(--color-extra-dark-blue) 70%, var(--color-light-blue));
+}
+
+/* 
+========================
+  FONT/COLORS
+========================
+*/
+.mico-color-1 {
+  color: var(--color-dark-blue);
+}
+.mico-color-2 {
+  color: var(--color-blue);
+}
+.mico-color-3 {
+  color: var(--color-light-blue);
+}
+.mico-color-4 {
+  color: var(--color-extra-light-blue);
+}
+.mico-color-bg4 {
+  background-color: var(--color-extra-light-blue);
+}
+.text-green {
+  color: var(--color-green);
+}
+
+/* 
+========================
+      NAVBAR
+========================
+*/
+.navbar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 3;
+}
+.nav-link:hover {
+  border-bottom: 1px solid white;
+  transition: border 0.5s ease 0s;
+  cursor: pointer;
+}
+.nav-item {
+  font-weight: 1000;
+}
+
+/* 
+========================
+      ICONS
+========================
+*/
+.media_icons {
+  font-size: 2.5em;
+  color: var(--color-pink);
+  margin-right: 25px;
+  transition: transform 0.5s ease 0s;
+}
+.hb_logo {
+  max-width: 45px;
+  margin-right: 25px;
+  transition: transform 0.5s ease 0s;
+  margin-bottom: 15px;
+}
+.media_icons:hover, .hb_logo:hover {  
+  transform: scale3d(1.5, 1.5, 1);
+}

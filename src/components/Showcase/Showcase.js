@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Button from 'react-bootstrap/Button';
 import './Showcase.css';
 
 class Showcase extends Component {
@@ -9,8 +10,8 @@ class Showcase extends Component {
                     <div id="overlay"></div>
                     <div id="header" class="container text-white text-center">
                         <h1 className="mb-0 text-primary" id="header-name">MICO</h1>
-                        <p className="lead d-none d-md-block white font-mont mico-color-1">test your knowledge</p>
-                        <a className="btn test-button custom-btn" id="testButton" href="#" role="button"><span>Get Started</span></a>
+                        <p className="d-none d-md-block" id="subtitle">test your knowledge</p>
+                        <Button className="bg-primary text-white" id="testButton" href="#" role="button" variant="outline-primary">Get Started</Button>
                     </div>
                 </section>
             </div>

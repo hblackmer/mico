@@ -28,6 +28,12 @@
     font-size: 7.5em;
 }
 
+#subtitle {
+    font-family: Menlo;
+    color: black;
+    font-weight: bold;
+}
+
 @media(max-width: 768px) {
     .navbar {
         background: var(--color-dark-grey);
