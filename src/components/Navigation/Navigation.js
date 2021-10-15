@@ -39,10 +39,10 @@ class Navigation extends Component {
         return (
             <div className="App">
                 <Navbar dark sticky="top" color="primary" expand="md">
-                    <NavbarBrand href="/">{' '}Mico</NavbarBrand>
+                    <NavbarBrand className="ml-2" href="/">Mico</NavbarBrand>
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>
-                        <Nav className="ms-auto" navbar>
+                        <Nav className="ml-auto" navbar>
                             {links.map(createNavItem)}
                         </Nav>
                     </Collapse>
