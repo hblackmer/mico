@@ -5,20 +5,22 @@ import {
     NavbarToggler,
     NavbarBrand,
     Nav,
-    NavItem,
-    NavLink
+    NavLink,
+    NavItem
 } from 'reactstrap';
+import { NavLink as NavTo} from 'react-router-dom';
 import './Navigation.css';
 
 const links = [
-    { href: '#about', text: 'About' },
-    { href: '#contact', text: 'Contact' },
-    { href: '#login', text: 'Login' }
+    { href: '/home', text: 'Home' },
+    { href: '/about', text: 'About' },
+    { href: '/contact', text: 'Contact' },
+    { href: '/login', text: 'Login' }
 ];
 
 const createNavItem = ({ href, text, className }) => (
     <NavItem>
-        <NavLink href={href} className={className}>{text}</NavLink>
+        <NavLink className={className}><NavTo to={href}>{text}</NavTo></NavLink>
     </NavItem>
 );
 
