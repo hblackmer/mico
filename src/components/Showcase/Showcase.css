@@ -35,9 +35,6 @@
 }
 
 @media(max-width: 768px) {
-    .navbar {
-        background: var(--color-dark-grey);
-    }
     #showcase {
         min-height: 300px;
     }

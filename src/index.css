@@ -59,27 +59,6 @@ body {
 
 /* 
 ========================
-      NAVBAR
-========================
-*/
-.navbar {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  z-index: 3;
-}
-.nav-link:hover {
-  border-bottom: 1px solid white;
-  transition: border 0.5s ease 0s;
-  cursor: pointer;
-}
-.nav-item {
-  font-weight: 1000;
-}
-
-/* 
-========================
       ICONS
 ========================
 */

@@ -6,8 +6,9 @@ import {
     NavbarBrand,
     Nav,
     NavItem,
-    NavLink,
+    NavLink
 } from 'reactstrap';
+import './Navigation.css';
 
 const links = [
     { href: '#about', text: 'About' },
@@ -38,8 +39,8 @@ class Navigation extends Component {
     render() {
         return (
             <div className="App">
-                <Navbar sticky="top" expand="md">
-                    <NavbarBrand className="ml-2" href="/"><strong>MICO</strong></NavbarBrand>
+                <Navbar dark sticky="top" expand="md">
+                    <NavbarBrand className="text-primary ml-2" href="/"><strong>MICO</strong></NavbarBrand>
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav className="ml-auto" navbar>
