@@ -6,7 +6,7 @@
 .showcase {
     margin-top: -70px;
     height: 102vh;
-    background: url("../../desktop.jpeg") bottom center / cover no-repeat;
+    background: url("../img/desktop.jpeg") bottom center / cover no-repeat;
     position: relative;
 }
 
@@ -31,6 +31,8 @@
 #subtitle {
     font-family: Menlo;
     color: black;
+    background-color: lightgrey;
+    padding: 5px;
     font-weight: bold;
 }
 

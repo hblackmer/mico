@@ -12,6 +12,7 @@ import './Navigation.css';
 
 const links = [
     { href: '#about', text: 'About' },
+    { href: '#contact', text: 'Contact' },
     { href: '#login', text: 'Login' }
 ];
 

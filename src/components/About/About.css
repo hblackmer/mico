@@ -1,0 +1,45 @@
+/* 
+========================
+       ABOUT CARDS
+========================
+*/
+#about {
+    font-size: 4em;
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+#results {
+    padding-top:100px;
+}
+.about_icons {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 4rem;
+    width: 4rem;
+    font-size: 2rem;
+    margin-top: -3rem;
+    border-radius: 0.5rem;
+    padding-bottom: 100px;
+}
+.about_icons {
+    transition: transform 0.5s ease 0s;
+}
+.about_icons:hover {  
+    transform: scale3d(1.25, 1.25, 1);
+}
+.about_img {
+    width: 200px;
+    height: 150px;
+    border: 5px solid #5B92AB;
+    border-radius: 0.5rem;
+}
+.about-bg {
+    background-color: rgba(255, 255, 255, 0.7);
+    margin-top: 50px;
+    opacity: 0.8;
+    margin-bottom: -3.5rem;
+}
+.about-cards {
+    padding-bottom: 100px;
+}
