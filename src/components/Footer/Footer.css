@@ -6,13 +6,11 @@
 .media_icons {
     font-size: 3em;
     color: var(--color-pink);
-    margin-top: 10px;
     margin-right: 25px;
     transition: transform 0.5s ease 0s;
 }
 .hb_logo {
     max-width: 55px;
-    margin-top: 10px;
     margin-right: 25px;
     transition: transform 0.5s ease 0s;
     margin-bottom: 15px;
