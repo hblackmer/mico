@@ -2,7 +2,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/hblackmer/" target="_blank">
-    <img src="src/img/logo_circle.png" alt="Logo" width="80" height="80">
+    <img src="public/assets/logo_circle.png" alt="Logo" width="80" height="80">
   </a>
 
   <h1 align="center">Mico</h1>
