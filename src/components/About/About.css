@@ -6,11 +6,16 @@
 #about {
     font-size: 4em;
     margin-top: 50px;
-    margin-bottom: 100px;
+    margin-bottom: 150px;
 }
 
 .about {
     margin-bottom: 50px;
+}
+
+.about-body {
+    padding-bottom: 50px !important;
+    border: 5px solid #5B92AB;
 }
 
 .about-body h2 {
@@ -31,15 +36,16 @@
     transition: transform 0.5s ease 0s;
 }
 
-.about_icons:hover {  
+.about-icons:hover {  
     transform: scale3d(1.25, 1.25, 1);
 }
 
-.about_img {
-    width: 200px;
-    height: 150px;
+.about-img {
+    width: 250px;
+    height: 200px;
     border: 5px solid #5B92AB;
     border-radius: 0.5rem;
+    margin-bottom: 50px;
 }
 
 .about-bg {
@@ -51,5 +57,5 @@
 }
 
 .about-cards {
-    margin-bottom: 125px;
+    margin-bottom: 150px;
 }
