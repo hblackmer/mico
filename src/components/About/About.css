@@ -8,8 +8,8 @@
     margin-top: 50px;
     margin-bottom: 100px;
 }
-#results {
-    padding-top:100px;
+.about-container {
+    margin-bottom: 50px;
 }
 .about_icons {
     display: inline-flex;
@@ -39,7 +39,4 @@
     margin-top: 50px;
     opacity: 0.8;
     margin-bottom: -3.5rem;
-}
-.about-cards {
-    padding-bottom: 100px;
 }
