@@ -14,8 +14,7 @@ import './Navigation.css';
 const links = [
     { href: '/home', text: 'Home' },
     { href: '/about', text: 'About' },
-    { href: '/contact', text: 'Contact' },
-    { href: '/login', text: 'Login' }
+    { href: '/contribute', text: 'Contribute' }
 ];
 
 const createNavItem = ({ href, text, className }) => (
