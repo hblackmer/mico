@@ -13,6 +13,7 @@
 }
 .about-body h2 {
     font-weight: bolder;
+    margin-bottom: 25px;
 }
 .about-icons {
     display: inline-flex;
@@ -32,15 +33,15 @@
 .about_img {
     width: 200px;
     height: 150px;
-    border: 5px solid #9fa3aa;
+    border: 5px solid #5B92AB;
     border-radius: 0.5rem;
 }
 .about-bg {
-    background-color: rgba(255, 255, 255, 0.7);
     margin-top: 50px;
     opacity: 0.8;
     margin-bottom: -3.5rem;
     height: 100%;
+    background: #829bad !important;
 }
 .about-cards {
     margin-bottom: 125px;
