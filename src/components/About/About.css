@@ -11,7 +11,10 @@
 .about-container {
     margin-bottom: 50px;
 }
-.about_icons {
+.about-body h2 {
+    font-weight: bolder;
+}
+.about-icons {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -21,8 +24,6 @@
     margin-top: -3rem;
     border-radius: 0.5rem;
     padding-bottom: 100px;
-}
-.about_icons {
     transition: transform 0.5s ease 0s;
 }
 .about_icons:hover {  
@@ -39,4 +40,8 @@
     margin-top: 50px;
     opacity: 0.8;
     margin-bottom: -3.5rem;
+    height: 100%;
+}
+.about-cards {
+    margin-bottom: 125px;
 }
