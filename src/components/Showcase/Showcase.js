@@ -6,14 +6,12 @@ class Showcase extends Component {
     render() {
         return (
             <div className="Showcase">
-                <section className="showcase d-flex justify-content-center align-items-center">
-                    <div id="overlay"></div>
-                    <div id="header" class="text-white text-center">
-                        <h1 className="mb-0 text-primary" id="header-name">MICO</h1>
-                        <p className="d-none d-md-block"><span id="subtitle">test your knowledge</span></p>
-                        <Button className="bg-primary text-white" id="testButton" href="#" role="button" variant="outline-primary">Get Started</Button>
-                    </div>
-                </section>
+                <div id="overlay"></div>
+                <div id="header">
+                    <h1 id="header-name">MICO</h1>
+                    <subtitle id="subtitle" className="d-none d-md-block">test your knowledge</subtitle>
+                    <Button id="test-button" href="#" role="button" variant="outline-primary">Get Started</Button>
+                </div>
             </div>
         );
     }

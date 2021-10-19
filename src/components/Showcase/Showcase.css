@@ -3,7 +3,10 @@
     MAIN IMAGE
 ========================
 */
-.showcase {
+.Showcase {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-top: -70px;
     margin-left:-50px;
     height: 102vh;
@@ -26,6 +29,7 @@
 }
 
 #header-name {
+    color: var(--color-primary);
     font-size: 7.5em;
 }
 
@@ -35,6 +39,11 @@
     background-color: lightgrey;
     padding: 5px;
     font-weight: bold;
+}
+
+#test-button {
+    background-color: var(--color-primary);
+    color: white;
 }
 
 @media(max-width: 768px) {
