@@ -7,6 +7,7 @@ import Customize from '../Customize/Customize';
 import Footer from '../Footer/Footer';
 
 class Main extends Component {
+    
     render() {
         return (
             <div className="Main">

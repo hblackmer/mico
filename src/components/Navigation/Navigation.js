@@ -1,18 +1,13 @@
 import React, { Component } from 'react';
 import {
-    Collapse,
-    Navbar,
-    NavbarToggler,
-    NavbarBrand,
-    Nav,
-    NavLink,
-    NavItem
+    Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavLink, NavItem,
+    Modal, ModalHeader, ModalBody,
+    Button
 } from 'reactstrap';
 import { NavLink as NavTo} from 'react-router-dom';
 import './Navigation.css';
 
 const links = [
-    { href: '/home', text: 'Home' },
     { href: '/about', text: 'About' },
     { href: '/contribute', text: 'Contribute' }
 ];
@@ -27,29 +22,44 @@ class Navigation extends Component {
     constructor(props) {
         super(props);
         this.state = {
-          isOpen: false
+          isNavOpen: false,
+          isModalOpen: false
         };
-        this.toggle = this.toggle.bind(this);
+        this.toggleNav = this.toggleNav.bind(this);
+        this.toggleModal = this.toggleModal.bind(this);
     }
     
-    toggle() {
+    toggleNav() {
         this.setState({
-            isOpen: !this.state.isOpen
+            isNavOpen: !this.state.isNavOpen
+        });
+    }
+
+    toggleModal() {
+        this.setState({
+            isModalOpen: !this.state.isModalOpen
         });
     }
 
     render() {
         return (
             <div className="App">
-                <Navbar dark sticky="top" expand="md">
+                <Navbar dark expand="md">
                     <NavbarBrand className="text-primary ml-2" href="/"><strong>MICO</strong></NavbarBrand>
-                    <NavbarToggler onClick={this.toggle} />
-                    <Collapse isOpen={this.state.isOpen} navbar>
-                        <Nav className="ml-auto" navbar>
+                    <NavbarToggler onClick={this.toggleNav} />
+                    <Collapse isOpen={this.state.isNavOpen} navbar>
+                    <Button outline onClick={this.toggleModal} id="start-button" className="text-primary ml-auto">Start</Button>
+                        <Nav navbar>
                             {links.map(createNavItem)}
                         </Nav>
                     </Collapse>
                 </Navbar>
+                <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
+                    <ModalHeader toggle={this.toggleModal}>Customize</ModalHeader>
+                    <ModalBody>
+                    
+                    </ModalBody>
+                </Modal>
             </div>
         );
     }

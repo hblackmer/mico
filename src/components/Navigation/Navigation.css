@@ -34,6 +34,18 @@ a:hover, a:visited, a:link, a:active {
     font-weight: 1000;
 }
 
+#start-button {
+    margin-right: 1rem;
+    font-size: 1.25rem;
+    border-color: var(--color-primary);
+}
+
+#start-button:hover {
+    background-color: var(--color-primary);
+    color: white !important;
+    transition: 0.3s;
+}
+
 @media(max-width: 768px) {
     .navbar {
         background: #003366;

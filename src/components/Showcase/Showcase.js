@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Button from 'react-bootstrap/Button';
+import { Link } from 'react-router-dom';
 import './Showcase.css';
 
 class Showcase extends Component {
@@ -10,7 +11,9 @@ class Showcase extends Component {
                 <div id="header">
                     <h1 id="header-name">MICO</h1>
                     <subtitle id="subtitle" className="d-none d-md-block">test your knowledge</subtitle>
-                    <Button id="test-button" href="#" role="button" variant="outline-primary">Get Started</Button>
+                    <Link to="/start">
+                        <Button className="test-button">Get Started</Button>
+                    </Link>
                 </div>
             </div>
         );
