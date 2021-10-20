@@ -3,7 +3,6 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import Navigation from '../Navigation/Navigation';
 import Showcase from '../Showcase/Showcase';
 import About from '../About/About';
-import Customize from '../Customize/Customize';
 import Footer from '../Footer/Footer';
 
 class Main extends Component {

@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import {
     Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavLink, NavItem,
-    Modal, ModalHeader, ModalBody,
     Button
 } from 'reactstrap';
 import { NavLink as NavTo} from 'react-router-dom';
+import Customize from '../Customize/Customize';
 import './Navigation.css';
 
 const links = [
@@ -54,12 +54,7 @@ class Navigation extends Component {
                         </Nav>
                     </Collapse>
                 </Navbar>
-                <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
-                    <ModalHeader toggle={this.toggleModal}>Customize</ModalHeader>
-                    <ModalBody>
-                    
-                    </ModalBody>
-                </Modal>
+                <Customize isModalOpen={this.state.isModalOpen} toggle={this.toggleModal}/>
             </div>
         );
     }

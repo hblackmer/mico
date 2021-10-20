@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-import { Container, Row, Col, Card, CardBody, CardTitle, CardSubtitle } from 'reactstrap';
+import {
+    Container, Row, Col,
+    Card, CardBody, CardTitle, CardSubtitle
+} from 'reactstrap';
 import './About.css';
 
 class About extends Component {
