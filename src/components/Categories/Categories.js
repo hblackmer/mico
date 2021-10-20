@@ -18,7 +18,7 @@ class Categories extends Component {
     onDrop = (ev, cat) => {
        let id = ev.dataTransfer.getData("id");
        let tasks = this.state.tasks.filter((task) => {
-           if (task.name == id) {
+           if (task.name === id) {
                task.category = cat;
            }
            return task;
