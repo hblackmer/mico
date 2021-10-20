@@ -19,42 +19,20 @@ const createNavItem = ({ href, text, className }) => (
 );
 
 class Navigation extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-          isNavOpen: false,
-          isModalOpen: false
-        };
-        this.toggleNav = this.toggleNav.bind(this);
-        this.toggleModal = this.toggleModal.bind(this);
-    }
-    
-    toggleNav() {
-        this.setState({
-            isNavOpen: !this.state.isNavOpen
-        });
-    }
-
-    toggleModal() {
-        this.setState({
-            isModalOpen: !this.state.isModalOpen
-        });
-    }
-
     render() {
         return (
             <div className="App">
                 <Navbar dark expand="md">
                     <NavbarBrand className="text-primary ml-2" href="/"><strong>MICO</strong></NavbarBrand>
-                    <NavbarToggler onClick={this.toggleNav} />
-                    <Collapse isOpen={this.state.isNavOpen} navbar>
-                    <Button outline onClick={this.toggleModal} id="start-button" className="text-primary ml-auto">Start</Button>
+                    <NavbarToggler onClick={this.props.toggleNav} />
+                    <Collapse isOpen={this.props.isNavOpen} navbar>
+                    <Button outline onClick={this.props.toggleModal} id="start-button" className="text-primary ml-auto">Start</Button>
                         <Nav navbar>
                             {links.map(createNavItem)}
                         </Nav>
                     </Collapse>
                 </Navbar>
-                <Customize isModalOpen={this.state.isModalOpen} toggle={this.toggleModal}/>
+                <Customize isModalOpen={this.props.isModalOpen} toggleModal={this.props.toggleModal}/>
             </div>
         );
     }

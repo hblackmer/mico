@@ -12,7 +12,7 @@ import './Customize.css';
 class Customize extends Component {
     render() {
         return (
-            <Modal isOpen={this.props.isModalOpen} toggle={this.props.toggleModal}>
+            <Modal isOpen={this.props.isModalOpen} toggleModal={this.props.toggleModal}>
                 <ModalHeader toggle={this.props.toggleModal}> 
                     <h3>Test Customization</h3>
                 </ModalHeader>
