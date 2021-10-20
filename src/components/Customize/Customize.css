@@ -7,15 +7,34 @@
     background-color: var(--color-extra-dark-blue); 
     color: white;
 }
+
 .modal-body {
     background: linear-gradient( var(--color-light-blue) 10%, var(--color-extra-dark-blue));
 }
+
+.tab {
+    text-align: center;
+    color: white;
+}
+
+.categories-header {
+    text-align: center;
+    margin-top: -20px;
+}
+
+.length-header {
+    margin-top: 20px;
+    color: white;
+    text-align: center;
+}
+
 #regForm {
     margin: 0px auto;
     font-family: Raleway;
     padding: 40px;
     border-radius: 10px
 }
+
 .toggle_radio{
     position: relative;
     background: rgba(255,255,255,.1);
@@ -27,12 +46,15 @@
     height: 30px;
     width: 318px;
 }
+
 .toggle_radio > * {
     float: left;
 }
+
 .toggle_radio input[type=radio]{
     display: none;
 }
+
 .toggle_radio label{
     color: rgba(255,255,255,.9);
     z-index: 0;
@@ -45,6 +67,7 @@
     z-index: 1;
     text-align: center;
 }
+
 .toggle_option_slider{
     width: 100px;
     height: 23px;
@@ -53,18 +76,22 @@
     border-radius: 50px;
     transition: all .4s ease;
 }
+
 #first_toggle:checked ~ .toggle_option_slider{
     background: rgba(255,255,255,.3);
     left: 3px;
 }
+
 #second_toggle:checked ~ .toggle_option_slider{
     background: rgba(255,255,255,.3);
     left: 109px;
 }
+
 #third_toggle:checked ~ .toggle_option_slider{
     background: rgba(255,255,255,.3);
     left: 215px;
 }
+
 #customize-button {
     font-size: 1.25rem;
 }

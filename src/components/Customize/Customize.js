@@ -19,29 +19,12 @@ class Customize extends Component {
                 <ModalBody>
                     <Form id="regForm">
                         <div className="tab">
+                            <h4 className="categories-header">CATEGORIES</h4>
+                            <lead>Drag and drop item(s) to select:</lead>
                             <Categories />
-                            <h4 className="text-white text-center my-3">CATEGORIES</h4>
-                            <Row className="row offset-1 justify-content-center mb-5">
-                                <Col className="form-check form-switch"> 
-                                    <Input className="form-check-input" type="checkbox" id="flexSwitchCheckHTML" checked />
-                                    <Label className="form-check-label text-white h5"
-                                        for="flexSwitchCheckChecked">HTML</Label>
-                                </Col>
-                                <Col className="form-check form-switch">
-                                    <Input className="form-check-input" type="checkbox" id="flexSwitchCheckCSS" checked />
-                                    <Label className="form-check-label text-white h5"
-                                        for="flexSwitchCheckChecked">CSS</Label>
-                                </Col>
-                                <Col className="form-check form-switch">
-                                    <Input className="form-check-input" type="checkbox" id="flexSwitchCheckJavaScript"
-                                        checked />
-                                    <Label className="form-check-label text-white h5"
-                                        for="flexSwitchCheckChecked">JavaScript</Label>
-                                </Col>
-                            </Row>
                         </div>
                         <div className="tab">
-                            <h4 className="text-white text-center my-3">LENGTH</h4>
+                            <h4 className="length-header">LENGTH</h4>
                             <div className="toggle_radio mb-5">
                                 <Input type="radio" className="toggle_option" id="first_toggle" name="toggle_option" />
                                 <Input type="radio" checked className="toggle_option" id="second_toggle" name="toggle_option" />

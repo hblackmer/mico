@@ -4,10 +4,10 @@ import './Categories.css';
 class Categories extends Component {
     state = {
         tasks: [
-            {name:"HTML",category:"todo", bgcolor: "#96D1CD"},
-            {name:"CSS", category:"todo", bgcolor: "#96D1CD"},
-            {name:"JavaScript", category:"todo", bgcolor: "#96D1CD"},
-            {name:"React", category:"todo", bgcolor: "#96D1CD"}
+            {name:"HTML",category:"list1", bgcolor: "#96D1CD"},
+            {name:"CSS", category:"list1", bgcolor: "#96D1CD"},
+            {name:"JavaScript", category:"list1", bgcolor: "#96D1CD"},
+            {name:"React", category:"list1", bgcolor: "#96D1CD"}
         ]
     }
 
@@ -37,8 +37,8 @@ class Categories extends Component {
 
     render() {
         var tasks = {
-            todo: [],
-            done: []
+            list1: [],
+            list2: []
         }
 
         this.state.tasks.forEach ((t) => {
@@ -56,18 +56,17 @@ class Categories extends Component {
 
         return (
             <div className="container-drag">
-                <h2 className="header">Categories</h2>
-                <div className="todo"
+                <div className="list1"
                     onDragOver={(e)=>this.onDragOver(e)}
-                    onDrop={(e)=>{this.onDrop(e, "todo")}}>
+                    onDrop={(e)=>{this.onDrop(e, "list1")}}>
                     <span className="task-header">Not Selected</span>
-                    {tasks.todo}
+                    {tasks.list1}
                 </div>
-                <div className="droppable" 
-                    onDrop={(e)=>this.onDrop(e, "done")}
+                <div className="list2" 
+                    onDrop={(e)=>this.onDrop(e, "list2")}
                     onDragOver={(ev)=>this.onDragOver(ev)}>
                     <span className="task-header">Selected</span>
-                    {tasks.done}
+                    {tasks.list2}
                 </div>
             </div>
         );
