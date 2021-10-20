@@ -1,0 +1,58 @@
+.container-drag {
+    text-align: center;
+}
+
+.todo {
+    position: absolute;
+    width: 150px;
+    height: 40vh;
+    left: 0;
+    top: 10;
+    background-color: #FBF2ED;
+    border-style: solid;
+    border-width: 2px;
+    color: #45597E;
+}
+
+.header {
+    display: inline-block;
+    color: #45597E;
+    font-family: sans-serif;
+    margin: 0;
+    width:100%;
+}
+
+.task-header {
+    display: inline-block;
+    background-color: #DBE2F4;
+    color: #45597E;
+    font-family: sans-serif;
+    width:100%;
+    height: 30px;
+    padding-top: 15px;
+    font-weight: bold;
+    border-bottom-style: solid;
+    border-width: 2px;
+}
+
+.droppable {
+    position: absolute;
+    width: 150px;
+    height: 40vh;
+    right: 0;
+    background-color: #FBF2ED;
+    border-style: solid;
+    border-width: 2px;
+    color: #45597E;
+}
+
+.draggable {
+    width: 100px;
+    margin: 15px auto;
+    padding-top: 5px;
+    border-style: solid;
+    border-width: 2px;
+    color: #45597E;
+    font-family: sans-serif;
+    font-weight: bold;
+}

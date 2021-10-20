@@ -5,6 +5,7 @@ import {
     Form, FormGroup, Input, Label,
     Row, Col
 } from 'reactstrap';
+import Categories from '../Categories/Categories';
 import './Customize.css';
 
 
@@ -18,6 +19,7 @@ class Customize extends Component {
                 <ModalBody>
                     <Form id="regForm">
                         <div className="tab">
+                            <Categories />
                             <h4 className="text-white text-center my-3">CATEGORIES</h4>
                             <Row className="row offset-1 justify-content-center mb-5">
                                 <Col className="form-check form-switch"> 
