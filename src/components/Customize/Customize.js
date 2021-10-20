@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {
     Modal, ModalHeader, ModalBody,
-    Button,
+    Button, Tooltip,
     Form, FormGroup, Input, Label,
     Row, Col
 } from 'reactstrap';
@@ -14,13 +14,13 @@ class Customize extends Component {
         return (
             <Modal isOpen={this.props.isModalOpen} toggle={this.props.toggleModal}>
                 <ModalHeader toggle={this.props.toggleModal}> 
-                    Test Customization
+                    <h3>Test Customization</h3>
                 </ModalHeader>
                 <ModalBody>
                     <Form id="regForm">
                         <div className="tab">
                             <h4 className="categories-header">CATEGORIES</h4>
-                            <lead>Drag and drop item(s) to select:</lead>
+                            <lead className="categories-subtitle">Drag and drop item(s) to be tested on:</lead>
                             <Categories />
                         </div>
                         <div className="tab">
