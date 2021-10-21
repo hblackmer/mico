@@ -61,7 +61,7 @@ class Test extends Component {
                                     </div>
                                     <Answer />
                                 </React.Fragment> : 
-                                <Button color="primary" id="start_btn" onClick={() => this.hideComponent()}>START</Button>
+                                <Button color="primary" onClick={() => this.hideComponent()}>START</Button>
                             }
                         </Col>
                     </Row>

@@ -8,6 +8,7 @@
     background: url("../../img/chalkboard.jpg") bottom center / cover no-repeat;
     height: 102vh;
     margin-top: -70px;
+    text-align: center;
 }
 .dark-overlay {
     background: rgba(0,0,0,0.15);
