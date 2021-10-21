@@ -64,13 +64,13 @@ class Test extends Component {
     }
 
     render() {
-        const { showAnswer } = this.state;
+        const { showAnswer, timerActive, questionMax, questionNum } = this.state;
         const questionList = [];
-        const calculateProgress = (this.state.questionNum / this.state.questionMax) * 100;
+        const calculateProgress = (questionNum / questionMax) * 100;
 
 
         const GenerateQuestions = () => {
-            while (questionList.length < this.state.questionMax) {
+            while (questionList.length < questionMax) {
                 let randomQuestionIdx = Math.floor(Math.random()*this.props.javascript.length);
                 let randomQuestion = this.props.javascript[randomQuestionIdx];
                 if (questionList.indexOf(randomQuestion) === -1) {
@@ -80,8 +80,8 @@ class Test extends Component {
         };    
 
         const AskQuestion = () => {
-            if (this.state.questionNum !== this.state.questionMax) {
-                let question = questionList[this.state.questionNum].question;
+            if (questionNum !== questionMax) {
+                let question = questionList[questionNum].question;
                 return (
                     <div>
                         <Question question={question} />
@@ -99,7 +99,7 @@ class Test extends Component {
                         <Col sm={{ size: 10, offset: 1 }}>
                             <Row>
                                 <Col className="test-timer">
-                                    <Timer active={this.state.timerActive} duration={null} className="h4">
+                                    <Timer active={timerActive} duration={null} className="h4">
                                         <i className="fas fa-stopwatch" />
                                         <span>  </span>
                                         <Timecode />
@@ -108,7 +108,7 @@ class Test extends Component {
                             </Row>
                             <Row>
                                 <Col sm={{ size: 10, offset: 1 }}>
-                                    <Progress animated className="progress" color="success" value={calculateProgress}>{this.state.questionNum}/{this.state.questionMax}</Progress>
+                                    <Progress animated className="progress" color="success" value={calculateProgress}>{questionNum}/{questionMax}</Progress>
                                 </Col>
                             </Row>
                             { showAnswer ? 
