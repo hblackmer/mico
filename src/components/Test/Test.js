@@ -24,10 +24,18 @@ class Test extends Component {
         super(props);
         this.state = {
           showAnswer: false,
-          timerActive: false
+          timerActive: false,
+          questionNum: 0
         };
+        this.questionSubmitted = this.questionSubmitted.bind(this);
         this.hideComponent = this.hideComponent.bind(this);
     }
+
+    questionSubmitted() {
+        this.setState(prevState => {
+            return {questionNum: prevState.questionNum + 1}
+        });
+      }
 
     hideComponent() {
         this.setState({
@@ -59,7 +67,7 @@ class Test extends Component {
                     <Question question={question} />
                 </div>
             );
-        };    
+        };
 
         return (
             <div className="test">
@@ -78,7 +86,7 @@ class Test extends Component {
                             </Row>
                             <Row>
                                 <Col sm={{ size: 10, offset: 1 }}>
-                                    <Progress animated className="progress" color="success" value="25">1/5</Progress>
+                                    <Progress animated className="progress" color="success" value="25">{this.state.questionNum}/5</Progress>
                                 </Col>
                             </Row>
                             { showAnswer ? 
@@ -90,9 +98,11 @@ class Test extends Component {
                                     </Row>
                                     {GenerateQuestions()}
                                     {AskQuestion()}
-                                    <Answer />
+                                    <Answer submit={this.questionSubmitted}/>
                                 </React.Fragment> : 
-                                <Button color="primary" onClick={() => this.hideComponent()}>START</Button>
+                                <Button color="primary" onClick={() => 
+                                    this.hideComponent()
+                                }>START</Button>
                             }
                         </Col>
                     </Row>

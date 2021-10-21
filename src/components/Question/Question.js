@@ -4,8 +4,8 @@ import './Question.css';
 class Question extends Component {
     render() {
         return (
-            <Fragment className="question">
-                <p className="text-white">{this.props.question}</p>
+            <Fragment>
+                <p className="question text-white">{this.props.question}</p>
             </Fragment>
         );
     }

@@ -19,7 +19,7 @@ class Answer extends Component {
                     </Row>
                     <Row className="form-group mt-3">
                         <Col>
-                            <Button href="/" color="primary" className="answer-submit">Submit</Button>
+                            <Button type="button" color="primary" className="answer-submit" onClick={this.props.submit}>Submit</Button>
                             <Button type="submit" className="answer-arrow bg-transparent text-success">
                                 <i className="far fa-caret-square-right" />
                             </Button>
