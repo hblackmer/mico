@@ -14,16 +14,16 @@ class Answer extends Component {
                     <Row className="form-group mt-3">
                         <Col className="answer-text">
                             <Label for="feedback" className="col-form-label fs-3">Your Answer:</Label>
-                                <textarea className="form-control" id="answer" name="answer" rows="4"></textarea>
+                                <textarea className="form-control" id="answer" name="answer" rows="6"></textarea>
                         </Col>
                     </Row>
                     <Row className="form-group mt-3">
                         <Col>
-                            <a href="results.html" className="btn btn-primary">Submit</a>
-                            <Button type="submit" className="btn btn-success bg-transparent arrow-size float-end text-success">
+                            <Button href="/" color="primary" className="answer-submit">Submit</Button>
+                            <Button type="submit" className="answer-arrow bg-transparent text-success">
                                 <i className="far fa-caret-square-right" />
                             </Button>
-                            <Button type="submit" className="btn btn-success bg-transparent arrow-size float-end text-success">
+                            <Button type="submit" className="answer-arrow bg-transparent text-success">
                                 <i className="far fa-caret-square-left" />
                             </Button>
                         </Col>

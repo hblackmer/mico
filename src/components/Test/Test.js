@@ -45,7 +45,7 @@ class Test extends Component {
                                 </Col>
                             </Row>
                             <Row>
-                                <Col>
+                                <Col sm={{ size: 10, offset: 1 }}>
                                     <Progress animated className="progress" color="success" value="25">1/5</Progress>
                                 </Col>
                             </Row>
