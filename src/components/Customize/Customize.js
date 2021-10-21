@@ -26,26 +26,26 @@ class Customize extends Component {
                         </div>
                         <div className="tab">
                             <h4 className="length-header">LENGTH</h4>
-                            <div className="toggle_radio mb-5">
-                                <Input type="radio" className="toggle_option" id="first_toggle" name="toggle_option" />
-                                <Input type="radio" checked className="toggle_option" id="second_toggle" name="toggle_option" />
-                                <Input type="radio" className="toggle_option" id="third_toggle" name="toggle_option" />
-                                <Label for="first_toggle">
+                            <div className="toggle-radio mb-5">
+                                <Input type="radio" className="toggle-option" id="first-toggle" name="toggle-option" />
+                                <Input type="radio" checked className="toggle-option" id="second-toggle" name="toggle-option" />
+                                <Input type="radio" className="toggle-option" id="third-toggle" name="toggle-option" />
+                                <Label for="first-toggle">
                                     <h5>Short</h5>
                                 </Label>
-                                <Label for="second_toggle">
+                                <Label for="second-toggle">
                                     <h5>Medium</h5>
                                 </Label>
-                                <Label for="third_toggle">
+                                <Label for="third-toggle">
                                     <h5>Long</h5>
                                 </Label>
-                                <div className="toggle_option_slider">
+                                <div className="toggle-option-slider">
                                 </div>
                             </div>
                         </div>
                         <div className="tab text-center">
                             <Link to="/test">
-                                <Button href="/" color="primary" id="customize-button" onClick={this.props.toggleModal}>Start</Button>
+                                <Button color="primary" id="customize-button" onClick={this.props.toggleModal}>Start</Button>
                             </Link>
                         </div>
                     </Form>

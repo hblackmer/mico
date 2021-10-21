@@ -3,7 +3,7 @@ import {
     Button,
     Container, Row, Col,
 } from 'reactstrap';
-import Answer from '../Answer/Answer';
+import Answer from '../Answer/Answer'
 import './Test.css';
 
 class Test extends Component {

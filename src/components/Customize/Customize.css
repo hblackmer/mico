@@ -39,7 +39,7 @@
     border-radius: 10px
 }
 
-.toggle_radio{
+.toggle-radio{
     position: relative;
     background: rgba(255,255,255,.1);
     margin: 4px auto;
@@ -51,15 +51,15 @@
     width: 318px;
 }
 
-.toggle_radio > * {
+.toggle-radio > * {
     float: left;
 }
 
-.toggle_radio input[type=radio]{
+.toggle-radio input[type=radio]{
     display: none;
 }
 
-.toggle_radio label{
+.toggle-radio label{
     color: rgba(255,255,255,.9);
     z-index: 0;
     display: block;
@@ -72,7 +72,7 @@
     text-align: center;
 }
 
-.toggle_option_slider{
+.toggle-option-slider{
     width: 100px;
     height: 23px;
     position: absolute;
@@ -81,17 +81,17 @@
     transition: all .4s ease;
 }
 
-#first_toggle:checked ~ .toggle_option_slider{
+#first-toggle:checked ~ .toggle-option-slider{
     background: rgba(255,255,255,.3);
     left: 3px;
 }
 
-#second_toggle:checked ~ .toggle_option_slider{
+#second-toggle:checked ~ .toggle-option-slider{
     background: rgba(255,255,255,.3);
     left: 109px;
 }
 
-#third_toggle:checked ~ .toggle_option_slider{
+#third-toggle:checked ~ .toggle-option-slider{
     background: rgba(255,255,255,.3);
     left: 215px;
 }
