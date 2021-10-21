@@ -48,7 +48,7 @@ class Test extends Component {
         const { showAnswer } = this.state;
         const questionList = [];
         const questionMaxNumSelected = 2;
-        const questionNumIndex = 0;
+        const calculateProgress = (this.state.questionNum / questionMaxNumSelected) * 100;
 
         const GenerateQuestions = () => {
             while (questionList.length < questionMaxNumSelected) {
@@ -86,7 +86,7 @@ class Test extends Component {
                             </Row>
                             <Row>
                                 <Col sm={{ size: 10, offset: 1 }}>
-                                    <Progress animated className="progress" color="success" value="25">{this.state.questionNum}/5</Progress>
+                                    <Progress animated className="progress" color="success" value={calculateProgress}>{this.state.questionNum}/{questionMaxNumSelected}</Progress>
                                 </Col>
                             </Row>
                             { showAnswer ? 
