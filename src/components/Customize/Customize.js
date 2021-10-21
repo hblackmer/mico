@@ -5,6 +5,7 @@ import {
     Form, FormGroup, Input, Label,
     Row, Col
 } from 'reactstrap';
+import { Link } from 'react-router-dom';
 import Categories from '../Categories/Categories';
 import './Customize.css';
 
@@ -43,7 +44,9 @@ class Customize extends Component {
                             </div>
                         </div>
                         <div className="tab text-center">
-                            <Button href="/" color="primary" id="customize-button">Start</Button>
+                            <Link to="/test">
+                                <Button href="/" color="primary" id="customize-button" onClick={this.props.toggleModal}>Start</Button>
+                            </Link>
                         </div>
                     </Form>
                 </ModalBody>

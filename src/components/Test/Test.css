@@ -59,15 +59,3 @@
     0% { width: 0; }
     100% { width: 60%; }
 }
-
-/* 
-========================
-    QUESTION TIMER
-========================
-*/
-#time {
-    display: none;
-}
-#answer-textarea {
-    display: none;
-}

@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import {
     Button,
     Container, Row, Col,
+    Form, FormGroup, Input, Label,
 } from 'reactstrap';
 import '../Test/Test.css';
 
@@ -68,25 +69,22 @@ class Answer extends Component {
 
     render() {
         return (
-            <div>
-                Test
-                <div id="time" className="text-green text-center h3"><i className="fas fa-stopwatch" /> 00:00:00</div>
-                <form id="answer-textarea">
+            <Fragment>
+                <h3 className="time text-green"><i className="fas fa-stopwatch" /> 00:00:00</h3>
+                <Form id="answer-textarea">
                     <Row className="form-group mt-3">
-                        <label for="feedback" className="row col-form-label fs-3 text-primary">Answer:</label>
+                        <Label for="feedback" className="row col-form-label fs-3 text-primary">Answer:</Label>
                         <div className="row">
                             <textarea className="form-control" id="answer" name="answer" rows="4"></textarea>
                         </div>
                     </Row>
-                    <Row className="form-group row mt-3">
-                        <div>
-                            <a href="results.html" className="btn btn-primary">Submit</a>
-                            <button type="submit" className="btn btn-success bg-transparent arrow-size float-end text-success"><i className="far fa-caret-square-right"></i></button>
-                            <button type="submit" className="btn btn-success bg-transparent arrow-size float-end text-success"><i className="far fa-caret-square-left"></i></button>
-                        </div>
+                    <Row className="form-group mt-3">
+                        <a href="results.html" className="btn btn-primary">Submit</a>
+                        <Button type="submit" className="btn btn-success bg-transparent arrow-size float-end text-success"><i className="far fa-caret-square-right" /></Button>
+                        <Button type="submit" className="btn btn-success bg-transparent arrow-size float-end text-success"><i className="far fa-caret-square-left" /></Button>
                     </Row>
-                </form>
-            </div>
+                </Form>
+            </Fragment>
         );
     }
 }

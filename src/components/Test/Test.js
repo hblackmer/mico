@@ -42,8 +42,10 @@ class Test extends Component {
                             <div className="question">
                                 <h4 className="row text-white">What are CSS selectors?</h4>
                             </div>
+                            { showAnswer ? 
+                            <Answer /> : 
                             <Button variant="primary" className="btn btn-primary" id="start_btn" onClick={() => this.hideComponent()}>START</Button>
-                            {showAnswer && <Answer />}
+                             }
                         </Col>
                     </Row>
                 </Container>
