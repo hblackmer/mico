@@ -39,26 +39,25 @@ class Test extends Component {
     render() {
         const { showAnswer } = this.state;
         const questionList = [];
-        const questionNumSelected = 2;
+        const questionMaxNumSelected = 2;
+        const questionNumIndex = 0;
 
         const GenerateQuestions = () => {
-            console.log(this.props.javascript.length);
-            while (questionList.length < questionNumSelected) {
+            while (questionList.length < questionMaxNumSelected) {
                 let randomQuestionIdx = Math.floor(Math.random()*this.props.javascript.length);
                 let randomQuestion = this.props.javascript[randomQuestionIdx];
                 if (questionList.indexOf(randomQuestion) === -1) {
                     questionList.push(this.props.javascript[randomQuestionIdx]);
                 }
             }
-            console.log(questionList);
         };    
 
         const AskQuestion = () => {
-            //TODO: Randomize questions and make sure not to ask same question again.
+            let question = questionList.shift().question;
             return (
-                <Question question={this.props.javascript.filter(
-                    javascript => javascript.id === 0
-                )[0].question} />
+                <div>
+                    <Question question={question} />
+                </div>
             );
         };    
 
@@ -86,11 +85,11 @@ class Test extends Component {
                                 <React.Fragment>
                                     <Row>
                                         <Col className="test-category">
-                                            <i className="fab fa-css3-alt" /> CSS
+                                            <i className="fab fa-js-square" /> JavaScript
                                         </Col>
                                     </Row>
-                                    {AskQuestion()}
                                     {GenerateQuestions()}
+                                    {AskQuestion()}
                                     <Answer />
                                 </React.Fragment> : 
                                 <Button color="primary" onClick={() => this.hideComponent()}>START</Button>
