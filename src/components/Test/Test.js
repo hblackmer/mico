@@ -47,8 +47,9 @@ class Test extends Component {
     render() {
         const { showAnswer } = this.state;
         const questionList = [];
-        const questionMaxNumSelected = 2;
+        const questionMaxNumSelected = 3;
         const calculateProgress = (this.state.questionNum / questionMaxNumSelected) * 100;
+
 
         const GenerateQuestions = () => {
             while (questionList.length < questionMaxNumSelected) {
@@ -61,12 +62,15 @@ class Test extends Component {
         };    
 
         const AskQuestion = () => {
-            let question = questionList.shift().question;
-            return (
-                <div>
-                    <Question question={question} />
-                </div>
-            );
+            if (this.state.questionNum !== questionMaxNumSelected) {
+                let question = questionList[this.state.questionNum].question;
+                return (
+                    <div>
+                        <Question question={question} />
+                    </div>
+                );
+            }
+            return <div></div>
         };
 
         return (
