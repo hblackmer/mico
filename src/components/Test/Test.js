@@ -4,10 +4,20 @@ import {
     Button,
     Container, Row, Col,
 } from 'reactstrap';
+import { withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
 import Timer from 'react-timer-wrapper';
 import Timecode from 'react-timecode';
+import Question from '../Question/Question';
 import Answer from '../Answer/Answer';
 import './Test.css';
+
+const mapStateToProps = state => {
+    return {
+        javascript: state.javascript,
+        react: state.react,
+    };
+};
 
 class Test extends Component {
     constructor(props) {
@@ -25,9 +35,18 @@ class Test extends Component {
             timerActive: true
         });
     }
-    
+
     render() {
         const { showAnswer } = this.state;
+
+        const AskQuestion = () => {
+            //TODO: Randomize questions and make sure not to ask same question again.
+            return (
+                <Question question={this.props.javascript.filter(
+                    javascript => javascript.id === 0
+                )[0].question} />
+            );
+        };    
 
         return (
             <div className="test">
@@ -56,9 +75,7 @@ class Test extends Component {
                                             <i className="fab fa-css3-alt" /> CSS
                                         </Col>
                                     </Row>
-                                    <div className="question">
-                                        <h4>What are CSS selectors?</h4>
-                                    </div>
+                                    {AskQuestion()}
                                     <Answer />
                                 </React.Fragment> : 
                                 <Button color="primary" onClick={() => this.hideComponent()}>START</Button>
@@ -71,4 +88,4 @@ class Test extends Component {
     }
 }
   
-export default Test;  
+export default withRouter(connect(mapStateToProps)(Test));
