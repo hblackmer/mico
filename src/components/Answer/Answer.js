@@ -68,9 +68,9 @@ class Answer extends Component {
 
     render() {
         return (
-            <React.Fragment className="Answer">
+            <div>
+                Test
                 <div id="time" className="text-green text-center h3"><i className="fas fa-stopwatch" /> 00:00:00</div>
-                <Button variant="primary" type="submit" className="btn btn-primary" id="start_btn">START</Button>
                 <form id="answer-textarea">
                     <Row className="form-group mt-3">
                         <label for="feedback" className="row col-form-label fs-3 text-primary">Answer:</label>
@@ -86,7 +86,7 @@ class Answer extends Component {
                         </div>
                     </Row>
                 </form>
-            </React.Fragment>
+            </div>
         );
     }
 }

@@ -7,9 +7,26 @@ import Answer from '../Answer/Answer';
 import './Test.css';
 
 class Test extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+          showAnswer: false
+        };
+        this.hideComponent = this.hideComponent.bind(this);
+    }
+
+    hideComponent() {
+        this.setState({
+            showAnswer: !this.state.showAnswer
+        });
+        console.log("Button clicked: " + this.state.showAnswer);
+    }
+    
     render() {
+        const { showAnswer } = this.state;
+
         return (
-            <React.Fragment className="Test">
+            <div className="Test">
                 <div className="dark-overlay"></div>
                 <Container className="d-flex justify-content-center align-items-center">
                     <Row>
@@ -25,11 +42,12 @@ class Test extends Component {
                             <div className="question">
                                 <h4 className="row text-white">What are CSS selectors?</h4>
                             </div>
-                            <Answer />
+                            <Button variant="primary" className="btn btn-primary" id="start_btn" onClick={() => this.hideComponent()}>START</Button>
+                            {showAnswer && <Answer />}
                         </Col>
                     </Row>
                 </Container>
-            </React.Fragment>
+            </div>
         );
     }
 }
