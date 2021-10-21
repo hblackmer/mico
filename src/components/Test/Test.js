@@ -25,9 +25,12 @@ class Test extends Component {
         this.state = {
           showAnswer: false,
           timerActive: false,
-          questionNum: 0
+          questionNum: 0,
+          questionMax: 3
         };
         this.questionSubmitted = this.questionSubmitted.bind(this);
+        this.questionPrev = this.questionPrev.bind(this);
+        this.questionNext = this.questionNext.bind(this);
         this.hideComponent = this.hideComponent.bind(this);
     }
 
@@ -35,7 +38,23 @@ class Test extends Component {
         this.setState(prevState => {
             return {questionNum: prevState.questionNum + 1}
         });
-      }
+    }
+
+    questionPrev() {
+        if (this.state.questionNum > 0) {
+            this.setState(prevState => {
+                return {questionNum: prevState.questionNum - 1}
+            });
+        }
+    }
+
+    questionNext() {
+        if (this.state.questionNum < this.state.questionMax) {
+            this.setState(prevState => {
+                return {questionNum: prevState.questionNum + 1}
+            });
+        }
+    }
 
     hideComponent() {
         this.setState({
@@ -47,12 +66,11 @@ class Test extends Component {
     render() {
         const { showAnswer } = this.state;
         const questionList = [];
-        const questionMaxNumSelected = 3;
-        const calculateProgress = (this.state.questionNum / questionMaxNumSelected) * 100;
+        const calculateProgress = (this.state.questionNum / this.state.questionMax) * 100;
 
 
         const GenerateQuestions = () => {
-            while (questionList.length < questionMaxNumSelected) {
+            while (questionList.length < this.state.questionMax) {
                 let randomQuestionIdx = Math.floor(Math.random()*this.props.javascript.length);
                 let randomQuestion = this.props.javascript[randomQuestionIdx];
                 if (questionList.indexOf(randomQuestion) === -1) {
@@ -62,7 +80,7 @@ class Test extends Component {
         };    
 
         const AskQuestion = () => {
-            if (this.state.questionNum !== questionMaxNumSelected) {
+            if (this.state.questionNum !== this.state.questionMax) {
                 let question = questionList[this.state.questionNum].question;
                 return (
                     <div>
@@ -90,7 +108,7 @@ class Test extends Component {
                             </Row>
                             <Row>
                                 <Col sm={{ size: 10, offset: 1 }}>
-                                    <Progress animated className="progress" color="success" value={calculateProgress}>{this.state.questionNum}/{questionMaxNumSelected}</Progress>
+                                    <Progress animated className="progress" color="success" value={calculateProgress}>{this.state.questionNum}/{this.state.questionMax}</Progress>
                                 </Col>
                             </Row>
                             { showAnswer ? 
@@ -102,7 +120,7 @@ class Test extends Component {
                                     </Row>
                                     {GenerateQuestions()}
                                     {AskQuestion()}
-                                    <Answer submit={this.questionSubmitted}/>
+                                    <Answer submit={this.questionSubmitted} prev={this.questionPrev} next={this.questionNext}/>
                                 </React.Fragment> : 
                                 <Button color="primary" onClick={() => 
                                     this.hideComponent()

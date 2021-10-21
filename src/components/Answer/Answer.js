@@ -20,10 +20,10 @@ class Answer extends Component {
                     <Row className="form-group mt-3">
                         <Col>
                             <Button type="button" color="primary" className="answer-submit" onClick={this.props.submit}>Submit</Button>
-                            <Button type="submit" className="answer-arrow bg-transparent text-success">
+                            <Button type="button" className="answer-arrow bg-transparent text-success" onClick={this.props.next}>
                                 <i className="far fa-caret-square-right" />
                             </Button>
-                            <Button type="submit" className="answer-arrow bg-transparent text-success">
+                            <Button type="button" className="answer-arrow bg-transparent text-success" onClick={this.props.prev}>
                                 <i className="far fa-caret-square-left" />
                             </Button>
                         </Col>
