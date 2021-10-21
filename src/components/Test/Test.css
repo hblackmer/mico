@@ -10,20 +10,24 @@
     position: relative;
     text-align: center;
 }
-.test-category {
+.test-timer {
+    text-align: center;
     color: var(--color-green);
-    font-size: 3rem;
+}
+.test-category {
+    color: var(--color-primary);
+    margin-top: 5px;
+    font-size: 2rem;
     font-weight: bolder;
     text-align: center;
-}
-.category{
-    height: 10vh;
-    width: 100%;
 }
 .question {
     height: 5vh;
     width: 100%;
-    margin-bottom: 30px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: white;
 }
 .answer {
     height: 30vh;
@@ -43,27 +47,12 @@
 ========================
 */
 .progress {
-    background: rgba(255,255,255,0.2);
-    justify-content: flex-start;
-    border-radius: 100px;
-    align-items: center;
-    position: relative;
-    padding: 0 5px;
-    display: flex;
-    height: 20px;
-    width: 500px;
-    margin-bottom: 10px;
+    color: black;
+    font-size: 2rem;
+    font-weight: bolder;
+    margin-bottom: 20px;
 }
 .progress-value {
-    animation: load 3s normal forwards;
-    box-shadow: 0 10px 40px -10px #fff;
-    border-radius: 100px;
-    font-size: 1.5em;
-    background: darkgray;
-    height: 30px;
-    width: 0;
-}
-@keyframes load {
-    0% { width: 0; }
-    100% { width: 60%; }
+    text-align: left;
+    color: white;
 }

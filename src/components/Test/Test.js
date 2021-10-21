@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {
+    Progress,
     Button,
     Container, Row, Col,
 } from 'reactstrap';
@@ -33,28 +34,32 @@ class Test extends Component {
                 <div className="dark-overlay"></div>
                 <Row>
                     <Col sm={{ size: 10, offset: 1 }}>
-                        <Row className="category">
+                        <Row>
+                            <Col className="test-timer">
+                                <Timer active={this.state.timerActive} duration={null} className="h4">
+                                    <i className="fas fa-stopwatch" />
+                                    <span>  </span>
+                                    <Timecode />
+                                </Timer>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col>
+                                <Progress animated className="progress" color="success" value="25">1/5</Progress>
+                            </Col>
+                        </Row>
+                        <Row>
                             <Col className="test-category">
                                 <i className="fab fa-css3-alt" /> CSS
                             </Col>
                         </Row>
-                        <Row>
-                            <Col className="progress">
-                                <div className="progress-value">Question 3 of 5</div>
-                            </Col>
-                        </Row>
-                        <Timer active={this.state.timerActive} duration={null} className="text-green">
-                            <i className="fas fa-stopwatch" />
-                            <span>  </span>
-                            <Timecode />
-                        </Timer>
                         <div className="question">
-                            <h4 className="row text-white">What are CSS selectors?</h4>
+                            <h4>What are CSS selectors?</h4>
                         </div>
                         { showAnswer ? 
-                        <Answer /> : 
-                        <Button variant="primary" className="btn btn-primary" id="start_btn" onClick={() => this.hideComponent()}>START</Button>
-                            }
+                            <Answer /> : 
+                            <Button variant="primary" className="btn btn-primary" id="start_btn" onClick={() => this.hideComponent()}>START</Button>
+                        }
                     </Col>
                 </Row>
             </Container>
