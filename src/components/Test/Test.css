@@ -6,7 +6,7 @@
 .test {
     padding-top: 100px;
     background: url("../../img/chalkboard.jpg") bottom center / cover no-repeat;
-    height: 125vh;
+    height: 102vh;
     margin-top: -70px;
 }
 .dark-overlay {
@@ -35,6 +35,10 @@
     margin-bottom: 20px;
     text-align: center;
     color: white;
+}
+.answer-text {
+    text-align: left;
+    color: var(--color-primary);
 }
 .answer {
     height: 30vh;

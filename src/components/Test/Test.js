@@ -49,17 +49,19 @@ class Test extends Component {
                                     <Progress animated className="progress" color="success" value="25">1/5</Progress>
                                 </Col>
                             </Row>
-                            <Row>
-                                <Col className="test-category">
-                                    <i className="fab fa-css3-alt" /> CSS
-                                </Col>
-                            </Row>
-                            <div className="question">
-                                <h4>What are CSS selectors?</h4>
-                            </div>
                             { showAnswer ? 
-                                <Answer /> : 
-                                <Button variant="primary" className="btn btn-primary" id="start_btn" onClick={() => this.hideComponent()}>START</Button>
+                                <React.Fragment>
+                                    <Row>
+                                        <Col className="test-category">
+                                            <i className="fab fa-css3-alt" /> CSS
+                                        </Col>
+                                    </Row>
+                                    <div className="question">
+                                        <h4>What are CSS selectors?</h4>
+                                    </div>
+                                    <Answer />
+                                </React.Fragment> : 
+                                <Button color="primary" id="start_btn" onClick={() => this.hideComponent()}>START</Button>
                             }
                         </Col>
                     </Row>
