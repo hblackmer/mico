@@ -3,23 +3,26 @@ import {
     Button,
     Container, Row, Col,
 } from 'reactstrap';
-import Answer from '../Answer/Answer'
+import Timer from 'react-timer-wrapper';
+import Timecode from 'react-timecode';
+import Answer from '../Answer/Answer';
 import './Test.css';
 
 class Test extends Component {
     constructor(props) {
         super(props);
         this.state = {
-          showAnswer: false
+          showAnswer: false,
+          timerActive: false
         };
         this.hideComponent = this.hideComponent.bind(this);
     }
 
     hideComponent() {
         this.setState({
-            showAnswer: !this.state.showAnswer
+            showAnswer: !this.state.showAnswer,
+            timerActive: true
         });
-        console.log("Button clicked: " + this.state.showAnswer);
     }
     
     render() {
@@ -39,6 +42,11 @@ class Test extends Component {
                                     <div className="progress-value">Question 3 of 5</div>
                                 </Col>
                             </Row>
+                            <Timer active={this.state.timerActive} duration={null} className="text-green">
+                                <i className="fas fa-stopwatch" />
+                                <span>  </span>
+                                <Timecode />
+                            </Timer>
                             <div className="question">
                                 <h4 className="row text-white">What are CSS selectors?</h4>
                             </div>
