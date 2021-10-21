@@ -8,6 +8,13 @@
     height: 100vh;
     background: url("../../img/chalkboard.jpg") bottom center / cover no-repeat;
     position: relative;
+    text-align: center;
+}
+.test-category {
+    color: var(--color-green);
+    font-size: 3rem;
+    font-weight: bolder;
+    text-align: center;
 }
 .category{
     height: 10vh;
@@ -45,6 +52,7 @@
     display: flex;
     height: 20px;
     width: 500px;
+    margin-bottom: 10px;
 }
 .progress-value {
     animation: load 3s normal forwards;
