@@ -38,6 +38,20 @@ class Test extends Component {
 
     render() {
         const { showAnswer } = this.state;
+        const questionList = [];
+        const questionNumSelected = 2;
+
+        const GenerateQuestions = () => {
+            console.log(this.props.javascript.length);
+            while (questionList.length < questionNumSelected) {
+                let randomQuestionIdx = Math.floor(Math.random()*this.props.javascript.length);
+                let randomQuestion = this.props.javascript[randomQuestionIdx];
+                if (questionList.indexOf(randomQuestion) === -1) {
+                    questionList.push(this.props.javascript[randomQuestionIdx]);
+                }
+            }
+            console.log(questionList);
+        };    
 
         const AskQuestion = () => {
             //TODO: Randomize questions and make sure not to ask same question again.
@@ -76,6 +90,7 @@ class Test extends Component {
                                         </Col>
                                     </Row>
                                     {AskQuestion()}
+                                    {GenerateQuestions()}
                                     <Answer />
                                 </React.Fragment> : 
                                 <Button color="primary" onClick={() => this.hideComponent()}>START</Button>
