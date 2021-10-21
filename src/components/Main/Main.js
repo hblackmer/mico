@@ -1,10 +1,18 @@
 import React, { Component } from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
 import Navigation from '../Navigation/Navigation';
 import Showcase from '../Showcase/Showcase';
 import About from '../About/About';
 import Footer from '../Footer/Footer';
 import Test from '../Test/Test';
+
+const mapStateToProps = state => {
+    return {
+        javascript: state.javascript,
+        react: state.react,
+    };
+};
 
 class Main extends Component {
     constructor(props) {
@@ -46,4 +54,4 @@ class Main extends Component {
     }
 }
   
-export default Main;  
+export default withRouter(connect(mapStateToProps)(Main));
