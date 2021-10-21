@@ -16,7 +16,7 @@ class About extends Component {
                             <CardBody className="about-body">
                                 <div className="about-icons"><img src="/assets/flash.png" className="about-img" alt="A cartoon drawing of a girl sitting on a stool and picking different sticky notes."/></div>
                                 <CardTitle tag="h2">A study tool</CardTitle>
-                                <CardSubtitle tag="h6">Customizable and randomized questions.</CardSubtitle>
+                                <CardSubtitle tag="h6">Interview style questions geared for web developers.</CardSubtitle>
                             </CardBody>
                         </Card>
                     </Col>
@@ -25,7 +25,7 @@ class About extends Component {
                             <CardBody className="about-body">
                                 <div className="about-icons"><img src="/assets/test.png" className="about-img" alt="A cartoon character deciding between different notes."/></div>
                                 <CardTitle tag="h2">Flash cards</CardTitle>
-                                <CardSubtitle tag="h6">Flash card style questions.</CardSubtitle>
+                                <CardSubtitle tag="h6">Customizable and randomized flash card style questions.</CardSubtitle>
                             </CardBody>
                         </Card>
                     </Col>
