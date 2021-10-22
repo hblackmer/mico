@@ -4,6 +4,9 @@ import {
     Card, CardBody, CardTitle, CardSubtitle
 } from 'reactstrap';
 import './About.css';
+import flashImg from '../../img/flash.png';
+import testImg from '../../img/test.png';
+import selectImg from '../../img/select.png';
 
 class About extends Component {
     render() {
@@ -14,7 +17,7 @@ class About extends Component {
                     <Col md="4" className="about-cards">
                         <Card className="about-bg">
                             <CardBody className="about-body">
-                                <div className="about-icons"><img src="../../img/flash.png" className="about-img" alt="A cartoon drawing of a girl sitting on a stool and picking different sticky notes."/></div>
+                                <div className="about-icons"><img src={flashImg} className="about-img" alt="A cartoon drawing of a girl sitting on a stool and picking different sticky notes."/></div>
                                 <CardTitle tag="h2">A study tool</CardTitle>
                                 <CardSubtitle tag="h6">Interview style questions geared for web developers.</CardSubtitle>
                             </CardBody>
@@ -23,7 +26,8 @@ class About extends Component {
                     <Col md="4"  className="about-cards">
                         <Card className="about-bg">
                             <CardBody className="about-body">
-                                <div className="about-icons"><img src="../../img/test.png" className="about-img" alt="A cartoon character deciding between different notes."/></div>
+                                <div className="about-icons"><img src={testImg} className="about-img" alt="A cartoon character deciding between different notes."/></div>
+                                
                                 <CardTitle tag="h2">Flash cards</CardTitle>
                                 <CardSubtitle tag="h6">Customizable and randomized flash card style questions.</CardSubtitle>
                             </CardBody>
@@ -32,7 +36,7 @@ class About extends Component {
                     <Col md="4" className="about-cards">
                         <Card className="about-bg">
                             <CardBody className="about-body">
-                                <div className="about-icons"><img src="../../img/select.png" className="about-img" alt="A cartoon drawing of someone checking a list."/></div>
+                                <div className="about-icons"><img src={selectImg} className="about-img" alt="A cartoon drawing of someone checking a list."/></div>
                                 <CardTitle tag="h2">Test report</CardTitle>
                                 <CardSubtitle tag="h6">Comprehensive report of your question/answers for review at the end of your test.</CardSubtitle>
                             </CardBody>
