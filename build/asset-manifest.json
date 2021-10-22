@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/mico-react/static/css/main.e8856dc1.chunk.css",
+    "main.js": "/mico-react/static/js/main.49caaee8.chunk.js",
+    "main.js.map": "/mico-react/static/js/main.49caaee8.chunk.js.map",
+    "runtime-main.js": "/mico-react/static/js/runtime-main.3f9b4605.js",
+    "runtime-main.js.map": "/mico-react/static/js/runtime-main.3f9b4605.js.map",
+    "static/css/2.8943d9a7.chunk.css": "/mico-react/static/css/2.8943d9a7.chunk.css",
+    "static/js/2.6bee1d70.chunk.js": "/mico-react/static/js/2.6bee1d70.chunk.js",
+    "static/js/2.6bee1d70.chunk.js.map": "/mico-react/static/js/2.6bee1d70.chunk.js.map",
+    "static/js/3.3235621c.chunk.js": "/mico-react/static/js/3.3235621c.chunk.js",
+    "static/js/3.3235621c.chunk.js.map": "/mico-react/static/js/3.3235621c.chunk.js.map",
+    "index.html": "/mico-react/index.html",
+    "static/css/2.8943d9a7.chunk.css.map": "/mico-react/static/css/2.8943d9a7.chunk.css.map",
+    "static/css/main.e8856dc1.chunk.css.map": "/mico-react/static/css/main.e8856dc1.chunk.css.map",
+    "static/js/2.6bee1d70.chunk.js.LICENSE.txt": "/mico-react/static/js/2.6bee1d70.chunk.js.LICENSE.txt",
+    "static/media/Test.css": "/mico-react/static/media/chalkboard.cd853fda.jpg",
+    "static/media/Showcase.css": "/mico-react/static/media/desktop.f5d8b7ef.jpeg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3f9b4605.js",
+    "static/css/2.8943d9a7.chunk.css",
+    "static/js/2.6bee1d70.chunk.js",
+    "static/css/main.e8856dc1.chunk.css",
+    "static/js/main.49caaee8.chunk.js"
+  ]
+}
