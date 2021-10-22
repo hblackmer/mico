@@ -6,7 +6,7 @@
     display: inline-flex;
     flex-direction: column;
     width: 150px;
-    height: 35vh;
+    height: 250px;
     background-color: var(--color-extra-light-blue);
     border-style: solid;
     border-width: 2px;
@@ -17,7 +17,7 @@
     display: inline-flex;
     flex-direction: column;
     width: 150px;
-    height: 35vh;
+    height: 250px;
     background-color: var(--color-extra-light-blue);
     border-style: solid;
     border-width: 2px;
