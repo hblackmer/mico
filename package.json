@@ -1,5 +1,5 @@
 {
-  "homepage": "https://github.com/hblackmer/mico-react",
+  "homepage": "https://hblackmer.github.io/mico-react",
   "name": "mico-react",
   "version": "0.1.0",
   "private": true,
@@ -33,7 +33,7 @@
     "build": "react-scripts build",
     "predeploy": "yarn run build",
     "test": "react-scripts test",
-    "deploy": "gh-pages -b master -d build",
+    "deploy": "gh-pages -b main -d build",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
