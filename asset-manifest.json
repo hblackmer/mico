@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/mico-react/static/css/main.e8856dc1.chunk.css",
-    "main.js": "/mico-react/static/js/main.49caaee8.chunk.js",
-    "main.js.map": "/mico-react/static/js/main.49caaee8.chunk.js.map",
+    "main.js": "/mico-react/static/js/main.759d64c8.chunk.js",
+    "main.js.map": "/mico-react/static/js/main.759d64c8.chunk.js.map",
     "runtime-main.js": "/mico-react/static/js/runtime-main.3f9b4605.js",
     "runtime-main.js.map": "/mico-react/static/js/runtime-main.3f9b4605.js.map",
     "static/css/2.8943d9a7.chunk.css": "/mico-react/static/css/2.8943d9a7.chunk.css",
@@ -22,6 +22,6 @@
     "static/css/2.8943d9a7.chunk.css",
     "static/js/2.6bee1d70.chunk.js",
     "static/css/main.e8856dc1.chunk.css",
-    "static/js/main.49caaee8.chunk.js"
+    "static/js/main.759d64c8.chunk.js"
   ]
 }
