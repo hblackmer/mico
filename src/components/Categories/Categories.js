@@ -2,14 +2,17 @@ import React, { Component } from 'react';
 import './Categories.css';
 
 class Categories extends Component {
-    state = {
-        tasks: [
-            {name:"HTML",category:"list1", bgcolor: "#96D1CD"},
-            {name:"CSS", category:"list1", bgcolor: "#96D1CD"},
-            {name:"JavaScript", category:"list1", bgcolor: "#96D1CD"},
-            {name:"React", category:"list1", bgcolor: "#96D1CD"},
-            {name:"Programming", category:"list1", bgcolor: "#96D1CD"}
-        ]
+    constructor(props) {
+        super(props);
+        this.state = {
+            tasks: [
+                {name:"HTML",category:"list1", bgcolor: "#96D1CD"},
+                {name:"CSS", category:"list1", bgcolor: "#96D1CD"},
+                {name:"JavaScript", category:"list1", bgcolor: "#96D1CD"},
+                {name:"React", category:"list1", bgcolor: "#96D1CD"},
+                {name:"Programming", category:"list1", bgcolor: "#96D1CD"}
+            ]
+        }
     }
 
     onDragOver = (ev) => {
