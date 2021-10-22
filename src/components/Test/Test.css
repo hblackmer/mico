@@ -19,6 +19,7 @@
     height: 100%;
 }
 .test-timer {
+    margin-top:25px;
     text-align: center;
     color: var(--color-green);
 }
