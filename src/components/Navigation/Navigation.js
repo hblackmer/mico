@@ -14,7 +14,7 @@ const links = [
 
 const createNavItem = ({ href, text, className }) => (
     <NavItem>
-        <NavLink className={className}><NavTo to={href}>{text}</NavTo></NavLink>
+        <NavLink className={className}><NavTo to={"/mico"+href}>{text}</NavTo></NavLink>
     </NavItem>
 );
 
@@ -23,7 +23,7 @@ class Navigation extends Component {
         return (
             <div className="App">
                 <Navbar dark expand="md">
-                    <NavbarBrand className="text-primary ml-2" href="/"><strong>MICO</strong></NavbarBrand>
+                    <NavbarBrand className="text-primary ml-2" href="/mico/"><strong>MICO</strong></NavbarBrand>
                     <NavbarToggler onClick={this.props.toggleNav} />
                     <Collapse isOpen={this.props.isNavOpen} navbar>
                     <Button outline onClick={this.props.toggleModal} id="start-button" className="text-primary ml-auto">Start</Button>

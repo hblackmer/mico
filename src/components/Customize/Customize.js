@@ -44,7 +44,7 @@ class Customize extends Component {
                             </div>
                         </div>
                         <div className="tab text-center">
-                            <Link to="/test">
+                            <Link to="/mico/test">
                                 <Button color="primary" id="customize-button" onClick={this.props.toggleModal}>Start</Button>
                             </Link>
                         </div>

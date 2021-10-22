@@ -34,10 +34,10 @@ class Main extends Component {
             <div className="Main">
                 <Navigation isNavOpen={this.state.isNavOpen} isModalOpen={this.state.isModalOpen} toggleNav={this.toggleNav} toggleModal={this.toggleModal}/>
                 <Switch>
-                    <Route exact path='/' render={() => <Showcase toggleNav={this.toggleNav} toggleModal={this.toggleModal}/>} />
-                    <Route exact path='/about' component={About} />
-                    <Route exact path='/test' component={Test} />
-                    <Redirect to='/' />
+                    <Route exact path='/mico/' render={() => <Showcase toggleNav={this.toggleNav} toggleModal={this.toggleModal}/>} />
+                    <Route exact path='/mico/about' component={About} />
+                    <Route exact path='/mico/test' component={Test} />
+                    <Redirect to='/mico/' />
                     <Showcase />
                 </Switch>
                 <Footer />

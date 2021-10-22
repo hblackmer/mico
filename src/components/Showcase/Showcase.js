@@ -12,7 +12,7 @@ class Showcase extends Component {
                 <div id="header">
                     <h1 id="header-name">MICO</h1>
                     <subtitle id="subtitle" className="d-none d-md-block">a study tool for web developers</subtitle>
-                    <Link to="/start">
+                    <Link to="/mico/start">
                         <Button className="test-button" onClick={this.props.toggleModal}>Get Started</Button>
                     </Link>
                 </div>
