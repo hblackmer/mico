@@ -10,7 +10,7 @@ class App extends Component {
     render() {
         return (
             <Provider store={store}>
-                <BrowserRouter basename="window.location.pathname || ''">
+                <BrowserRouter>
                     <div className="App">
                         <Main />
                     </div>
