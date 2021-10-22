@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/mico-react/static/css/main.e8856dc1.chunk.css",
-    "main.js": "/mico-react/static/js/main.759d64c8.chunk.js",
-    "main.js.map": "/mico-react/static/js/main.759d64c8.chunk.js.map",
+    "main.js": "/mico-react/static/js/main.c6da742f.chunk.js",
+    "main.js.map": "/mico-react/static/js/main.c6da742f.chunk.js.map",
     "runtime-main.js": "/mico-react/static/js/runtime-main.3f9b4605.js",
     "runtime-main.js.map": "/mico-react/static/js/runtime-main.3f9b4605.js.map",
     "static/css/2.8943d9a7.chunk.css": "/mico-react/static/css/2.8943d9a7.chunk.css",
@@ -15,13 +15,17 @@
     "static/css/main.e8856dc1.chunk.css.map": "/mico-react/static/css/main.e8856dc1.chunk.css.map",
     "static/js/2.6bee1d70.chunk.js.LICENSE.txt": "/mico-react/static/js/2.6bee1d70.chunk.js.LICENSE.txt",
     "static/media/Test.css": "/mico-react/static/media/chalkboard.cd853fda.jpg",
-    "static/media/Showcase.css": "/mico-react/static/media/desktop.f5d8b7ef.jpeg"
+    "static/media/Showcase.css": "/mico-react/static/media/desktop.f5d8b7ef.jpeg",
+    "static/media/flash.bdb3c9f1.png": "/mico-react/static/media/flash.bdb3c9f1.png",
+    "static/media/logo_circle.e4097773.png": "/mico-react/static/media/logo_circle.e4097773.png",
+    "static/media/select.b84ec410.png": "/mico-react/static/media/select.b84ec410.png",
+    "static/media/test.1403cdc2.png": "/mico-react/static/media/test.1403cdc2.png"
   },
   "entrypoints": [
     "static/js/runtime-main.3f9b4605.js",
     "static/css/2.8943d9a7.chunk.css",
     "static/js/2.6bee1d70.chunk.js",
     "static/css/main.e8856dc1.chunk.css",
-    "static/js/main.759d64c8.chunk.js"
+    "static/js/main.c6da742f.chunk.js"
   ]
 }
