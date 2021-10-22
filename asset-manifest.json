@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/mico/static/css/main.366f2eb5.chunk.css",
-    "main.js": "/mico/static/js/main.4fd9e5e8.chunk.js",
-    "main.js.map": "/mico/static/js/main.4fd9e5e8.chunk.js.map",
+    "main.js": "/mico/static/js/main.4feb98ff.chunk.js",
+    "main.js.map": "/mico/static/js/main.4feb98ff.chunk.js.map",
     "runtime-main.js": "/mico/static/js/runtime-main.4cd25ad9.js",
     "runtime-main.js.map": "/mico/static/js/runtime-main.4cd25ad9.js.map",
     "static/css/2.8943d9a7.chunk.css": "/mico/static/css/2.8943d9a7.chunk.css",
-    "static/js/2.6bee1d70.chunk.js": "/mico/static/js/2.6bee1d70.chunk.js",
-    "static/js/2.6bee1d70.chunk.js.map": "/mico/static/js/2.6bee1d70.chunk.js.map",
+    "static/js/2.5e05142a.chunk.js": "/mico/static/js/2.5e05142a.chunk.js",
+    "static/js/2.5e05142a.chunk.js.map": "/mico/static/js/2.5e05142a.chunk.js.map",
     "static/js/3.3235621c.chunk.js": "/mico/static/js/3.3235621c.chunk.js",
     "static/js/3.3235621c.chunk.js.map": "/mico/static/js/3.3235621c.chunk.js.map",
     "index.html": "/mico/index.html",
     "static/css/2.8943d9a7.chunk.css.map": "/mico/static/css/2.8943d9a7.chunk.css.map",
     "static/css/main.366f2eb5.chunk.css.map": "/mico/static/css/main.366f2eb5.chunk.css.map",
-    "static/js/2.6bee1d70.chunk.js.LICENSE.txt": "/mico/static/js/2.6bee1d70.chunk.js.LICENSE.txt",
+    "static/js/2.5e05142a.chunk.js.LICENSE.txt": "/mico/static/js/2.5e05142a.chunk.js.LICENSE.txt",
     "static/media/Test.css": "/mico/static/media/chalkboard.cd853fda.jpg",
     "static/media/Showcase.css": "/mico/static/media/desktop.f5d8b7ef.jpeg",
     "static/media/flash.bdb3c9f1.png": "/mico/static/media/flash.bdb3c9f1.png",
@@ -24,8 +24,8 @@
   "entrypoints": [
     "static/js/runtime-main.4cd25ad9.js",
     "static/css/2.8943d9a7.chunk.css",
-    "static/js/2.6bee1d70.chunk.js",
+    "static/js/2.5e05142a.chunk.js",
     "static/css/main.366f2eb5.chunk.css",
-    "static/js/main.4fd9e5e8.chunk.js"
+    "static/js/main.4feb98ff.chunk.js"
   ]
 }
