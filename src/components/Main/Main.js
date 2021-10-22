@@ -5,6 +5,7 @@ import Showcase from '../Showcase/Showcase';
 import About from '../About/About';
 import Footer from '../Footer/Footer';
 import Test from '../Test/Test';
+import Contribute from '../Contribute/Contribute';
 
 class Main extends Component {
     constructor(props) {
@@ -37,6 +38,7 @@ class Main extends Component {
                     <Route exact path='/mico/' render={() => <Showcase toggleNav={this.toggleNav} toggleModal={this.toggleModal}/>} />
                     <Route exact path='/mico/about' component={About} />
                     <Route exact path='/mico/test' component={Test} />
+                    <Route exact path='/mico/contribute' component={Contribute} />
                     <Redirect to='/mico/' />
                     <Showcase />
                 </Switch>
