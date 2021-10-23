@@ -10,6 +10,9 @@ import flashImg from '../../img/flash.png';
 import testImg from '../../img/test.png';
 import selectImg from '../../img/select.png';
 
+// Image for Profile
+import avatarImg from '../../img/avatar.png';
+
 export default function About () {
     return (
         <Container className="About px-lg-5">
@@ -42,6 +45,19 @@ export default function About () {
                             <CardSubtitle tag="h6">Comprehensive report of your question/answers for review at the end of your test.</CardSubtitle>
                         </CardBody>
                     </Card>
+                </Col>
+            </Row>
+            <Row className="align-items-center content">
+                <Col md={6} className="justify-content-center">
+                    <img src={avatarImg} alt="Cartoon girl showing off her website design." className="avatar-img img-fluid mt-1" />
+                </Col>
+                <Col md={6} className="text-center">
+                    <Row className="justify-content-center">
+                        <Col claclassNamess="blurb mb-5 mb-md-0">
+                            <h1 className="text-white mt-1">About Me</h1>
+                            <p className="lead">Hi, my name is Helene! I am a hardware and software engineer that had always wanted to but just started learning web development in August 2021. Having been a teaching assistant for various engineering classes at my university, I have always loved helping people learn and watching them succeed which is my inspiration for creating this website. Welcome to my personal project!</p>
+                        </Col>
+                    </Row>
                 </Col>
             </Row>
         </Container>

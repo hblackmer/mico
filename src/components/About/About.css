@@ -61,3 +61,25 @@
 .about-cards {
     margin-bottom: 150px;
 }
+
+.avatar-img {
+    border-radius: 10%;
+    border: 5px solid #5B92AB;
+}
+
+.content {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.blurb h2 {
+    color: black;
+    font-weight: 1000;
+    font-size: 2.5rem;
+ }
+ 
+ .blurb p {
+     font-weight: 1000;
+     font-size: 1.125rem;
+     line-height: 2;
+ }
