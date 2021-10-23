@@ -20,6 +20,8 @@ const mapStateToProps = state => {
     };
 };
 
+const questionList = [];
+
 class Test extends Component {
     constructor(props) {
         super(props);
@@ -62,35 +64,33 @@ class Test extends Component {
             showAnswer: !this.state.showAnswer,
             timerActive: true
         });
+        this.GenerateQuestions();
     }
+
+    GenerateQuestions = () => {
+        while (questionList.length < this.state.questionMax) {
+            let randomQuestionIdx = Math.floor(Math.random()*this.props.programming.length);
+            let randomQuestion = this.props.programming[randomQuestionIdx];
+            if (questionList.indexOf(randomQuestion) === -1) {
+                questionList.push(this.props.programming[randomQuestionIdx]);
+            }
+        }
+    };    
+
+    AskQuestion = () => {
+        if (this.state.questionNum !== this.state.questionMax) {
+            let question = questionList[this.state.questionNum].question;
+            return (
+                <div>
+                    <Question question={question} />
+                </div>
+            );
+        }
+        return <div></div>
+    };
 
     render() {
         const { showAnswer, timerActive, questionMax, questionNum } = this.state;
-        const questionList = [];
-        const calculateProgress = (questionNum / questionMax) * 100;
-
-
-        const GenerateQuestions = () => {
-            while (questionList.length < questionMax) {
-                let randomQuestionIdx = Math.floor(Math.random()*this.props.programming.length);
-                let randomQuestion = this.props.programming[randomQuestionIdx];
-                if (questionList.indexOf(randomQuestion) === -1) {
-                    questionList.push(this.props.programming[randomQuestionIdx]);
-                }
-            }
-        };    
-
-        const AskQuestion = () => {
-            if (questionNum !== questionMax) {
-                let question = questionList[questionNum].question;
-                return (
-                    <div>
-                        <Question question={question} />
-                    </div>
-                );
-            }
-            return <div></div>
-        };
 
         return (
             <div className="test">
@@ -109,7 +109,7 @@ class Test extends Component {
                             </Row>
                             <Row>
                                 <Col sm={{ size: 10, offset: 1 }}>
-                                    <Progress animated className="progress" color="success" value={calculateProgress}>{questionNum}/{questionMax}</Progress>
+                                    <Progress animated className="progress" color="success" value={(questionNum / questionMax) * 100}>{questionNum}/{questionMax}</Progress>
                                 </Col>
                             </Row>
                             <p className="text-danger text-center">Test functionality is still in progress! The following is for demo purposes currently.</p>
@@ -120,8 +120,7 @@ class Test extends Component {
                                             <i className="fab fa-js-square" /> Programming
                                         </Col>
                                     </Row>
-                                    {GenerateQuestions()}
-                                    {AskQuestion()}
+                                    {this.AskQuestion()}
                                     <Answer submit={this.questionSubmitted} prev={this.questionPrev} next={this.questionNext}/>
                                 </React.Fragment> : 
                                 <Button color="primary" onClick={() => 
