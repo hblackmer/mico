@@ -46,7 +46,10 @@ class Test extends Component {
     questionPrev() {
         if (this.state.questionNum > 0) {
             this.setState(prevState => {
-                return {questionNum: prevState.questionNum - 1}
+                return {
+                    questionNum: prevState.questionNum - 1,
+                    timerActive: !this.state.timerActive
+                }
             });
         }
     }
@@ -55,6 +58,11 @@ class Test extends Component {
         if (this.state.questionNum < this.state.questionMax) {
             this.setState(prevState => {
                 return {questionNum: prevState.questionNum + 1}
+            });
+        }
+        if (this.state.questionNum === this.state.questionMax-1) {
+            this.setState({
+                timerActive: !this.state.timerActive
             });
         }
     }
