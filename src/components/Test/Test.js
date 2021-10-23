@@ -16,6 +16,7 @@ const mapStateToProps = state => {
     return {
         javascript: state.javascript,
         react: state.react,
+        programming: state.programming
     };
 };
 
@@ -26,7 +27,7 @@ class Test extends Component {
           showAnswer: false,
           timerActive: false,
           questionNum: 0,
-          questionMax: 3
+          questionMax: 6
         };
         this.questionSubmitted = this.questionSubmitted.bind(this);
         this.questionPrev = this.questionPrev.bind(this);
@@ -71,10 +72,10 @@ class Test extends Component {
 
         const GenerateQuestions = () => {
             while (questionList.length < questionMax) {
-                let randomQuestionIdx = Math.floor(Math.random()*this.props.javascript.length);
-                let randomQuestion = this.props.javascript[randomQuestionIdx];
+                let randomQuestionIdx = Math.floor(Math.random()*this.props.programming.length);
+                let randomQuestion = this.props.programming[randomQuestionIdx];
                 if (questionList.indexOf(randomQuestion) === -1) {
-                    questionList.push(this.props.javascript[randomQuestionIdx]);
+                    questionList.push(this.props.programming[randomQuestionIdx]);
                 }
             }
         };    
@@ -115,7 +116,7 @@ class Test extends Component {
                                 <React.Fragment>
                                     <Row>
                                         <Col className="test-category">
-                                            <i className="fab fa-js-square" /> JavaScript
+                                            <i className="fab fa-js-square" /> Programming
                                         </Col>
                                     </Row>
                                     {GenerateQuestions()}
