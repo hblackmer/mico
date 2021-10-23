@@ -1,7 +1,7 @@
 export const PROGRAMMING = [
     {
         id: 0,
-        question: "Given a string, return a new string with the reversed order of characters. Example: reverse('apple') === 'leppa'",
+        question: "Given a string, return a new string with the reversed order of characters. Example: reverse('apple') === 'elppa'",
         answer: "",
         source: ""
     },
