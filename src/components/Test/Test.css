@@ -50,6 +50,10 @@
     border: none !important;
     font-size: 1.25rem !important;
 }
+#answer-back {
+    margin-top: -25px;
+    margin-bottom: 25px;
+}
 .arrow-size {
     font-size: 1.5rem;
     border-color: transparent;

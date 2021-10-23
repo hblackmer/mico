@@ -38,9 +38,9 @@ class Test extends Component {
     }
 
     questionSubmitted() {
-        this.setState(prevState => {
-            return {questionNum: prevState.questionNum + 1}
-        });
+        if (this.state.questionNum === this.state.questionMax) {
+
+        }
     }
 
     questionPrev() {
@@ -121,7 +121,7 @@ class Test extends Component {
                                         </Col>
                                     </Row>
                                     {this.AskQuestion()}
-                                    <Answer submit={this.questionSubmitted} prev={this.questionPrev} next={this.questionNext}/>
+                                    <Answer questionNum={this.state.questionNum} questionMax={this.state.questionMax} submit={this.questionSubmitted} prev={this.questionPrev} next={this.questionNext}/>
                                 </React.Fragment> : 
                                 <Button color="primary" onClick={() => 
                                     this.hideComponent()

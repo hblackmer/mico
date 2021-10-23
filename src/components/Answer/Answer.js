@@ -17,9 +17,11 @@ class Answer extends Component {
     };
 
     render() {
+        const lastQuestion = this.props.questionMax === this.props.questionNum;
         return (
             <LocalForm onSubmit={values => this.props.submit(values)} id="answer-textarea">
                 <Row className="form-group mt-3">
+                    {!lastQuestion ?
                     <Col className="answer-text">
                         <Label htmlFor="answer">Your Answer:</Label>
                         <Control.textarea
@@ -29,17 +31,24 @@ class Answer extends Component {
                             rows="6"
                             className="form-control"
                         />
-                    </Col>
+                    </Col>:''};
                 </Row>
                 <Row className="form-group mt-3">
-                    <Col>
-                        <Button type="button" color="primary" className="answer-submit" onClick={this.props.submit}>Submit</Button>
-                        <Button type="button" className="answer-arrow bg-transparent text-success" onClick={this.props.next}>
-                            <i className="far fa-caret-square-right" />
-                        </Button>
+                    {lastQuestion ?
+                    <Col xs={12} className="justify-content-center d-flex">
+                        <Button type="button" outline id="answer-back" onClick={this.props.prev}>Go Back</Button>
+                    </Col> :
+                    <Col xs={12} className="justify-content-center d-flex">
                         <Button type="button" className="answer-arrow bg-transparent text-success" onClick={this.props.prev}>
                             <i className="far fa-caret-square-left" />
                         </Button>
+                        <Button type="button" className="answer-arrow bg-transparent text-success" onClick={this.props.next}>
+                            <i className="far fa-caret-square-right" />
+                        </Button>
+                    </Col>}
+                    <Col xs={12} className="justify-content-center d-flex">
+                        {lastQuestion ?
+                        <Button type="button" color="primary" className="answer-submit" onClick={this.props.submit}>Submit Test</Button> : ""}
                     </Col>
                 </Row>
             </LocalForm>
