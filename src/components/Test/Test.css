@@ -35,6 +35,7 @@
     width: 100%;
 }
 .answer-text {
+    margin-top: 2.5rem;
     text-align: left;
     color: var(--color-primary);
     font-weight: bolder;

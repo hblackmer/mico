@@ -26,7 +26,7 @@ class Answer extends Component {
                             model=".answer"
                             id="answer"
                             name="answer"
-                            rows="8"
+                            rows="6"
                             className="form-control"
                         />
                     </Col>
