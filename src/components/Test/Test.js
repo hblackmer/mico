@@ -123,11 +123,12 @@ class Test extends Component {
                             <p className="text-danger text-center">Test functionality is still in progress! The following is for demo purposes currently.</p>
                             { showAnswer ? 
                                 <React.Fragment>
+                                    {this.state.questionNum === this.state.questionMax ? '' :
                                     <Row>
                                         <Col className="test-category">
                                             <i className="fab fa-js-square" /> Programming
                                         </Col>
-                                    </Row>
+                                    </Row>}
                                     {this.AskQuestion()}
                                     <Answer questionNum={this.state.questionNum} questionMax={this.state.questionMax} submit={this.questionSubmitted} prev={this.questionPrev} next={this.questionNext}/>
                                 </React.Fragment> : 
