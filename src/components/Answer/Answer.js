@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import {
     Button,
     Row, Col,
@@ -35,9 +35,14 @@ class Answer extends Component {
                 </Row>
                 <Row className="form-group mt-3">
                     {lastQuestion ?
-                    <Col xs={12} className="justify-content-center d-flex">
-                        <Button type="button" outline id="answer-back" onClick={this.props.prev}>Go Back</Button>
-                    </Col> :
+                    <Fragment>
+                        <Col xs={12} className="justify-content-center d-flex">
+                            <Button type="button" outline id="answer-back" onClick={this.props.prev}>Go Back</Button>
+                        </Col>
+                        <Col xs={12} className="justify-content-center d-flex">
+                            <Button type="button" color="primary" className="answer-submit" onClick={this.props.submit}>Submit Test</Button>
+                        </Col>
+                    </Fragment> :
                     <Col xs={12} className="justify-content-center d-flex">
                         <Button type="button" className="answer-arrow bg-transparent text-success" onClick={this.props.prev}>
                             <i className="far fa-caret-square-left" />
@@ -46,10 +51,6 @@ class Answer extends Component {
                             <i className="far fa-caret-square-right" />
                         </Button>
                     </Col>}
-                    <Col xs={12} className="justify-content-center d-flex">
-                        {lastQuestion ?
-                        <Button type="button" color="primary" className="answer-submit" onClick={this.props.submit}>Submit Test</Button> : ""}
-                    </Col>
                 </Row>
             </LocalForm>
         );
