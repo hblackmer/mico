@@ -112,6 +112,7 @@ class Test extends Component {
                                     <Progress animated className="progress" color="success" value={calculateProgress}>{questionNum}/{questionMax}</Progress>
                                 </Col>
                             </Row>
+                            <p className="text-danger text-center">Test functionality is still in progress! The following is for demo purposes currently.</p>
                             { showAnswer ? 
                                 <React.Fragment>
                                     <Row>
