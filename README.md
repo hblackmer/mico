@@ -41,4 +41,4 @@ Future features include personal user accounts with user submitted questions as 
 
 <!-- Project -->
 ## Project
-Project Link: https://github.com/hblackmer/mico-react
+Project Link: https://github.com/hblackmer/mico
