@@ -10,6 +10,7 @@ import Timer from 'react-timer-wrapper';
 import Timecode from 'react-timecode';
 import Question from '../Question/Question';
 import Answer from '../Answer/Answer';
+import { addAnswer } from '../../redux/ActionCreators';
 import './Test.css';
 
 const mapStateToProps = state => {
@@ -20,6 +21,10 @@ const mapStateToProps = state => {
         programming: state.programming,
         react: state.react
     };
+};
+
+const mapDispatchToProps = {
+    addAnswer: (answer) => (addAnswer(answer))
 };
 
 const questionList = [];
@@ -132,7 +137,7 @@ class Test extends Component {
                                         </Col>
                                     </Row>}
                                     {this.AskQuestion()}
-                                    <Answer questionNum={questionNum} questionMax={questionMax} submit={this.questionSubmitted} prev={this.questionPrev} next={this.questionNext}/>
+                                    <Answer questionNum={questionNum} questionMax={questionMax} submit={this.questionSubmitted} prev={this.questionPrev} next={this.questionNext} addAnswer={this.props.addAnswer}/>
                                 </React.Fragment> : 
                                 <Button color="primary" onClick={() => 
                                     this.hideComponent()
@@ -146,4 +151,4 @@ class Test extends Component {
     }
 }
   
-export default withRouter(connect(mapStateToProps)(Test));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Test));
