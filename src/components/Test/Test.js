@@ -92,14 +92,32 @@ class Test extends Component {
         }
     };    
 
-    AskQuestion = () => {
+    AskQuestion = (category) => {
         if (this.state.questionNum !== this.state.questionMax) {
             let question = questionList[this.state.questionNum].question;
             return (
                 <Fragment>
-                    <h1 className="test-category">
-                        <i className="fab fa-js-square" /> Programming
-                    </h1>
+                    {(category === "css") ?
+                        <h1 className="test-category">
+                            <i className="fab fa-css3-alt" /> CSS
+                        </h1> : 
+                    (category === "html") ?
+                        <h1 className="test-category">
+                            <i className="fa-html5" /> HTML
+                        </h1> :
+                    (category === "javascript") ?
+                        <h1 className="test-category">
+                            <i className="fab fa-js-square" /> JavaScript
+                        </h1> :
+                    (category === "programming") ?
+                        <h1 className="test-category">
+                            <i className="fab fa-js-square" /> Programming
+                        </h1> :
+                    (category === "react") ?
+                        <h1 className="test-category">
+                            <i className="fab fa-react" /> React
+                        </h1> : ''
+                    }
                     <Question question={question} />
                 </Fragment>
             );
@@ -133,7 +151,7 @@ class Test extends Component {
                             <p className="text-danger text-center">Test functionality is still in progress! The following is for demo purposes currently.</p>
                             { showAnswer ? 
                                 <Fragment>
-                                    {this.AskQuestion()}
+                                    {this.AskQuestion("programming")}
                                     <Answer questionNum={questionNum} questionMax={questionMax} submit={this.questionSubmitted} prev={this.questionPrev} next={this.questionNext} addAnswer={this.props.addAnswer} resetFeedbackForm={this.props.resetFeedbackForm}/>
                                 </Fragment> : 
                                 <Button color="primary" onClick={() => 
