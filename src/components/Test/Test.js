@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import {
     Progress,
     Button,
@@ -96,9 +96,12 @@ class Test extends Component {
         if (this.state.questionNum !== this.state.questionMax) {
             let question = questionList[this.state.questionNum].question;
             return (
-                <div>
+                <Fragment>
+                    <h1 className="test-category">
+                        <i className="fab fa-js-square" /> Programming
+                    </h1>
                     <Question question={question} />
-                </div>
+                </Fragment>
             );
         }
         return <div></div>
@@ -129,16 +132,10 @@ class Test extends Component {
                             </Row>
                             <p className="text-danger text-center">Test functionality is still in progress! The following is for demo purposes currently.</p>
                             { showAnswer ? 
-                                <React.Fragment>
-                                    {questionNum === questionMax ? '' :
-                                    <Row>
-                                        <Col className="test-category">
-                                            <i className="fab fa-js-square" /> Programming
-                                        </Col>
-                                    </Row>}
+                                <Fragment>
                                     {this.AskQuestion()}
                                     <Answer questionNum={questionNum} questionMax={questionMax} submit={this.questionSubmitted} prev={this.questionPrev} next={this.questionNext} addAnswer={this.props.addAnswer} resetFeedbackForm={this.props.resetFeedbackForm}/>
-                                </React.Fragment> : 
+                                </Fragment> : 
                                 <Button color="primary" onClick={() => 
                                     this.hideComponent()
                                 }>START</Button>
