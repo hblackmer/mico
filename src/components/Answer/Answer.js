@@ -8,6 +8,10 @@ import { Control, Form } from 'react-redux-form';
 import './Answer.css';
 
 class Answer extends Component {
+    handleInputChange = (event) => {
+        this.props.addAnswer(this.props.id, event.target.value);
+    }
+
     render() {
         return (
             <Form model="feedbackForm" onSubmit={values => this.props.submit(values)} id="answer-textarea">
@@ -21,6 +25,7 @@ class Answer extends Component {
                             name="answer"
                             rows="6"
                             className="form-control"
+                            onChange={this.handleInputChange}
                         />
                     </Col>:''};
                 </Row>
@@ -38,7 +43,7 @@ class Answer extends Component {
                         <Button type="button" className="answer-arrow bg-transparent text-success" onClick={this.props.prev}>
                             <i className="far fa-caret-square-left" />
                         </Button>
-                        <Button type="button" className="answer-arrow bg-transparent text-success" onClick={this.props.next}>
+                        <Button type="submit" className="answer-arrow bg-transparent text-success" onClick={this.props.next}>
                             <i className="far fa-caret-square-right" />
                         </Button>
                     </Col>}

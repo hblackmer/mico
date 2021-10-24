@@ -2,9 +2,15 @@ import { PROGRAMMING } from '../shared/programming';
 import * as ActionTypes from './ActionTypes';
 
 export const Programming = (state = PROGRAMMING, action) => {
+    //Debugging purposes:
+    console.log(state);
+
     switch (action.type) {
         case ActionTypes.ADD_ANSWER:
-            return [...state, {"answer": action.payload}];
+            let newState = [...state];
+            let objIndex = newState.findIndex((obj => obj.id === action.payload.id));
+            newState[objIndex].answer = action.payload.answer;
+            return newState;
         default:
             return state;
     }

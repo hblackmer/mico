@@ -24,7 +24,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = {
-    addAnswer: (answer) => (addAnswer(answer)),
+    addAnswer: (id, answer) => addAnswer(id, answer),
     resetFeedbackForm: () => (actions.reset('feedbackForm'))
 };
 
@@ -98,6 +98,7 @@ class Test extends Component {
     allQuestions = (category) => {
         let lastQuestion = this.state.questionNum !== this.state.questionMax;
         let question = lastQuestion && questionList[this.state.questionNum].question;
+        let id = lastQuestion && questionList[this.state.questionNum].id;
 
         if (this.state.questionMax === 7) {
             return (
@@ -107,6 +108,7 @@ class Test extends Component {
                             category={category}
                             lastQuestion={lastQuestion}
                             question={question}
+                            id={id}
                             submit={this.questionSubmitted} 
                             prev={this.questionPrev} 
                             next={this.questionNext} 
@@ -118,6 +120,7 @@ class Test extends Component {
                             category={category}
                             lastQuestion={lastQuestion}
                             question={question}
+                            id={id}
                             submit={this.questionSubmitted} 
                             prev={this.questionPrev} 
                             next={this.questionNext} 
@@ -129,6 +132,7 @@ class Test extends Component {
                             category={category}
                             lastQuestion={lastQuestion}
                             question={question}
+                            id={id}
                             submit={this.questionSubmitted} 
                             prev={this.questionPrev} 
                             next={this.questionNext} 
@@ -140,6 +144,7 @@ class Test extends Component {
                             category={category}
                             lastQuestion={lastQuestion}
                             question={question}
+                            id={id}
                             submit={this.questionSubmitted} 
                             prev={this.questionPrev} 
                             next={this.questionNext} 
@@ -151,6 +156,7 @@ class Test extends Component {
                             category={category}
                             lastQuestion={lastQuestion}
                             question={question}
+                            id={id}
                             submit={this.questionSubmitted} 
                             prev={this.questionPrev} 
                             next={this.questionNext} 
@@ -162,6 +168,7 @@ class Test extends Component {
                             category={category}
                             lastQuestion={lastQuestion}
                             question={question}
+                            id={id}
                             submit={this.questionSubmitted} 
                             prev={this.questionPrev} 
                             next={this.questionNext} 
@@ -173,6 +180,7 @@ class Test extends Component {
                             category={category}
                             lastQuestion={lastQuestion}
                             question={question}
+                            id={id}
                             submit={this.questionSubmitted} 
                             prev={this.questionPrev} 
                             next={this.questionNext} 
@@ -184,6 +192,7 @@ class Test extends Component {
                             category={category}
                             lastQuestion={lastQuestion}
                             question={question}
+                            id={id}
                             submit={this.questionSubmitted} 
                             prev={this.questionPrev} 
                             next={this.questionNext} 
