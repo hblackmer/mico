@@ -14,9 +14,11 @@ import './Test.css';
 
 const mapStateToProps = state => {
     return {
+        css: state.css,
+        html: state.html,
         javascript: state.javascript,
-        react: state.react,
-        programming: state.programming
+        programming: state.programming,
+        react: state.react
     };
 };
 

@@ -1,4 +1,4 @@
-export const CSS = [
+export const HTML = [
     {
         id: 0,
         question: "What is HTML?",
