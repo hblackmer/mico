@@ -6,6 +6,7 @@ import {
 } from 'reactstrap';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { actions } from 'react-redux-form'
 import Timer from 'react-timer-wrapper';
 import Timecode from 'react-timecode';
 import Question from '../Question/Question';
@@ -24,7 +25,8 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = {
-    addAnswer: (answer) => (addAnswer(answer))
+    addAnswer: (answer) => (addAnswer(answer)),
+    resetFeedbackForm: () => (actions.reset('feedbackForm'))
 };
 
 const questionList = [];

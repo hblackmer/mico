@@ -1,9 +1,11 @@
+import { React } from './react';
 import { createStore, combineReducers } from 'redux';
+import { createForms } from 'react-redux-form';
+import { InitialFeedback } from './forms';
 import { Css } from './css';
 import { Html } from './html';
 import { Javascript } from './javascript';
 import { Programming } from './programming';
-import { React } from './react';
 
 export const ConfigureStore = () => {
     const store = createStore(
@@ -12,7 +14,10 @@ export const ConfigureStore = () => {
             html: Html,
             javascript: Javascript,
             programming: Programming,
-            react: React
+            react: React,
+            ...createForms({
+                feedbackForm: InitialFeedback
+            })
         })
     );
 
