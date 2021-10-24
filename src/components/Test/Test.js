@@ -92,45 +92,55 @@ class Test extends Component {
         }
     };
 
-    categoryDisplay = (category) => {
+    categoryDisplay = (category, lastQuestion) => {
         return (
             <Fragment>
-                {(category === "css") ?
-                <h1 className="test-category">
-                    <i className="fab fa-css3-alt" /> CSS
-                </h1> : 
-                (category === "html") ?
+                {lastQuestion ? 
+                    (category === "css") ?
                     <h1 className="test-category">
-                        <i className="fa-html5" /> HTML
-                    </h1> :
-                (category === "javascript") ?
-                    <h1 className="test-category">
-                        <i className="fab fa-js-square" /> JavaScript
-                    </h1> :
-                (category === "programming") ?
-                    <h1 className="test-category">
-                        <i className="fab fa-js-square" /> Programming
-                    </h1> :
-                (category === "react") ?
-                    <h1 className="test-category">
-                        <i className="fab fa-react" /> React
-                    </h1> : ''
+                        <i className="fab fa-css3-alt" /> CSS
+                    </h1> : 
+                    (category === "html") ?
+                        <h1 className="test-category">
+                            <i className="fa-html5" /> HTML
+                        </h1> :
+                    (category === "javascript") ?
+                        <h1 className="test-category">
+                            <i className="fab fa-js-square" /> JavaScript
+                        </h1> :
+                    (category === "programming") ?
+                        <h1 className="test-category">
+                            <i className="fab fa-js-square" /> Programming
+                        </h1> :
+                    (category === "react") ?
+                        <h1 className="test-category">
+                            <i className="fab fa-react" /> React
+                        </h1> : '' : ''
                 }
             </Fragment>
         )
     }
 
     askQuestion = (category) => {
-        if (this.state.questionNum !== this.state.questionMax) {
-            let question = questionList[this.state.questionNum].question;
-            return (
-                <Fragment>
-                    {this.categoryDisplay(category)}
-                    <Question question={question} />
-                </Fragment>
-            );
-        }
-        return <div></div>
+        let lastQuestion = this.state.questionNum !== this.state.questionMax;
+        let question = lastQuestion && questionList[this.state.questionNum].question;
+        return (
+            <Fragment>
+                {this.categoryDisplay(category, lastQuestion)}
+                <Question
+                    lastQuestion={lastQuestion}
+                    question={question}
+                />
+                <Answer 
+                    lastQuestion={lastQuestion}
+                    submit={this.questionSubmitted} 
+                    prev={this.questionPrev} 
+                    next={this.questionNext} 
+                    addAnswer={this.props.addAnswer} 
+                    resetFeedbackForm={this.props.resetFeedbackForm}
+                />
+            </Fragment>
+        );
     };
     //<Answer questionNum={this.state.questionNum} questionMax={this.state.questionMax} submit={this.questionSubmitted} prev={this.questionPrev} next={this.questionNext} addAnswer={this.props.addAnswer} resetFeedbackForm={this.props.resetFeedbackForm}/>
     render() {
@@ -160,7 +170,6 @@ class Test extends Component {
                             { showAnswer ? 
                                 <Fragment>
                                     {this.askQuestion("programming")}
-                                    <Answer questionNum={questionNum} questionMax={questionMax} submit={this.questionSubmitted} prev={this.questionPrev} next={this.questionNext} addAnswer={this.props.addAnswer} resetFeedbackForm={this.props.resetFeedbackForm}/>
                                 </Fragment> : 
                                 <Button color="primary" onClick={() => 
                                     this.hideComponent()

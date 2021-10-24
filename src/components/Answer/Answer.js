@@ -17,11 +17,10 @@ class Answer extends Component {
     };
 
     render() {
-        const lastQuestion = this.props.questionMax === this.props.questionNum;
         return (
             <Form model="feedbackForm" onSubmit={values => this.props.submit(values)} id="answer-textarea">
                 <Row className="form-group mt-3">
-                    {!lastQuestion ?
+                    {this.props.lastQuestion ?
                     <Col className="answer-text">
                         <Label htmlFor="answer">Your Answer:</Label>
                         <Control.textarea
@@ -34,7 +33,7 @@ class Answer extends Component {
                     </Col>:''};
                 </Row>
                 <Row className="form-group mt-3">
-                    {lastQuestion ?
+                    {!this.props.lastQuestion ?
                     <Fragment>
                         <Col xs={12} className="justify-content-center d-flex">
                             <Button type="button" outline id="answer-back" onClick={this.props.prev}>Go Back</Button>
