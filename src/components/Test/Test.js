@@ -38,7 +38,7 @@ class Test extends Component {
           showAnswer: false,
           timerActive: false,
           questionNum: 0,
-          questionMax: 6
+          questionMax: 7
         };
         this.questionSubmitted = this.questionSubmitted.bind(this);
         this.questionPrev = this.questionPrev.bind(this);
@@ -72,6 +72,10 @@ class Test extends Component {
                 timerActive: !this.state.timerActive
             });
         }
+    }
+
+    questionSet(num) {
+        this.setState({questionNum: num});
     }
 
     hideComponent() {
@@ -143,6 +147,23 @@ class Test extends Component {
         );
     };
 
+    allQuestions = (category, currentQuestion) => {
+        if (this.state.questionMax === 7) {
+            return (
+                <Fragment>
+                    {currentQuestion === 7 && this.askQuestion(category)}
+                    {currentQuestion === 6 && this.askQuestion(category)}
+                    {currentQuestion === 5 && this.askQuestion(category)}
+                    {currentQuestion === 4 && this.askQuestion(category)}
+                    {currentQuestion === 3 && this.askQuestion(category)}
+                    {currentQuestion === 2 && this.askQuestion(category)}
+                    {currentQuestion === 1 && this.askQuestion(category)}
+                    {currentQuestion === 0 && this.askQuestion(category)}
+                </Fragment>
+            );
+        }
+    }
+
     render() {
         const { showAnswer, timerActive, questionMax, questionNum } = this.state;
 
@@ -169,7 +190,7 @@ class Test extends Component {
                             <p className="text-danger text-center">Test functionality is still in progress! The following is for demo purposes currently.</p>
                             { showAnswer ? 
                                 <Fragment>
-                                    {this.askQuestion("programming")}
+                                    {this.allQuestions("programming", questionNum)}
                                 </Fragment> : 
                                 <Button color="primary" onClick={() => 
                                     this.hideComponent()
