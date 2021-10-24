@@ -9,8 +9,7 @@ import { connect } from 'react-redux';
 import { actions } from 'react-redux-form'
 import Timer from 'react-timer-wrapper';
 import Timecode from 'react-timecode';
-import Question from '../Question/Question';
-import Answer from '../Answer/Answer';
+import QuestionAnswer from '../QuestionAnswer/QuestionAnswer';
 import { addAnswer } from '../../redux/ActionCreators';
 import './Test.css';
 
@@ -96,69 +95,101 @@ class Test extends Component {
         }
     };
 
-    categoryDisplay = (category, lastQuestion) => {
-        return (
-            <Fragment>
-                {lastQuestion ? 
-                    (category === "css") ?
-                    <h1 className="test-category">
-                        <i className="fab fa-css3-alt" /> CSS
-                    </h1> : 
-                    (category === "html") ?
-                        <h1 className="test-category">
-                            <i className="fa-html5" /> HTML
-                        </h1> :
-                    (category === "javascript") ?
-                        <h1 className="test-category">
-                            <i className="fab fa-js-square" /> JavaScript
-                        </h1> :
-                    (category === "programming") ?
-                        <h1 className="test-category">
-                            <i className="fab fa-js-square" /> Programming
-                        </h1> :
-                    (category === "react") ?
-                        <h1 className="test-category">
-                            <i className="fab fa-react" /> React
-                        </h1> : '' : ''
-                }
-            </Fragment>
-        )
-    }
-
-    askQuestion = (category) => {
+    allQuestions = (category) => {
         let lastQuestion = this.state.questionNum !== this.state.questionMax;
         let question = lastQuestion && questionList[this.state.questionNum].question;
-        return (
-            <Fragment>
-                {this.categoryDisplay(category, lastQuestion)}
-                <Question
-                    lastQuestion={lastQuestion}
-                    question={question}
-                />
-                <Answer 
-                    lastQuestion={lastQuestion}
-                    submit={this.questionSubmitted} 
-                    prev={this.questionPrev} 
-                    next={this.questionNext} 
-                    addAnswer={this.props.addAnswer} 
-                    resetFeedbackForm={this.props.resetFeedbackForm}
-                />
-            </Fragment>
-        );
-    };
 
-    allQuestions = (category, currentQuestion) => {
         if (this.state.questionMax === 7) {
             return (
                 <Fragment>
-                    {currentQuestion === 7 && this.askQuestion(category)}
-                    {currentQuestion === 6 && this.askQuestion(category)}
-                    {currentQuestion === 5 && this.askQuestion(category)}
-                    {currentQuestion === 4 && this.askQuestion(category)}
-                    {currentQuestion === 3 && this.askQuestion(category)}
-                    {currentQuestion === 2 && this.askQuestion(category)}
-                    {currentQuestion === 1 && this.askQuestion(category)}
-                    {currentQuestion === 0 && this.askQuestion(category)}
+                    {this.state.questionNum === 7 && 
+                        <QuestionAnswer 
+                            category={category}
+                            lastQuestion={lastQuestion}
+                            question={question}
+                            submit={this.questionSubmitted} 
+                            prev={this.questionPrev} 
+                            next={this.questionNext} 
+                            addAnswer={this.props.addAnswer} 
+                            resetFeedbackForm={this.props.resetFeedbackForm}
+                        />}
+                    {this.state.questionNum === 6 && 
+                        <QuestionAnswer 
+                            category={category}
+                            lastQuestion={lastQuestion}
+                            question={question}
+                            submit={this.questionSubmitted} 
+                            prev={this.questionPrev} 
+                            next={this.questionNext} 
+                            addAnswer={this.props.addAnswer} 
+                            resetFeedbackForm={this.props.resetFeedbackForm}
+                        />}
+                    {this.state.questionNum === 5 && 
+                        <QuestionAnswer 
+                            category={category}
+                            lastQuestion={lastQuestion}
+                            question={question}
+                            submit={this.questionSubmitted} 
+                            prev={this.questionPrev} 
+                            next={this.questionNext} 
+                            addAnswer={this.props.addAnswer} 
+                            resetFeedbackForm={this.props.resetFeedbackForm}
+                        />}
+                    {this.state.questionNum === 4 && 
+                        <QuestionAnswer 
+                            category={category}
+                            lastQuestion={lastQuestion}
+                            question={question}
+                            submit={this.questionSubmitted} 
+                            prev={this.questionPrev} 
+                            next={this.questionNext} 
+                            addAnswer={this.props.addAnswer} 
+                            resetFeedbackForm={this.props.resetFeedbackForm}
+                        />}
+                    {this.state.questionNum === 3 && 
+                        <QuestionAnswer 
+                            category={category}
+                            lastQuestion={lastQuestion}
+                            question={question}
+                            submit={this.questionSubmitted} 
+                            prev={this.questionPrev} 
+                            next={this.questionNext} 
+                            addAnswer={this.props.addAnswer} 
+                            resetFeedbackForm={this.props.resetFeedbackForm}
+                        />}
+                    {this.state.questionNum === 2 && 
+                        <QuestionAnswer 
+                            category={category}
+                            lastQuestion={lastQuestion}
+                            question={question}
+                            submit={this.questionSubmitted} 
+                            prev={this.questionPrev} 
+                            next={this.questionNext} 
+                            addAnswer={this.props.addAnswer} 
+                            resetFeedbackForm={this.props.resetFeedbackForm}
+                        />}
+                    {this.state.questionNum === 1 && 
+                        <QuestionAnswer 
+                            category={category}
+                            lastQuestion={lastQuestion}
+                            question={question}
+                            submit={this.questionSubmitted} 
+                            prev={this.questionPrev} 
+                            next={this.questionNext} 
+                            addAnswer={this.props.addAnswer} 
+                            resetFeedbackForm={this.props.resetFeedbackForm}
+                        />}
+                    {this.state.questionNum === 0 && 
+                        <QuestionAnswer 
+                            category={category}
+                            lastQuestion={lastQuestion}
+                            question={question}
+                            submit={this.questionSubmitted} 
+                            prev={this.questionPrev} 
+                            next={this.questionNext} 
+                            addAnswer={this.props.addAnswer} 
+                            resetFeedbackForm={this.props.resetFeedbackForm}
+                        />}
                 </Fragment>
             );
         }
@@ -190,7 +221,7 @@ class Test extends Component {
                             <p className="text-danger text-center">Test functionality is still in progress! The following is for demo purposes currently.</p>
                             { showAnswer ? 
                                 <Fragment>
-                                    {this.allQuestions("programming", questionNum)}
+                                    {this.allQuestions("programming")}
                                 </Fragment> : 
                                 <Button color="primary" onClick={() => 
                                     this.hideComponent()
