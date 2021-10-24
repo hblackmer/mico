@@ -142,7 +142,7 @@ class Test extends Component {
             </Fragment>
         );
     };
-    //<Answer questionNum={this.state.questionNum} questionMax={this.state.questionMax} submit={this.questionSubmitted} prev={this.questionPrev} next={this.questionNext} addAnswer={this.props.addAnswer} resetFeedbackForm={this.props.resetFeedbackForm}/>
+
     render() {
         const { showAnswer, timerActive, questionMax, questionNum } = this.state;
 

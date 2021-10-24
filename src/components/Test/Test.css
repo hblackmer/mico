@@ -1,8 +1,3 @@
-/* 
-========================
-    QUESTIONS/ANSWERS
-========================
-*/
 .test {
     padding-top: 100px;
     background: url("../../img/chalkboard.jpg") bottom center / cover no-repeat;
@@ -10,6 +5,7 @@
     margin-top: -70px;
     text-align: center;
 }
+
 .dark-overlay {
     background: rgba(0,0,0,0.15);
     position: absolute;
@@ -18,11 +14,13 @@
     width: 100%;
     height: 100%;
 }
+
 .test-timer {
     margin-top:25px;
     text-align: center;
     color: var(--color-green);
 }
+
 .test-category {
     color: var(--color-primary);
     margin-top: 5px;
@@ -30,43 +28,7 @@
     font-weight: bolder;
     text-align: center;
 }
-.answer {
-    height: 30vh;
-    width: 100%;
-}
-.answer-text {
-    margin-top: 2.5rem;
-    text-align: left;
-    color: var(--color-primary);
-    font-weight: bolder;
-}
-.answer-submit {
-    margin-top: 10px;
-    text-align: left !important;
-    float: left;
-}
-.answer-arrow {
-    float: right;
-    border: none !important;
-    font-size: 1.25rem !important;
-}
-#answer-back {
-    margin-top: -25px;
-    margin-bottom: 25px;
-}
-.arrow-size {
-    font-size: 1.5rem;
-    border-color: transparent;
-}
-.arrow-size:hover {
-    border-color: transparent;
-}
 
-/* 
-========================
-    PROGRESS BAR
-========================
-*/
 .progress {
     color: black;
     font-size: 2rem;

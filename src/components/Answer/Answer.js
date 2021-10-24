@@ -5,17 +5,9 @@ import {
     Label,
 } from 'reactstrap';
 import { Control, Form } from 'react-redux-form';
-import '../Test/Test.css';
+import './Answer.css';
 
 class Answer extends Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            answer: ''
-        }
-    };
-
     render() {
         return (
             <Form model="feedbackForm" onSubmit={values => this.props.submit(values)} id="answer-textarea">
