@@ -7,7 +7,7 @@ function QuestionAnswer ({category, lastQuestion, question, answer, id, question
     const categoryDisplay = (category, lastQuestion) => {
         return (
             <Fragment>
-                {lastQuestion ? 
+                {!lastQuestion ? 
                     (category === "css") ?
                     <h1 className="test-category">
                         <i className="fab fa-css3-alt" /> CSS

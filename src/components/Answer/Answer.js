@@ -18,7 +18,7 @@ function Answer ({id, answer, prev, next, submit, lastQuestion, addAnswer}) {
     return (
         <Form model="feedbackForm" onSubmit={values => submit(values)} id="answer-textarea">
             <Row className="form-group mt-3">
-                {lastQuestion ?
+                {!lastQuestion ?
                 <Col className="answer-text">
                     <Label htmlFor="answer">Your Answer:</Label>
                     <Control.textarea
@@ -33,7 +33,7 @@ function Answer ({id, answer, prev, next, submit, lastQuestion, addAnswer}) {
                 </Col>:''};
             </Row>
             <Row className="form-group mt-3">
-                {!lastQuestion ?
+                {lastQuestion ?
                 <Fragment>
                     <Col xs={12} className="justify-content-center d-flex">
                         <Button type="button" outline id="answer-back" onClick={prev}>Go Back</Button>

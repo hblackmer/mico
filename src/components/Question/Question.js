@@ -4,7 +4,7 @@ import './Question.css';
 export default function Question({lastQuestion, question}) {
     return (
         <Fragment>
-            {lastQuestion ?
+            {!lastQuestion ?
                 <p className="question text-white">{question}</p> : ''
             }
         </Fragment>

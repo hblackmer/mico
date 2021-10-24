@@ -96,10 +96,10 @@ class Test extends Component {
     };
 
     allQuestions = (category) => {
-        let lastQuestion = this.state.questionNum !== this.state.questionMax;
-        let question = lastQuestion && questionList[this.state.questionNum].question;
-        let id = lastQuestion && questionList[this.state.questionNum].id;
-        let answer = this.props.programming[this.props.programming.findIndex((obj => obj.id === id))].answer;
+        let lastQuestion = this.state.questionNum === this.state.questionMax;
+        let question = !lastQuestion && questionList[this.state.questionNum].question;
+        let id = !lastQuestion && questionList[this.state.questionNum].id;
+        let answer = !lastQuestion && this.props.programming[this.props.programming.findIndex((obj => obj.id === id))].answer;
 
         if (this.state.questionMax === 7) {
             return (
