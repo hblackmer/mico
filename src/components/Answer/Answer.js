@@ -4,7 +4,7 @@ import {
     Row, Col,
     Label,
 } from 'reactstrap';
-import { Control, LocalForm } from 'react-redux-form';
+import { Control, Form } from 'react-redux-form';
 import '../Test/Test.css';
 
 class Answer extends Component {
@@ -19,7 +19,7 @@ class Answer extends Component {
     render() {
         const lastQuestion = this.props.questionMax === this.props.questionNum;
         return (
-            <LocalForm onSubmit={values => this.props.submit(values)} id="answer-textarea">
+            <Form model="feedbackForm" onSubmit={values => this.props.submit(values)} id="answer-textarea">
                 <Row className="form-group mt-3">
                     {!lastQuestion ?
                     <Col className="answer-text">
@@ -52,7 +52,7 @@ class Answer extends Component {
                         </Button>
                     </Col>}
                 </Row>
-            </LocalForm>
+            </Form>
         );
     }
 }

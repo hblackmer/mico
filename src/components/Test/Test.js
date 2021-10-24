@@ -47,9 +47,7 @@ class Test extends Component {
     }
 
     questionSubmitted() {
-        if (this.state.questionNum === this.state.questionMax) {
-
-        }
+        this.props.resetFeedbackForm();
     }
 
     questionPrev() {
@@ -139,7 +137,7 @@ class Test extends Component {
                                         </Col>
                                     </Row>}
                                     {this.AskQuestion()}
-                                    <Answer questionNum={questionNum} questionMax={questionMax} submit={this.questionSubmitted} prev={this.questionPrev} next={this.questionNext} addAnswer={this.props.addAnswer}/>
+                                    <Answer questionNum={questionNum} questionMax={questionMax} submit={this.questionSubmitted} prev={this.questionPrev} next={this.questionNext} addAnswer={this.props.addAnswer} resetFeedbackForm={this.props.resetFeedbackForm}/>
                                 </React.Fragment> : 
                                 <Button color="primary" onClick={() => 
                                     this.hideComponent()
