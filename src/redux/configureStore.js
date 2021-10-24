@@ -1,5 +1,7 @@
 import { React } from './react';
-import { createStore, combineReducers } from 'redux';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+import logger from 'redux-logger';
 import { createForms } from 'react-redux-form';
 import { InitialFeedback } from './forms';
 import { Css } from './css';
@@ -18,7 +20,8 @@ export const ConfigureStore = () => {
             ...createForms({
                 feedbackForm: InitialFeedback
             })
-        })
+        }),
+        applyMiddleware(thunk, logger)
     );
 
     return store;
