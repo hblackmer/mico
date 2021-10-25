@@ -42,13 +42,13 @@ class Test extends Component {
           questionNum: 0,
           questionMax: 7
         };
-        this.questionSubmitted = this.questionSubmitted.bind(this);
+        this.testSubmitted = this.testSubmitted.bind(this);
         this.questionPrev = this.questionPrev.bind(this);
         this.questionNext = this.questionNext.bind(this);
         this.hideComponent = this.hideComponent.bind(this);
     }
 
-    questionSubmitted() {
+    testSubmitted() {
         this.props.resetFeedbackForm();
     }
 
@@ -119,7 +119,6 @@ class Test extends Component {
                             question={question}
                             answer={answer}
                             id={id}
-                            submit={this.questionSubmitted} 
                             prev={this.questionPrev} 
                             next={this.questionNext} 
                             addAnswer={this.props.addAnswer} 
@@ -132,7 +131,6 @@ class Test extends Component {
                             question={question}
                             answer={answer}
                             id={id}
-                            submit={this.questionSubmitted} 
                             prev={this.questionPrev} 
                             next={this.questionNext} 
                             addAnswer={this.props.addAnswer} 
@@ -144,7 +142,6 @@ class Test extends Component {
                             lastQuestion={lastQuestion}
                             question={question}
                             id={id}
-                            submit={this.questionSubmitted} 
                             prev={this.questionPrev} 
                             next={this.questionNext} 
                             addAnswer={this.props.addAnswer} 
@@ -157,7 +154,6 @@ class Test extends Component {
                             question={question}
                             answer={answer}
                             id={id}
-                            submit={this.questionSubmitted} 
                             prev={this.questionPrev} 
                             next={this.questionNext} 
                             addAnswer={this.props.addAnswer} 
@@ -170,7 +166,6 @@ class Test extends Component {
                             question={question}
                             answer={answer}
                             id={id}
-                            submit={this.questionSubmitted} 
                             prev={this.questionPrev} 
                             next={this.questionNext} 
                             addAnswer={this.props.addAnswer} 
@@ -183,7 +178,6 @@ class Test extends Component {
                             question={question}
                             answer={answer}
                             id={id}
-                            submit={this.questionSubmitted} 
                             prev={this.questionPrev} 
                             next={this.questionNext} 
                             addAnswer={this.props.addAnswer} 
@@ -196,7 +190,6 @@ class Test extends Component {
                             question={question}
                             answer={answer}
                             id={id}
-                            submit={this.questionSubmitted} 
                             prev={this.questionPrev} 
                             next={this.questionNext} 
                             addAnswer={this.props.addAnswer} 
@@ -209,7 +202,6 @@ class Test extends Component {
                             question={question}
                             answer={answer}
                             id={id}
-                            submit={this.questionSubmitted} 
                             prev={this.questionPrev} 
                             next={this.questionNext} 
                             addAnswer={this.props.addAnswer} 
@@ -257,6 +249,16 @@ class Test extends Component {
                                     <Button color="primary" onClick={() => 
                                         this.hideComponent()
                                     }>START</Button>
+                                }
+                                { questionNum === questionMax ?
+                                    <Col xs={12} className="justify-content-center d-flex">
+                                        <Button 
+                                            type="button"
+                                            color="primary"
+                                            id="answer-submit"
+                                            onClick={this.testSubmitted}
+                                        >Submit Test</Button>
+                                    </Col>  : ''
                                 }
                             </Col>
                         </Row>

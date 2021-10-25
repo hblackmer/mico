@@ -44,14 +44,6 @@ function Answer ({id, answer, prev, next, submit, lastQuestion, addAnswer}) {
                                 onClick={prev}
                             >Go Back</Button>
                         </Col>
-                        <Col xs={12} className="justify-content-center d-flex">
-                            <Button 
-                                type="button"
-                                color="primary"
-                                id="answer-submit"
-                                onClick={submit}
-                            >Submit Test</Button>
-                        </Col>
                     </Fragment> :
                     <Col xs={12} className="justify-content-center d-flex">
                         <Button 
