@@ -16,13 +16,13 @@ class Customize extends Component {
         return (
             <Modal isOpen={isModalOpen} toggleModal={toggleModal}>
                 <ModalHeader toggle={toggleModal}> 
-                    <h3>Test Customization</h3>
+                    Test Customization
                 </ModalHeader>
                 <ModalBody>
                     <Form id="regForm">
                         <div className="customize-section">
                             <h4 className="categories-header">CATEGORIES</h4>
-                            <lead className="categories-subtitle">Drag and drop item(s) to be tested on:</lead>
+                            <p className="categories-subtitle">Drag and drop item(s) to be tested on:</p>
                             <Categories />
                         </div>
                         <div className="customize-section">
@@ -42,7 +42,7 @@ class Customize extends Component {
                                 </Label>
                                 <Input
                                     type="radio"
-                                    checked
+                                    defaultChecked
                                     className="toggle-option"
                                     id="second-toggle"
                                     name="toggle-option"
