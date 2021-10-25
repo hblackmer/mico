@@ -8,12 +8,12 @@ import Customize from '../Customize/Customize';
 import './Navigation.css';
 
 const links = [
-    { href: '/about', text: 'About' },
-    { href: '/contribute', text: 'Contribute' }
+    { key: 0, href: '/about', text: 'About' },
+    { key: 1, href: '/contribute', text: 'Contribute' }
 ];
 
-const createNavItem = ({ href, text, className }) => (
-    <NavItem>
+const createNavItem = ({ key, href, text, className }) => (
+    <NavItem key={key}>
         <NavLink className={className}>
             <NavTo to={"/mico"+href}>
                 {text}
@@ -25,7 +25,6 @@ const createNavItem = ({ href, text, className }) => (
 class Navigation extends Component {
     render() {
         const { isNavOpen, toggleNav, isModalOpen, toggleModal } = this.props;
-
         return (
             <Fragment>
                 <Navbar dark expand="md">
