@@ -1,3 +1,12 @@
+/* 
+========================
+    CONTRIBUTE FORM
+========================
+*/
+.Contribute {
+    margin-bottom: 50px;
+}
+
 #contribute {
     font-size: 4em;
     margin-top: 50px;
@@ -5,6 +14,16 @@
     text-align: center;
 }
 
-.Contribute {
-    margin-bottom: 50px;
+.form-section {
+    display: inline-block
+}
+
+.text-icons {
+    text-align: left;
+}
+
+@media (min-width: 768px) {
+    .text-icons {
+        text-align: right;
+    } 
 }

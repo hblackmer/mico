@@ -46,13 +46,17 @@ export default class Contribute extends Component {
         return (
             <Container className="Contribute px-lg-5">
                 <h2 className="text-white text-center" id="contribute">Contribute</h2>
-                <Row className="row-content">
+                <Row className="form-box">
                     <Col md={10}>
                         <LocalForm onSubmit={values => this.handleSubmit(values)}>
                             <Row className="form-group text-white">
-                                <Label htmlFor="name" md={2} xl={{size: 1, offset: 1}}>Name</Label>
-                                <Col md={10}>
-                                <Control.text
+                                <Col md={{size: 1, offset:1}} className="text-icons">
+                                    <Label htmlFor="name">
+                                        <i className="fas fa-user" />
+                                    </Label>
+                                </Col>
+                                <Col md={{size: 4}} className="text-box mb-2">
+                                    <Control.text
                                         model=".name"
                                         id="name"
                                         name="name"
@@ -76,10 +80,12 @@ export default class Contribute extends Component {
                                         }}
                                     />
                                 </Col>
-                            </Row>
-                            <Row className="form-group text-white">
-                                <Label htmlFor="email" md={2} xl={{size: 1, offset: 1}}>Email</Label>
-                                <Col md={10}>
+                                <Col md={{size: 1}} className="text-icons">
+                                    <Label htmlFor="email">
+                                        <i className="fas fa-envelope" />
+                                    </Label>
+                                </Col>
+                                <Col md={{size: 5}}>
                                     <Control.text
                                         model=".email"
                                         id="email"
@@ -104,7 +110,11 @@ export default class Contribute extends Component {
                                 </Col>
                             </Row>
                             <Row className="form-group text-white">
-                                <Label htmlFor="question" md={2} xl={{size: 1, offset: 1}}>Question</Label>
+                                <Col md={{size: 1, offset:1}} className="text-icons">
+                                    <Label htmlFor="question">
+                                        <i class="fas fa-question-circle" />
+                                    </Label>
+                                </Col>
                                 <Col md={10}>
                                     <Control.textarea
                                         model=".question"
@@ -133,19 +143,33 @@ export default class Contribute extends Component {
                                 </Col>
                             </Row>
                             <Row className="form-group text-white">
-                                <Label htmlFor="answer" md={2} xl={{size: 1, offset: 1}}>Answer</Label>
+                                <Col md={{size: 1, offset:1}} className="text-icons">
+                                    <Label htmlFor="answer">
+                                        <i class="fas fa-check-circle" />
+                                    </Label>
+                                </Col>
                                 <Col md={10}>
-                                    <Control.textarea model=".answer" id="answer" name="answer"
+                                    <Control.textarea
+                                        model=".answer"
+                                        id="answer"
+                                        name="answer"
                                         placeholder="Answer"
-                                        rows="8"
+                                        rows="4"
                                         className="form-control"
                                     />
                                 </Col>
                             </Row>
                             <Row className="form-group text-white">
-                                <Label htmlFor="source" md={2} xl={{size: 1, offset: 1}}>Source</Label>
+                                <Col md={{size: 1, offset:1}} className="text-icons">
+                                    <Label htmlFor="source">
+                                        <i class="fas fa-link" />
+                                    </Label>
+                                </Col>
                                 <Col md={10}>
-                                    <Control.textarea model=".source" id="source" name="source"
+                                    <Control.textarea 
+                                        model=".source"
+                                        id="source"
+                                        name="source"
                                         placeholder="URL"
                                         rows="1"
                                         className="form-control"
@@ -154,7 +178,9 @@ export default class Contribute extends Component {
                             </Row>
                             <Row className="form-group">
                                 <Col md={{size: 10, offset: 2}}>
-                                    <Button type="submit" color="primary">
+                                    <Button
+                                        type="submit"
+                                        color="primary">
                                         Send Question
                                     </Button>
                                 </Col>
