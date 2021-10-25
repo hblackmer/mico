@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import {
-    Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavLink, NavItem,
+    Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem,
     Button
 } from 'reactstrap';
 import { NavLink as NavTo} from 'react-router-dom';
@@ -12,13 +12,11 @@ const links = [
     { key: 1, href: '/contribute', text: 'Contribute' }
 ];
 
-const createNavItem = ({ key, href, text, className }) => (
+const createNavItem = ({ key, href, text }) => (
     <NavItem key={key}>
-        <NavLink className={className}>
-            <NavTo to={"/mico"+href}>
+        <NavTo className="nav-link" to={"/mico"+href}>
                 {text}
-            </NavTo>
-        </NavLink>
+        </NavTo>
     </NavItem>
 );
 
