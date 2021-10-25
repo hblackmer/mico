@@ -10,8 +10,12 @@
 #contribute {
     font-size: 4em;
     margin-top: 50px;
-    margin-bottom: 25px;
     text-align: center;
+}
+
+#contribute-subtitle {
+    color: var(--color-extra-light-blue);
+    font-size: 1.25em;
 }
 
 .form-section {

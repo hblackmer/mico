@@ -46,6 +46,8 @@ export default class Contribute extends Component {
         return (
             <Container className="Contribute px-lg-5">
                 <h2 className="text-white text-center" id="contribute">Contribute</h2>
+                <p className="text-center" id="contribute-subtitle">Support Mico by contributing questions, thank you!</p>
+                <p className="text-danger text-center">[Sorry, feature not yet supported. Please <a href="https://heleneblackmer.com" target="_blank" className="text-danger font-weight-bold">contact me via LinkedIn</a> in the meantime!]</p>
                 <Row className="form-box">
                     <Col md={10}>
                         <LocalForm onSubmit={values => this.handleSubmit(values)}>
@@ -103,7 +105,7 @@ export default class Contribute extends Component {
                                         id="question"
                                         name="question"
                                         placeholder="Question (required)"
-                                        rows="4"
+                                        rows="3"
                                         className="form-control"
                                         validators={{
                                             required, 
@@ -136,7 +138,7 @@ export default class Contribute extends Component {
                                         id="answer"
                                         name="answer"
                                         placeholder="Answer (optional)"
-                                        rows="4"
+                                        rows="3"
                                         className="form-control"
                                     />
                                 </Col>
