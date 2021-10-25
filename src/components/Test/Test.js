@@ -9,6 +9,7 @@ import { connect } from 'react-redux';
 import { actions } from 'react-redux-form'
 import Timer from 'react-timer-wrapper';
 import Timecode from 'react-timecode';
+import { FadeTransform } from 'react-animation-components';
 import QuestionAnswer from '../QuestionAnswer/QuestionAnswer';
 import { addQuestion, addAnswer } from '../../redux/ActionCreators';
 import './Test.css';
@@ -226,33 +227,40 @@ class Test extends Component {
             <div className="test">
                 <Container>
                     <div className="dark-overlay"></div>
-                    <Row>
-                        <Col sm={{ size: 10, offset: 1 }}>
-                            <Row>
-                                <Col className="test-timer">
-                                    <Timer active={timerActive} duration={null} className="h4">
-                                        <i className="fas fa-stopwatch" />
-                                        <span>  </span>
-                                        <Timecode />
-                                    </Timer>
-                                </Col>
-                            </Row>
-                            <Row>
-                                <Col sm={{ size: 10, offset: 1 }}>
-                                    <Progress animated className="progress" color="success" value={(questionNum / questionMax) * 100}>{questionNum}/{questionMax}</Progress>
-                                </Col>
-                            </Row>
-                            <p className="text-danger text-center">Test functionality is still in progress! The following is for demo purposes currently.</p>
-                            { showAnswer ? 
-                                <Fragment>
-                                    {this.allQuestions("programming")}
-                                </Fragment> : 
-                                <Button color="primary" onClick={() => 
-                                    this.hideComponent()
-                                }>START</Button>
-                            }
-                        </Col>
-                    </Row>
+                    <FadeTransform
+                    in
+                    duration = {300}
+                    transformProps={{
+                        exitTransform: 'scale(0.5) translateY(50%)'
+                    }}>
+                        <Row>
+                            <Col sm={{ size: 10, offset: 1 }}>
+                                <Row>
+                                    <Col className="test-timer">
+                                        <Timer active={timerActive} duration={null} className="h4">
+                                            <i className="fas fa-stopwatch" />
+                                            <span>  </span>
+                                            <Timecode />
+                                        </Timer>
+                                    </Col>
+                                </Row>
+                                <Row>
+                                    <Col sm={{ size: 10, offset: 1 }}>
+                                        <Progress animated className="progress" color="success" value={(questionNum / questionMax) * 100}>{questionNum}/{questionMax}</Progress>
+                                    </Col>
+                                </Row>
+                                <p className="text-danger text-center">Test functionality is still in progress! The following is for demo purposes currently.</p>
+                                { showAnswer ? 
+                                    <Fragment>
+                                        {this.allQuestions("programming")}
+                                    </Fragment> : 
+                                    <Button color="primary" onClick={() => 
+                                        this.hideComponent()
+                                    }>START</Button>
+                                }
+                            </Col>
+                        </Row>
+                    </FadeTransform>
                 </Container>
             </div>
         );
