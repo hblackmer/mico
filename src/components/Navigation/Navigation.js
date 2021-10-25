@@ -26,7 +26,7 @@ class Navigation extends Component {
         return (
             <Fragment>
                 <Navbar dark expand="md">
-                    <NavbarBrand className="text-primary ml-2 font-weight-bold" href="/mico/">
+                    <NavbarBrand className="text-primary ml-2 font-weight-bold" to="/mico/">
                         MICO
                     </NavbarBrand>
                     <NavbarToggler onClick={toggleNav} />
