@@ -4,7 +4,7 @@ import {
     Button,
     Container, Row, Col,
 } from 'reactstrap';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { actions } from 'react-redux-form'
 import Timer from 'react-timer-wrapper';
@@ -252,12 +252,14 @@ class Test extends Component {
                                 }
                                 { questionNum === questionMax ?
                                     <Col xs={12} className="justify-content-center d-flex">
-                                        <Button 
-                                            type="button"
-                                            color="primary"
-                                            id="answer-submit"
-                                            onClick={this.testSubmitted}
-                                        >Submit Test</Button>
+                                        <Link to="/mico/results">
+                                            <Button 
+                                                type="button"
+                                                color="primary"
+                                                id="answer-submit"
+                                                onClick={this.testSubmitted}
+                                            >Submit Test</Button>
+                                        </Link>
                                     </Col>  : ''
                                 }
                             </Col>
