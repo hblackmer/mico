@@ -10,8 +10,17 @@
     text-align: center;
 }
 
-.about {
-    margin-bottom: 50px;
+.about-section {
+    margin-bottom: 150px;
+}
+
+.about-card {
+    text-align: center;
+    margin-top: 50px;
+    opacity: 0.8;
+    margin-bottom: -3.5rem;
+    height: 100%;
+    background: #829bad !important;
 }
 
 .about-body {
@@ -49,25 +58,17 @@
     margin-bottom: 50px;
 }
 
-.about-bg {
-    text-align: center;
-    margin-top: 50px;
-    opacity: 0.8;
-    margin-bottom: -3.5rem;
-    height: 100%;
-    background: #829bad !important;
-}
-
-.about-cards {
-    margin-bottom: 150px;
-}
-
 .avatar-img {
     border-radius: 10%;
     border: 5px solid #5B92AB;
 }
 
-.content {
+/* 
+========================
+       BIO SECTION
+========================
+*/
+.bio {
     margin-top: 20px;
     margin-bottom: 20px;
 }

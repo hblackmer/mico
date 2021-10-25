@@ -15,39 +15,44 @@ import avatarImg from '../../img/avatar.png';
 
 export default function About () {
     return (
-        <Container className="About px-lg-5">
+        <Container>
             <h2 className="text-white text-center" id="about">What is Mico?</h2>
             <Row>
-                <Col md="4" className="about-cards">
-                    <Card className="about-bg">
+                <Col md="4" className="about-section">
+                    <Card className="about-card">
                         <CardBody className="about-body">
-                            <div className="about-icons"><img src={flashImg} className="about-img" alt="A cartoon drawing of a girl sitting on a stool and picking different sticky notes."/></div>
+                            <div className="about-icons">
+                                <img src={flashImg} className="about-img" alt="A cartoon drawing of a girl sitting on a stool and picking different sticky notes."/>
+                            </div>
                             <CardTitle tag="h2">A study tool</CardTitle>
                             <CardSubtitle tag="h6">Interview style questions geared for web developers.</CardSubtitle>
                         </CardBody>
                     </Card>
                 </Col>
-                <Col md="4"  className="about-cards">
-                    <Card className="about-bg">
+                <Col md="4"  className="about-section">
+                    <Card className="about-card">
                         <CardBody className="about-body">
-                            <div className="about-icons"><img src={testImg} className="about-img" alt="A cartoon character deciding between different notes."/></div>
-                            
+                            <div className="about-icons">
+                                <img src={testImg} className="about-img" alt="A cartoon character deciding between different notes."/>
+                            </div>
                             <CardTitle tag="h2">Flash cards</CardTitle>
                             <CardSubtitle tag="h6">Customizable and randomized flash card style questions.</CardSubtitle>
                         </CardBody>
                     </Card>
                 </Col>
-                <Col md="4" className="about-cards">
-                    <Card className="about-bg">
+                <Col md="4" className="about-section">
+                    <Card className="about-card">
                         <CardBody className="about-body">
-                            <div className="about-icons"><img src={selectImg} className="about-img" alt="A cartoon drawing of someone checking a list."/></div>
+                            <div className="about-icons">
+                                <img src={selectImg} className="about-img" alt="A cartoon drawing of someone checking a list."/>
+                            </div>
                             <CardTitle tag="h2">Test report</CardTitle>
                             <CardSubtitle tag="h6">Comprehensive report of your question/answers for review at the end of your test.</CardSubtitle>
                         </CardBody>
                     </Card>
                 </Col>
             </Row>
-            <Row className="align-items-center content">
+            <Row className="align-items-center bio">
                 <Col md={6} className="justify-content-center">
                     <img src={avatarImg} alt="Cartoon girl showing off her website design." className="avatar-img img-fluid mt-1" />
                 </Col>
