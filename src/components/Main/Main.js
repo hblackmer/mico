@@ -35,18 +35,14 @@ class Main extends Component {
         return (
             <div className="Main">
                 <Navigation isNavOpen={this.state.isNavOpen} isModalOpen={this.state.isModalOpen} toggleNav={this.toggleNav} toggleModal={this.toggleModal}/>
-                <TransitionGroup>
-                    <CSSTransition key={this.props.location.key} classNames="page" timeout={300}>
-                        <Switch>
-                            <Route exact path='/mico/' render={() => <Showcase toggleNav={this.toggleNav} toggleModal={this.toggleModal}/>} />
-                            <Route exact path='/mico/about' component={About} />
-                            <Route exact path='/mico/test' component={Test} />
-                            <Route exact path='/mico/contribute' component={Contribute} />
-                            <Redirect to='/mico/' />
-                            <Showcase />
-                        </Switch>
-                    </CSSTransition>
-                </TransitionGroup>
+                    <Switch>
+                        <Route exact path='/mico/' render={() => <Showcase toggleNav={this.toggleNav} toggleModal={this.toggleModal}/>} />
+                        <Route exact path='/mico/about' component={About} />
+                        <Route exact path='/mico/test' component={Test} />
+                        <Route exact path='/mico/contribute' component={Contribute} />
+                        <Redirect to='/mico/' />
+                        <Showcase />
+                    </Switch>
                 <Footer />
             </div>
         );
