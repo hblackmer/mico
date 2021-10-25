@@ -58,7 +58,7 @@ export default class Contribute extends Component {
                                     </Label>
                                 </Col>
                                 <Col md={{size: 4}} className="text-box mb-2">
-                                    <Control.Text
+                                    <Control.textarea
                                         model=".name"
                                         id="name"
                                         name="name"
@@ -72,7 +72,7 @@ export default class Contribute extends Component {
                                     </Label>
                                 </Col>
                                 <Col md={{size: 5}}>
-                                    <Control.Text
+                                    <Control.textarea
                                         model=".email"
                                         id="email"
                                         name="email"
@@ -100,7 +100,7 @@ export default class Contribute extends Component {
                                     </Label>
                                 </Col>
                                 <Col md={10}>
-                                    <Control.Textarea
+                                    <Control.textarea
                                         model=".question"
                                         id="question"
                                         name="question"
@@ -133,7 +133,7 @@ export default class Contribute extends Component {
                                     </Label>
                                 </Col>
                                 <Col md={10}>
-                                    <Control.Textarea
+                                    <Control.textarea
                                         model=".answer"
                                         id="answer"
                                         name="answer"
@@ -150,7 +150,7 @@ export default class Contribute extends Component {
                                     </Label>
                                 </Col>
                                 <Col md={10}>
-                                    <Control.Textarea 
+                                    <Control.textarea
                                         model=".source"
                                         id="source"
                                         name="source"
