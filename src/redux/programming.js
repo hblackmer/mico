@@ -2,9 +2,6 @@ import { PROGRAMMING } from '../shared/programming';
 import * as ActionTypes from './ActionTypes';
 
 export const Programming = (state = PROGRAMMING, action) => {
-    //Debugging purposes:
-    console.log(state);
-
     switch (action.type) {
         case ActionTypes.ADD_ANSWER:
             let newState = [...state];

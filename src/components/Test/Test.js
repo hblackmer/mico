@@ -10,7 +10,7 @@ import { actions } from 'react-redux-form'
 import Timer from 'react-timer-wrapper';
 import Timecode from 'react-timecode';
 import QuestionAnswer from '../QuestionAnswer/QuestionAnswer';
-import { addAnswer } from '../../redux/ActionCreators';
+import { addQuestion, addAnswer } from '../../redux/ActionCreators';
 import './Test.css';
 
 const mapStateToProps = state => {
@@ -19,11 +19,13 @@ const mapStateToProps = state => {
         html: state.html,
         javascript: state.javascript,
         programming: state.programming,
-        react: state.react
+        react: state.react,
+        questions: state.questions
     };
 };
 
 const mapDispatchToProps = {
+    addQuestion: (id, question, answer, micoAnswer, source) => addQuestion(id, question, answer, micoAnswer, source),
     addAnswer: (id, answer) => addAnswer(id, answer),
     resetFeedbackForm: () => (actions.reset('feedbackForm'))
 };
@@ -73,10 +75,6 @@ class Test extends Component {
         }
     }
 
-    questionSet(num) {
-        this.setState({questionNum: num});
-    }
-
     hideComponent() {
         this.setState({
             showAnswer: !this.state.showAnswer,
@@ -86,11 +84,20 @@ class Test extends Component {
     }
 
     generateQuestions = () => {
+        let key=0;
         while (questionList.length < this.state.questionMax) {
             let randomQuestionIdx = Math.floor(Math.random()*this.props.programming.length);
             let randomQuestion = this.props.programming[randomQuestionIdx];
             if (questionList.indexOf(randomQuestion) === -1) {
+                key++;
                 questionList.push(this.props.programming[randomQuestionIdx]);
+                this.props.addQuestion(
+                    key, 
+                    randomQuestion.question,
+                    randomQuestion.answer,
+                    randomQuestion.micoAnswer,
+                    randomQuestion.source
+                )
             }
         }
     };

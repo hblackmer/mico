@@ -8,6 +8,7 @@ import { Css } from './css';
 import { Html } from './html';
 import { Javascript } from './javascript';
 import { Programming } from './programming';
+import { Questions } from './questions';
 
 export const ConfigureStore = () => {
     const store = createStore(
@@ -17,12 +18,12 @@ export const ConfigureStore = () => {
             javascript: Javascript,
             programming: Programming,
             react: React,
+            questions: Questions,
             ...createForms({
                 feedbackForm: InitialFeedback
             })
         })//,
         //applyMiddleware(thunk, logger)
     );
-
     return store;
 };
