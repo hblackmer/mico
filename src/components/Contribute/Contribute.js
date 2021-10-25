@@ -47,7 +47,7 @@ export default class Contribute extends Component {
             <Container className="Contribute px-lg-5">
                 <h2 className="text-white text-center" id="contribute">Contribute</h2>
                 <p className="text-center" id="contribute-subtitle">Support Mico by contributing questions, thank you!</p>
-                <p className="text-danger text-center">[Sorry, feature not yet supported. Please <a href="https://www.linkedin.com/in/hblackmer/" target="_blank" className="text-danger font-weight-bold">contact me via LinkedIn</a> in the meantime!]</p>
+                <p className="text-danger text-center">[Sorry, feature not yet supported. Please <a href="https://www.linkedin.com/in/hblackmer/" rel="noopener noreferrer" target="_blank" className="text-danger font-weight-bold">contact me via LinkedIn</a> in the meantime!]</p>
                 <Row className="form-box">
                     <Col md={10}>
                         <LocalForm onSubmit={values => this.handleSubmit(values)}>
@@ -58,7 +58,7 @@ export default class Contribute extends Component {
                                     </Label>
                                 </Col>
                                 <Col md={{size: 4}} className="text-box mb-2">
-                                    <Control.text
+                                    <Control.Text
                                         model=".name"
                                         id="name"
                                         name="name"
@@ -72,7 +72,7 @@ export default class Contribute extends Component {
                                     </Label>
                                 </Col>
                                 <Col md={{size: 5}}>
-                                    <Control.text
+                                    <Control.Text
                                         model=".email"
                                         id="email"
                                         name="email"
@@ -100,7 +100,7 @@ export default class Contribute extends Component {
                                     </Label>
                                 </Col>
                                 <Col md={10}>
-                                    <Control.textarea
+                                    <Control.Textarea
                                         model=".question"
                                         id="question"
                                         name="question"
@@ -133,7 +133,7 @@ export default class Contribute extends Component {
                                     </Label>
                                 </Col>
                                 <Col md={10}>
-                                    <Control.textarea
+                                    <Control.Textarea
                                         model=".answer"
                                         id="answer"
                                         name="answer"
@@ -150,7 +150,7 @@ export default class Contribute extends Component {
                                     </Label>
                                 </Col>
                                 <Col md={10}>
-                                    <Control.textarea 
+                                    <Control.Textarea 
                                         model=".source"
                                         id="source"
                                         name="source"

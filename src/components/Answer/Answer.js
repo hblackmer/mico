@@ -21,7 +21,7 @@ function Answer ({id, answer, prev, next, submit, lastQuestion, addAnswer}) {
                 {!lastQuestion ?
                     <Col className="answer-text">
                         <Label htmlFor="answer">Your Answer:</Label>
-                        <Control.textarea
+                        <Control.Textarea
                             model=".answer"
                             id="answer"
                             name="answer"
