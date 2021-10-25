@@ -12,7 +12,7 @@
     background: linear-gradient( var(--color-light-blue) 10%, var(--color-extra-dark-blue));
 }
 
-.tab {
+.customize-section {
     text-align: center;
     color: white;
 }
