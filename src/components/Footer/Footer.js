@@ -9,7 +9,7 @@ import logoImg from '../../img/logo_circle.png';
 
 export default function Footer() {
     return (
-        <Fragment className="Footer">
+        <Fragment>
             <Container>
                 <Row>
                     <Col className="d-inline-flex justify-content-center mt-3">
