@@ -60,24 +60,8 @@ export default class Contribute extends Component {
                                         model=".name"
                                         id="name"
                                         name="name"
-                                        placeholder="Name"
+                                        placeholder="Name (optional)"
                                         className="form-control"
-                                        validators={{
-                                            required, 
-                                            minLength: minLength(2),
-                                            maxLength: maxLength(15)
-                                        }}
-                                    />
-                                    <Errors
-                                        className="text-danger"
-                                        model=".name"
-                                        show="touched"
-                                        component="div"
-                                        messages={{
-                                            required: 'Required',
-                                            minLength: 'Must be at least 2 characters',
-                                            maxLength: 'Must be 15 characters or less'
-                                        }}
                                     />
                                 </Col>
                                 <Col md={{size: 1}} className="text-icons">
@@ -90,10 +74,9 @@ export default class Contribute extends Component {
                                         model=".email"
                                         id="email"
                                         name="email"
-                                        placeholder="Email"
+                                        placeholder="Email (optional)"
                                         className="form-control"
                                         validators={{
-                                            required,
                                             validEmail
                                         }}
                                     />
@@ -103,7 +86,6 @@ export default class Contribute extends Component {
                                         show="touched"
                                         component="div"
                                         messages={{
-                                            required: 'Required',
                                             validEmail: 'Invalid email address'
                                         }}
                                     />
@@ -120,7 +102,7 @@ export default class Contribute extends Component {
                                         model=".question"
                                         id="question"
                                         name="question"
-                                        placeholder="Question"
+                                        placeholder="Question (required)"
                                         rows="4"
                                         className="form-control"
                                         validators={{
@@ -153,7 +135,7 @@ export default class Contribute extends Component {
                                         model=".answer"
                                         id="answer"
                                         name="answer"
-                                        placeholder="Answer"
+                                        placeholder="Answer (optional)"
                                         rows="4"
                                         className="form-control"
                                     />
@@ -170,7 +152,7 @@ export default class Contribute extends Component {
                                         model=".source"
                                         id="source"
                                         name="source"
-                                        placeholder="URL"
+                                        placeholder="Reference (optional)"
                                         rows="1"
                                         className="form-control"
                                     />
