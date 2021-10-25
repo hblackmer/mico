@@ -60,7 +60,7 @@ export default function About () {
                     <Row className="justify-content-center">
                         <Col claclassNamess="blurb mb-5 mb-md-0">
                             <h1 className="text-white mt-1">About Me</h1>
-                            <p className="lead">Hi, my name is Helene! I am a hardware and software engineer that had always wanted to but just started learning web development in August 2021. Having been a teaching assistant for various engineering classes at my university, I have always loved helping people learn and watching them succeed which is my inspiration for creating this website. Welcome to my personal project!</p>
+                            <p className="lead">Hi, my name is Helene! I am a hardware and software engineer that had always wanted to but just started learning web development in August 2021. Having been a teaching assistant for various engineering classes at my university, I have always loved helping people learn and watching them succeed which is my inspiration for creating this website. Welcome to my personal project and <a href="https://www.linkedin.com/in/hblackmer/" target="_blank" className="text-dark font-weight-bold">connect with me on Linkedin!</a></p>
                         </Col>
                     </Row>
                 </Col>
