@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import Navigation from '../Navigation/Navigation';
 import Showcase from '../Showcase/Showcase';
 import About from '../About/About';
@@ -34,18 +35,22 @@ class Main extends Component {
         return (
             <div className="Main">
                 <Navigation isNavOpen={this.state.isNavOpen} isModalOpen={this.state.isModalOpen} toggleNav={this.toggleNav} toggleModal={this.toggleModal}/>
-                <Switch>
-                    <Route exact path='/mico/' render={() => <Showcase toggleNav={this.toggleNav} toggleModal={this.toggleModal}/>} />
-                    <Route exact path='/mico/about' component={About} />
-                    <Route exact path='/mico/test' component={Test} />
-                    <Route exact path='/mico/contribute' component={Contribute} />
-                    <Redirect to='/mico/' />
-                    <Showcase />
-                </Switch>
+                <TransitionGroup>
+                    <CSSTransition key={this.props.location.key} classNames="page" timeout={300}>
+                        <Switch>
+                            <Route exact path='/mico/' render={() => <Showcase toggleNav={this.toggleNav} toggleModal={this.toggleModal}/>} />
+                            <Route exact path='/mico/about' component={About} />
+                            <Route exact path='/mico/test' component={Test} />
+                            <Route exact path='/mico/contribute' component={Contribute} />
+                            <Redirect to='/mico/' />
+                            <Showcase />
+                        </Switch>
+                    </CSSTransition>
+                </TransitionGroup>
                 <Footer />
             </div>
         );
     }
 }
   
-export default Main;  
+export default withRouter(Main);  
