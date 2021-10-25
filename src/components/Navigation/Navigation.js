@@ -26,8 +26,10 @@ class Navigation extends Component {
         return (
             <Fragment>
                 <Navbar dark expand="md">
-                    <NavbarBrand className="text-primary ml-2 font-weight-bold" to="/mico/">
-                        MICO
+                    <NavbarBrand className="text-primary ml-2 font-weight-bold">
+                        <NavTo to="/mico/">
+                            MICO
+                        </NavTo>
                     </NavbarBrand>
                     <NavbarToggler onClick={toggleNav} />
                     <Collapse isOpen={isNavOpen} navbar>
