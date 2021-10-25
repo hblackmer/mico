@@ -10,6 +10,7 @@
     margin-right: 25px;
     transition: transform 0.5s ease 0s;
 }
+
 .hb_logo {
     max-width: 55px;
     margin-top: 5px;
@@ -17,6 +18,7 @@
     transition: transform 0.5s ease 0s;
     margin-bottom: 15px;
  }
+ 
 .media_icons:hover, .hb_logo:hover {  
     transform: scale3d(1.5, 1.5, 1);
 }
