@@ -1,3 +1,8 @@
+/* 
+========================
+    ANSWER TEXTAREA
+========================
+*/
 .answer {
     height: 30vh;
     width: 100%;
@@ -10,7 +15,17 @@
     font-weight: bolder;
 }
 
-.answer-submit {
+/* 
+========================
+    ANSWER BUTTONS
+========================
+*/
+#answer-back {
+    margin-top: -25px;
+    margin-bottom: 25px;
+}
+
+#answer-submit {
     margin-top: 10px;
     text-align: left !important;
     float: left;
@@ -19,17 +34,7 @@
 .answer-arrow {
     float: right;
     border: none !important;
-    font-size: 1.25rem !important;
-}
-
-#answer-back {
-    margin-top: -25px;
-    margin-bottom: 25px;
-}
-
-.arrow-size {
-    font-size: 1.5rem;
-    border-color: transparent;
+    font-size: 1.5rem !important;
 }
 
 .arrow-size:hover {
