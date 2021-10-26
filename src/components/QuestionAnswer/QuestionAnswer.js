@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import Question from '../Question/Question';
 import Answer from '../Answer/Answer';
 
-function QuestionAnswer ({category, lastQuestion, question, answer, id, prev, next, addAnswer, resetFeedbackForm}) {
+function QuestionAnswer ({lastQuestion, question, prev, next, addAnswer, resetFeedbackForm}) {
 
     const categoryDisplay = (category, lastQuestion) => {
         return (
@@ -35,18 +35,18 @@ function QuestionAnswer ({category, lastQuestion, question, answer, id, prev, ne
 
     return (
         <Fragment>
-            {categoryDisplay(category, lastQuestion)}
+            {categoryDisplay(question.category, lastQuestion)}
             <Question
                 lastQuestion={lastQuestion}
-                question={question}
+                question={question.question}
             />
             <Answer 
                 lastQuestion={lastQuestion}
                 prev={prev} 
                 next={next} 
                 addAnswer={addAnswer} 
-                answer={answer}
-                id={id}
+                answer={question.answer}
+                id={question.id}
                 resetFeedbackForm={resetFeedbackForm}
             />
         </Fragment>

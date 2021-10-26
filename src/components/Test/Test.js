@@ -143,20 +143,16 @@ class Test extends Component {
     allQuestions = () => {
         let lastQuestion = this.state.questionNum === this.state.questionMax;
         let currentQuestion = this.props.questions[this.state.questionNum];
-        let question = !lastQuestion && currentQuestion.question;
-        let id = !lastQuestion && currentQuestion.id;
-        let answer = !lastQuestion && currentQuestion.answer;
 
         if (this.state.questionMax === 8) {
+            //console.log("num=", this.state.questionNum, " max=",this.state.questionMax)
             return (
                 <Fragment>
                     {this.state.questionNum === 7 && 
                         <QuestionAnswer 
                             category={currentQuestion.category}
                             lastQuestion={lastQuestion}
-                            question={question}
-                            answer={answer}
-                            id={id}
+                            question={currentQuestion}
                             prev={this.questionPrev} 
                             next={this.questionNext} 
                             addAnswer={this.props.addAnswer} 
@@ -166,9 +162,7 @@ class Test extends Component {
                         <QuestionAnswer 
                             category={currentQuestion.category}
                             lastQuestion={lastQuestion}
-                            question={question}
-                            answer={answer}
-                            id={id}
+                            question={currentQuestion}
                             prev={this.questionPrev} 
                             next={this.questionNext} 
                             addAnswer={this.props.addAnswer} 
@@ -178,8 +172,7 @@ class Test extends Component {
                         <QuestionAnswer 
                             category={currentQuestion.category}
                             lastQuestion={lastQuestion}
-                            question={question}
-                            id={id}
+                            question={currentQuestion}
                             prev={this.questionPrev} 
                             next={this.questionNext} 
                             addAnswer={this.props.addAnswer} 
@@ -189,9 +182,7 @@ class Test extends Component {
                         <QuestionAnswer 
                             category={currentQuestion.category}
                             lastQuestion={lastQuestion}
-                            question={question}
-                            answer={answer}
-                            id={id}
+                            question={currentQuestion}
                             prev={this.questionPrev} 
                             next={this.questionNext} 
                             addAnswer={this.props.addAnswer} 
@@ -201,9 +192,7 @@ class Test extends Component {
                         <QuestionAnswer 
                             category={currentQuestion.category}
                             lastQuestion={lastQuestion}
-                            question={question}
-                            answer={answer}
-                            id={id}
+                            question={currentQuestion}
                             prev={this.questionPrev} 
                             next={this.questionNext} 
                             addAnswer={this.props.addAnswer} 
@@ -213,9 +202,7 @@ class Test extends Component {
                         <QuestionAnswer 
                             category={currentQuestion.category}
                             lastQuestion={lastQuestion}
-                            question={question}
-                            answer={answer}
-                            id={id}
+                            question={currentQuestion}
                             prev={this.questionPrev} 
                             next={this.questionNext} 
                             addAnswer={this.props.addAnswer} 
@@ -225,9 +212,7 @@ class Test extends Component {
                         <QuestionAnswer 
                             category={currentQuestion.category}
                             lastQuestion={lastQuestion}
-                            question={question}
-                            answer={answer}
-                            id={id}
+                            question={currentQuestion}
                             prev={this.questionPrev} 
                             next={this.questionNext} 
                             addAnswer={this.props.addAnswer} 
@@ -237,9 +222,7 @@ class Test extends Component {
                         <QuestionAnswer 
                             category={currentQuestion.category}
                             lastQuestion={lastQuestion}
-                            question={question}
-                            answer={answer}
-                            id={id}
+                            question={currentQuestion}
                             prev={this.questionPrev} 
                             next={this.questionNext} 
                             addAnswer={this.props.addAnswer} 
