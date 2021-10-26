@@ -17,8 +17,10 @@ class Customize extends Component {
                 {name:"JavaScript", category:"list1", bgcolor: "#96D1CD"},
                 {name:"React", category:"list1", bgcolor: "#96D1CD"},
                 {name:"Programming", category:"list1", bgcolor: "#96D1CD"}
-            ]
+            ],
+            length: 'medium'
         }
+        this.handleLengthChange = this.handleLengthChange.bind(this);
     }
 
     onDragOver = (ev) => {
@@ -50,6 +52,10 @@ class Customize extends Component {
             state.category === "list2"
         ).map(state => state.name);
         this.props.categories(selectedCategories);
+    }
+
+    handleLengthChange(event) {
+        this.setState({length: event.target.value})    
     }
 
     render() {
@@ -99,38 +105,43 @@ class Customize extends Component {
                         </div>
                         <div className="customize-section">
                             <h4 className="length-header">LENGTH</h4>
-                            <div className="toggle-radio mb-5">
-                                <Label htmlFor="first-toggle">
-                                    <h5>Short</h5>
-                                </Label>
-                                <Input
-                                    type="radio"
-                                    className="toggle-option"
-                                    id="first-toggle"
-                                    name="toggle-option"
-                                />
-                                <Label htmlFor="second-toggle">
-                                    <h5>Medium</h5>
-                                </Label>
-                                <Input
-                                    type="radio"
-                                    defaultChecked
-                                    className="toggle-option"
-                                    id="second-toggle"
-                                    name="toggle-option"
-                                />
-                                <Label htmlFor="third-toggle">
-                                    <h5>Long</h5>
-                                </Label>
-                                <Input
-                                    type="radio"
-                                    className="toggle-option"
-                                    id="third-toggle"
-                                    name="toggle-option"
-                                />
-                                <div className="toggle-option-slider">
+                            <fieldset onChange={this.handleLengthChange}>
+                                <div className="toggle-radio mb-5">
+                                    <Label htmlFor="first-toggle">
+                                        <h5>Short</h5>
+                                    </Label>
+                                    <Input
+                                        type="radio"
+                                        className="toggle-option"
+                                        id="first-toggle"
+                                        name="toggle-option"
+                                        value="short"
+                                    />
+                                    <Label htmlFor="second-toggle">
+                                        <h5>Medium</h5>
+                                    </Label>
+                                    <Input
+                                        type="radio"
+                                        defaultChecked
+                                        className="toggle-option"
+                                        id="second-toggle"
+                                        name="toggle-option"
+                                        value="medium"
+                                    />
+                                    <Label htmlFor="third-toggle">
+                                        <h5>Long</h5>
+                                    </Label>
+                                    <Input
+                                        type="radio"
+                                        className="toggle-option"
+                                        id="third-toggle"
+                                        name="toggle-option"
+                                        value="long"
+                                    />
+                                    <div className="toggle-option-slider">
+                                    </div>
                                 </div>
-                            </div>
+                            </fieldset>
                         </div>
                         <div className="tab text-center">
                             <Link to="/mico/test">
