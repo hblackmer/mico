@@ -97,38 +97,62 @@ class Test extends Component {
 
     generateQuestions = () => {
         let key=0;
-        let questionsGenerated=0;
-        while (questionsGenerated < this.state.questionMax) {
-            let randomQuestionIdx = Math.floor(Math.random()*this.props.programming.length);
-            let randomQuestion = Object.assign({}, this.props.programming[randomQuestionIdx]);
-            if (this.props.questions.indexOf(this.props.programming[randomQuestionIdx]) === -1) {
-                key++;
-                questionsGenerated++;
-                this.props.addQuestion(
-                    key, 
-                    randomQuestion.question,
-                    randomQuestion.answer,
-                    randomQuestion.micoAnswer,
-                    randomQuestion.source,
-                    randomQuestion.category
-                )
+        let questionList=[];
+
+        this.setState({
+            questionMax: this.props.length === "long" ? 12 :
+                         this.props.length === "medium" ? 8 :
+                         this.props.length === "short" ? 4 : 8
+        });
+
+        for (let category of this.props.categories) {
+            switch (category) {
+                case "HTML/CSS":
+                    questionList.push(...this.props.htmlcss);
+                    break;
+                case "JavaScript":
+                    questionList.push(...this.props.javascript);
+                    break;
+                case "React":
+                    questionList.push(...this.props.react);
+                    break;
+                case "Programming":
+                    questionList.push(...this.props.programming);
+                    break;
+                default:
+                    alert("No categories selected! Please start test again.");
             }
         }
+
+        for (let questionNum=0; questionNum <= this.state.questionMax; questionNum++) {
+            let randomQuestionIdx = Math.floor(Math.random()*questionList.length);
+            let randomQuestion = Object.assign({}, questionList[randomQuestionIdx]);
+            key++;
+            this.props.addQuestion(
+                key, 
+                randomQuestion.question,
+                randomQuestion.answer,
+                randomQuestion.micoAnswer,
+                randomQuestion.source,
+                randomQuestion.category
+            );
+            questionList.splice(randomQuestionIdx,1);
+        };
     };
 
-    allQuestions = (category) => {
+    allQuestions = () => {
         let lastQuestion = this.state.questionNum === this.state.questionMax;
         let currentQuestion = this.props.questions[this.state.questionNum];
         let question = !lastQuestion && currentQuestion.question;
         let id = !lastQuestion && currentQuestion.id;
         let answer = !lastQuestion && currentQuestion.answer;
 
-        if (this.state.questionMax === 7) {
+        if (this.state.questionMax === 8) {
             return (
                 <Fragment>
                     {this.state.questionNum === 7 && 
                         <QuestionAnswer 
-                            category={category}
+                            category={currentQuestion.category}
                             lastQuestion={lastQuestion}
                             question={question}
                             answer={answer}
@@ -140,7 +164,7 @@ class Test extends Component {
                         />}
                     {this.state.questionNum === 6 && 
                         <QuestionAnswer 
-                            category={category}
+                            category={currentQuestion.category}
                             lastQuestion={lastQuestion}
                             question={question}
                             answer={answer}
@@ -152,7 +176,7 @@ class Test extends Component {
                         />}
                     {this.state.questionNum === 5 && 
                         <QuestionAnswer 
-                            category={category}
+                            category={currentQuestion.category}
                             lastQuestion={lastQuestion}
                             question={question}
                             id={id}
@@ -163,7 +187,7 @@ class Test extends Component {
                         />}
                     {this.state.questionNum === 4 && 
                         <QuestionAnswer 
-                            category={category}
+                            category={currentQuestion.category}
                             lastQuestion={lastQuestion}
                             question={question}
                             answer={answer}
@@ -175,7 +199,7 @@ class Test extends Component {
                         />}
                     {this.state.questionNum === 3 && 
                         <QuestionAnswer 
-                            category={category}
+                            category={currentQuestion.category}
                             lastQuestion={lastQuestion}
                             question={question}
                             answer={answer}
@@ -187,7 +211,7 @@ class Test extends Component {
                         />}
                     {this.state.questionNum === 2 && 
                         <QuestionAnswer 
-                            category={category}
+                            category={currentQuestion.category}
                             lastQuestion={lastQuestion}
                             question={question}
                             answer={answer}
@@ -199,7 +223,7 @@ class Test extends Component {
                         />}
                     {this.state.questionNum === 1 && 
                         <QuestionAnswer 
-                            category={category}
+                            category={currentQuestion.category}
                             lastQuestion={lastQuestion}
                             question={question}
                             answer={answer}
@@ -211,7 +235,7 @@ class Test extends Component {
                         />}
                     {this.state.questionNum === 0 && 
                         <QuestionAnswer 
-                            category={category}
+                            category={currentQuestion.category}
                             lastQuestion={lastQuestion}
                             question={question}
                             answer={answer}
@@ -263,7 +287,7 @@ class Test extends Component {
                                 <p className="text-danger text-center">Test functionality is still in progress! The following is for demo purposes currently.</p>
                                 { showAnswer ? 
                                     <Fragment>
-                                        {this.allQuestions("programming")}
+                                        {this.allQuestions()}
                                     </Fragment> : 
                                     <Button color="primary" onClick={() => 
                                         this.hideComponent()
