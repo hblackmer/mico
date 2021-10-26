@@ -55,4 +55,44 @@ export const PROGRAMMING = [
         source: "",
         category: "programming"  
     },
+    {
+        id: 7,
+        question: "Given a string possibly containing three types of braces ({}, [], ()), write a function that returns a Boolean indicating whether the given string contains a valid nesting of braces.",
+        answer: "",
+        micoAnswer: "",
+        source: "https://www.educative.io/blog/level-up-javascript-coding-challenges",
+        category: "programming"  
+    },
+    {
+        id: 8,
+        question: "An Armstrong number is an n-digit number that is equal to the sum of the nthnth powers of its digits. Determine if the input number is an Armstrong number. Return either true or false.",
+        answer: "",
+        micoAnswer: "",
+        source: "https://www.educative.io/blog/level-up-javascript-coding-challenges",
+        category: "programming"  
+    },
+    {
+        id: 9,
+        question: "Create a function which receives a function as argument and executes it after 2 seconds.",
+        answer: "",
+        micoAnswer: "",
+        source: "https://github.com/sadanandpai/javascript-code-challenges",
+        category: "programming"  
+    },
+    {
+        id: 10,
+        question: "Write a code to remove all the vowels from a given string.",
+        answer: "",
+        micoAnswer: "",
+        source: "https://github.com/sadanandpai/javascript-code-challenges",
+        category: "programming"  
+    },
+    {
+        id: 11,
+        question: "Write a function which returns a list of elements which contains at least one character as digit.",
+        answer: "",
+        micoAnswer: "",
+        source: "https://github.com/sadanandpai/javascript-code-challenges",
+        category: "programming"  
+    }
 ];
