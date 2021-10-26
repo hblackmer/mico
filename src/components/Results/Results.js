@@ -57,6 +57,16 @@ class Results extends Component {
                     <Stagger in duration={600} timingFn='ease-in-out'>
                         {this.props.test.map(this.createQuestion)}
                     </Stagger>
+                    <Button
+                        className="results-button"
+                        color="primary"
+                        onClick={this.handleClick}
+                    >Retake Test</Button>
+                    <Button 
+                        className="results-button"
+                        color="primary"
+                        onClick={this.handleClick}
+                    >New Test</Button>
                 </Row>
             </Container>
         );
