@@ -25,7 +25,7 @@ export const PROGRAMMING = [
     },
     {
         id: 3,
-        question: "Given a string, return the character that is mostly commonly used in the string. maxChar('abccccccd') === 'c'",
+        question: "Given a string, return the character that is most commonly used in the string. maxChar('abccccccd') === 'c'",
         answer: "",
         micoAnswer: "",
         source: "",
