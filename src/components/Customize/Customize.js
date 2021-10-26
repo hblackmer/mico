@@ -17,7 +17,11 @@ class Customize extends Component {
                 {name:"JavaScript", category:"list1", bgcolor: "#96D1CD"},
                 {name:"React", category:"list1", bgcolor: "#96D1CD"},
                 {name:"Programming", category:"list1", bgcolor: "#96D1CD"}
-            ]
+            ],
+            lists : {
+                list1: [],
+                list2: []
+            }
         }
     }
 
@@ -50,16 +54,12 @@ class Customize extends Component {
     }
 
     render() {
-        let tasks = {
-            list1: [],
-            list2: []
-        }
         const { isModalOpen, toggleModal } = this.props;
 
         this.state.tasks.forEach ((t) => {
-            tasks[t.category].push(
+            this.state.lists[t.category].push(
                 <div key={t.name} 
-                    onDragStart = {(e) => this.onDragStart(e, t.name)}
+                    onDragStart = {e => this.onDragStart(e, t.name)}
                     draggable
                     className="draggable"
                     style = {{backgroundColor: t.bgcolor}}
@@ -84,13 +84,13 @@ class Customize extends Component {
                                     onDragOver={(e)=>this.onDragOver(e)}
                                     onDrop={(e)=>{this.onDrop(e, "list1")}}>
                                     <span className="task-header">Not Selected</span>
-                                    {tasks.list1}
+                                    {this.state.lists.list1}
                                 </div>
                                 <div className="list2" 
                                     onDrop={(e)=>this.onDrop(e, "list2")}
                                     onDragOver={(ev)=>this.onDragOver(ev)}>
                                     <span className="task-header">Selected</span>
-                                    {tasks.list2}
+                                    {this.state.lists.list2}
                                 </div>
                             </div>
                         </div>
