@@ -7,6 +7,10 @@ import Timecode from 'react-timecode';
 import './Results.css';
 
 class Results extends Component {
+    handleClick = () => {
+        alert("Sorry, not yet available!");
+    }
+
     createQuestion = ({ id, question, answer, micoAnswer, source}, idx) => {
         return (
             <Col xs={12}>
@@ -33,7 +37,7 @@ class Results extends Component {
                         <i className="fas fa-stopwatch" /> <Timecode time={this.props.time} />
                     </Col>
                     <Col>
-                        <Button className="print-button mb-3 text-center text-white mx-5">Print
+                        <Button className="print-button mb-3 text-center text-white mx-5" onClick={this.handleClick}>Print
                             <span className="print-icon"></span>
                         </Button>
                     </Col>
