@@ -12,8 +12,7 @@ class Customize extends Component {
         super(props);
         this.state = {
             tasks: [
-                {name:"HTML",category:"list1", bgcolor: "#96D1CD"},
-                {name:"CSS", category:"list1", bgcolor: "#96D1CD"},
+                {name:"HTML/CSS",category:"list1", bgcolor: "#96D1CD"},
                 {name:"JavaScript", category:"list1", bgcolor: "#96D1CD"},
                 {name:"React", category:"list1", bgcolor: "#96D1CD"},
                 {name:"Programming", category:"list1", bgcolor: "#96D1CD"}

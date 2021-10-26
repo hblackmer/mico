@@ -1,6 +1,22 @@
-export const CSS = [
+export const HTMLCSS = [
     {
         id: 0,
+        question: "What is HTML?",
+        answer: "",
+        micoAnswer: "HTML is the standard markup language for creating Web pages.",
+        source: "https://www.w3schools.com/html/html_intro.asp",
+        category: "html"
+    },
+    {
+        id: 1,
+        question: "How can we comment in HTML?",
+        answer: "",
+        micoAnswer: "The commented outlines will not be shown in the browser. To comment a line, the line should start by this <!– and end by this –>. Comments can be of one line or of multiple lines.",
+        source: "https://www.w3schools.com/html/html_comments.asp",
+        category: "html"
+    },
+    {
+        id: 2,
         question: "What is CSS?",
         answer: "",
         micoAnswer: "CSS is a language for specifying how documents are presented to users.",
@@ -8,7 +24,7 @@ export const CSS = [
         category: "css"
     },
     {
-        id: 1,
+        id: 3,
         question: "What is the difference between class selectors and ID selectors?",
         answer: "",
         micoAnswer: "In the CSS, a class selector is a name preceded by a full stop ('.') and an ID selector is a name preceded by a hash character ('#'). The difference between an ID and a class is that an ID can be used to identify one element, whereas a class can be used to identify more than one.",
@@ -16,7 +32,7 @@ export const CSS = [
         category: "css"
     },
     {
-        id: 2,
+        id: 4,
         question: "What is the float property of CSS?",
         answer: "",
         micoAnswer: "The float property specifies whether an element should float to the left, right, or not at all.",
@@ -24,7 +40,7 @@ export const CSS = [
         category: "css"
     },
     {
-        id: 3,
+        id: 5,
         question: "What is the purpose of the z-index and how is it used?",
         answer: "",
         micoAnswer: "The z-index helps to specify the stack order of positioned elements that may overlap one another. The z-index default value is zero and can take on either a positive or negative number.",
