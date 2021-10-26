@@ -34,17 +34,7 @@ function Answer ({id, answer, prev, next, submit, lastQuestion, addAnswer}) {
                 };
             </Row>
             <Row className="form-group mt-3">
-                {lastQuestion ?
-                    <Fragment>
-                        <Col xs={12} className="justify-content-center d-flex">
-                            <Button 
-                                type="button"
-                                outline
-                                id="answer-back"
-                                onClick={prev}
-                            >Go Back</Button>
-                        </Col>
-                    </Fragment> :
+                {!lastQuestion &&
                     <Col xs={12} className="justify-content-center d-flex">
                         <Button 
                             type="button" 

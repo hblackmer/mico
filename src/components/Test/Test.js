@@ -145,7 +145,6 @@ class Test extends Component {
         let currentQuestion = this.props.questions[this.state.questionNum];
 
         if (this.state.questionMax === 8) {
-            //console.log("num=", this.state.questionNum, " max=",this.state.questionMax)
             return (
                 <Fragment>
                     {this.state.questionNum === 7 && 
@@ -267,7 +266,6 @@ class Test extends Component {
                                         <Progress animated className="progress" color="success" value={(questionNum / questionMax) * 100}>{questionNum}/{questionMax}</Progress>
                                     </Col>
                                 </Row>
-                                <p className="text-danger text-center">Test functionality is still in progress! The following is for demo purposes currently.</p>
                                 { showAnswer ? 
                                     <Fragment>
                                         {this.allQuestions()}
@@ -277,16 +275,26 @@ class Test extends Component {
                                     }>START</Button>
                                 }
                                 { questionNum === questionMax ?
-                                    <Col xs={12} className="justify-content-center d-flex">
-                                        <Link to="/mico/results">
+                                    <Fragment>
+                                        <Col xs={12} className="justify-content-center d-flex mt-5">
                                             <Button 
                                                 type="button"
-                                                color="primary"
-                                                id="answer-submit"
-                                                onClick={this.testSubmitted}
-                                            >Submit Test</Button>
-                                        </Link>
-                                    </Col>  : ''
+                                                outline
+                                                id="answer-back"
+                                                onClick={this.questionPrev}
+                                            >Go Back</Button>
+                                        </Col>
+                                        <Col xs={12} className="justify-content-center d-flex">
+                                            <Link to="/mico/results">
+                                                <Button 
+                                                    type="button"
+                                                    color="primary"
+                                                    id="answer-submit"
+                                                    onClick={this.testSubmitted}
+                                                >Submit Test</Button>
+                                            </Link>
+                                        </Col>
+                                    </Fragment>  : ''
                                 }
                             </Col>
                         </Row>
