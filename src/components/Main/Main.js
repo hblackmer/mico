@@ -91,6 +91,7 @@ class Main extends Component {
                                     timer={this.timer}
                                     test={this.test}
                                     length={this.state.length}
+                                    categories={this.state.categories}
                                 />
                             } />
                         <Route exact path='/mico/contribute' component={Contribute} />
