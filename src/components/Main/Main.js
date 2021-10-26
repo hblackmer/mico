@@ -13,10 +13,12 @@ class Main extends Component {
         super(props);
         this.state = {
             isNavOpen: false,
-            isModalOpen: false
+            isModalOpen: false,
+            time: 0
         };
         this.toggleNav = this.toggleNav.bind(this);
         this.toggleModal = this.toggleModal.bind(this);
+        this.timer = this.timer.bind(this);
     }
 
     toggleNav() {
@@ -31,6 +33,12 @@ class Main extends Component {
         });
     }
 
+    timer(time) {
+        this.setState({
+            time: time
+        });
+    }
+
     render() {
         return (
             <div className="Main">
@@ -38,9 +46,9 @@ class Main extends Component {
                     <Switch>
                         <Route exact path='/mico/' render={() => <Showcase toggleNav={this.toggleNav} toggleModal={this.toggleModal}/>} />
                         <Route exact path='/mico/about' component={About} />
-                        <Route exact path='/mico/test' component={Test} />
+                        <Route exact path='/mico/test' render={() => <Test timer={this.timer} />} />
                         <Route exact path='/mico/contribute' component={Contribute} />
-                        <Route exact path='/mico/results' component={Results} />
+                        <Route exact path='/mico/results' render={() => <Results time={this.state.time}/>} />
                         <Redirect to='/mico/' />
                         <Showcase />
                     </Switch>

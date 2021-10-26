@@ -39,6 +39,7 @@ class Test extends Component {
         this.state = {
           showAnswer: false,
           timerActive: false,
+          time: 0,
           questionNum: 0,
           questionMax: 7
         };
@@ -46,10 +47,18 @@ class Test extends Component {
         this.questionPrev = this.questionPrev.bind(this);
         this.questionNext = this.questionNext.bind(this);
         this.hideComponent = this.hideComponent.bind(this);
+        this.onTimerTimeUpdate = this.onTimerTimeUpdate.bind(this);
+    }
+
+    onTimerTimeUpdate({time}) {
+        this.setState({
+            time: time
+        });
     }
 
     testSubmitted() {
         this.props.resetFeedbackForm();
+        this.props.timer(this.state.time);
     }
 
     questionPrev() {
@@ -214,6 +223,7 @@ class Test extends Component {
 
     render() {
         const { showAnswer, timerActive, questionMax, questionNum } = this.state;
+        let time = 0;
 
         return (
             <div className="test">
@@ -229,10 +239,15 @@ class Test extends Component {
                             <Col sm={{ size: 10, offset: 1 }}>
                                 <Row>
                                     <Col className="test-timer">
-                                        <Timer active={timerActive} duration={null} className="h4">
-                                            <i className="fas fa-stopwatch" />
-                                            <span>  </span>
-                                            <Timecode />
+                                        <Timer 
+                                            active={timerActive} 
+                                            duration={null} 
+                                            className="h4"
+                                            onTimeUpdate={this.onTimerTimeUpdate}
+                                        >
+                                                <i className="fas fa-stopwatch" />
+                                                <span>  </span>
+                                                <Timecode />
                                         </Timer>
                                     </Col>
                                 </Row>
