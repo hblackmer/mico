@@ -26,7 +26,8 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = {
-    addQuestion: (id, question, answer, micoAnswer, source) => addQuestion(id, question, answer, micoAnswer, source),
+    addQuestion: (id, question, answer, micoAnswer, source, category) => 
+        addQuestion(id, question, answer, micoAnswer, source, category),
     addAnswer: (id, answer) => addAnswer(id, answer),
     resetFeedbackForm: () => (actions.reset('feedbackForm'))
 };
@@ -109,7 +110,8 @@ class Test extends Component {
                     randomQuestion.question,
                     randomQuestion.answer,
                     randomQuestion.micoAnswer,
-                    randomQuestion.source
+                    randomQuestion.source,
+                    randomQuestion.category
                 )
             }
         }

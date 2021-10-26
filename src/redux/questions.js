@@ -9,7 +9,8 @@ export const Questions = (state = [], action) => {
                 question: action.payload.question,
                 answer: action.payload.answer,
                 micoAnswer: action.payload.micoAnswer,
-                source: action.payload.source
+                source: action.payload.source,
+                category: action.payload.category
             }];
             return newState;
         case ActionTypes.ADD_ANSWER:

@@ -8,13 +8,14 @@ export const addAnswer = (id, answer) => ({
     }
 });
 
-export const addQuestion = (id, question, answer, micoAnswer, source) => ({
+export const addQuestion = (id, question, answer, micoAnswer, source, category) => ({
     type: ActionTypes.ADD_QUESTION,
     payload: {
         id: id,
         question: question,
         answer: answer,
         micoAnswer: micoAnswer,
-        source: source
+        source: source,
+        category: category
     }
 });
