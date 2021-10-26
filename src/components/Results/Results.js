@@ -10,19 +10,20 @@ import './Results.css';
 class Results extends Component {
     createQuestion = ({ id, question, answer, micoAnswer, source}, idx) => {
         return (
-            <Accordion.Item eventKey={idx}>
-                <Accordion.Header>Question #{idx+1}</Accordion.Header>
-                <Accordion.Body className="text-white">
-                    <strong>Question: </strong>{question}
-                    <br/>
-                    <strong>Answer: </strong> {answer}
-                </Accordion.Body>
-            </Accordion.Item>
+            <Col md={6} lg={4}>
+                <Accordion.Item eventKey={idx}>
+                    <Accordion.Header>Question #{idx+1}</Accordion.Header>
+                    <Accordion.Body className="text-white">
+                        <strong>Question: </strong>{question}
+                        <br/>
+                        <strong>Answer: </strong> {answer}
+                    </Accordion.Body>
+                </Accordion.Item>
+            </Col>
         );
     }
 
     render() {
-        let key=0; 
         return (
             <Container id="results">
                 <h2 className="text-white text-center" id="results-header">Results</h2>
@@ -36,11 +37,11 @@ class Results extends Component {
                         </Button>
                     </Col>
                 </Row>
-                <Row>
-                    <Accordion>
+                <Accordion>
+                    <Row className="justify-content-center">
                         {this.props.test.map(this.createQuestion)}
-                    </Accordion>
-                </Row>
+                    </Row>
+                </Accordion>
             </Container>
         );
     }
