@@ -94,5 +94,5 @@ export const HTMLCSS = [
         micoAnswer: "The CSS box model describes the rectangular boxes that are generated for elements in the document tree and laid out according to the visual formatting model. Each box has a content area (e.g. text, an image, etc.) and an optional surrounding padding, border, and margin areas.",
         source: "https://www.w3schools.com/css/css_boxmodel.asp",
         category: "css"
-    },
+    }
 ];
