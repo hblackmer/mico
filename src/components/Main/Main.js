@@ -14,11 +14,13 @@ class Main extends Component {
         this.state = {
             isNavOpen: false,
             isModalOpen: false,
-            time: 0
+            time: 0,
+            test: []
         };
         this.toggleNav = this.toggleNav.bind(this);
         this.toggleModal = this.toggleModal.bind(this);
         this.timer = this.timer.bind(this);
+        this.test = this.test.bind(this);
     }
 
     toggleNav() {
@@ -39,16 +41,45 @@ class Main extends Component {
         });
     }
 
+    test(test) {
+        this.setState({
+            test: test
+        });
+        console.log(test);
+    }
+
     render() {
         return (
             <div className="Main">
-                <Navigation isNavOpen={this.state.isNavOpen} isModalOpen={this.state.isModalOpen} toggleNav={this.toggleNav} toggleModal={this.toggleModal}/>
+                <Navigation 
+                    sNavOpen={this.state.isNavOpen}
+                    isModalOpen={this.state.isModalOpen}
+                    toggleNav={this.toggleNav}
+                    toggleModal={this.toggleModal}
+                />
                     <Switch>
-                        <Route exact path='/mico/' render={() => <Showcase toggleNav={this.toggleNav} toggleModal={this.toggleModal}/>} />
+                        <Route exact path='/mico/'
+                            render={() =>
+                                <Showcase 
+                                    toggleNav={this.toggleNav}
+                                    toggleModal={this.toggleModal}
+                                />
+                            } />
                         <Route exact path='/mico/about' component={About} />
-                        <Route exact path='/mico/test' render={() => <Test timer={this.timer} />} />
+                        <Route exact path='/mico/test'
+                            render={() =>
+                                <Test 
+                                    timer={this.timer}
+                                    test={this.test}
+                                />
+                            } />
                         <Route exact path='/mico/contribute' component={Contribute} />
-                        <Route exact path='/mico/results' render={() => <Results time={this.state.time}/>} />
+                        <Route exact path='/mico/results' 
+                            render={() => 
+                                <Results
+                                    time={this.state.time}
+                                />
+                            } />
                         <Redirect to='/mico/' />
                         <Showcase />
                     </Switch>
