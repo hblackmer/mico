@@ -3,36 +3,15 @@
         RESULTS
 ========================
 */
+#results {
+    padding: 20px;
+    background-color: var(--color-extra-dark-blue);
+}
+
 #results-header {
     font-size: 4em;
     margin-top: 50px;
     text-align: center;
-}
-
-.accordion-button {
-    font-size: 0.5em;
-    color: white;
-    background-color: transparent;
-    padding:0.5em 3em;
-    border:0.16em solid var(--color-primary);
-    margin:0 0.3em 0.3em 0;
-    box-sizing: border-box;
-    text-decoration:none;
-    text-transform:uppercase;
-    font-family:'Roboto',sans-serif;
-    font-weight:400;
-    text-align:center;
-    transition: all 0.15s;
-}
-
-.accordion-button:hover{
-    color: #DDDDDD;
-    border-color: #DDDDDD;
-}
-
-.accordion-button:active{
-    color: #BBBBBB;
-    border-color: #BBBBBB;
 }
 
 /* 

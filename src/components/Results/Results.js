@@ -3,29 +3,30 @@ import {
     Button,
     Container, Row, Col,
 } from 'reactstrap';
-import { Accordion } from 'react-bootstrap'
 import Timecode from 'react-timecode';
 import './Results.css';
 
 class Results extends Component {
     createQuestion = ({ id, question, answer, micoAnswer, source}, idx) => {
         return (
-            <Col md={6} lg={4}>
-                <Accordion.Item eventKey={idx}>
-                    <Accordion.Header>Question #{idx+1}</Accordion.Header>
-                    <Accordion.Body className="text-white">
-                        <strong>Question: </strong>{question}
-                        <br/>
-                        <strong>Answer: </strong> {answer}
-                    </Accordion.Body>
-                </Accordion.Item>
+            <Col xs={12}>
+                <h4 className="text-primary">Question #{idx+1}</h4>
+                <p className="text-white">
+                    {question}
+                </p>
+                <p className="text-white">
+                    <strong>Your Answer: </strong>
+                    <br />
+                    {answer}
+                </p>
+                <hr size="10" width="100%" color="grey" />
             </Col>
         );
     }
 
     render() {
         return (
-            <Container id="results">
+            <Container>
                 <h2 className="text-white text-center" id="results-header">Results</h2>
                 <Row>
                     <Col className="text-green h3 mt-3 text-right">
@@ -37,11 +38,9 @@ class Results extends Component {
                         </Button>
                     </Col>
                 </Row>
-                <Accordion>
-                    <Row className="justify-content-center">
-                        {this.props.test.map(this.createQuestion)}
-                    </Row>
-                </Accordion>
+                <Row id="results" className="justify-content-center">
+                    {this.props.test.map(this.createQuestion)}
+                </Row>
             </Container>
         );
     }
