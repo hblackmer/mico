@@ -144,92 +144,130 @@ class Test extends Component {
         let lastQuestion = this.state.questionNum === this.state.questionMax;
         let currentQuestion = this.props.questions[this.state.questionNum];
 
-        if (this.state.questionMax === 8) {
-            return (
-                <Fragment>
-                    {this.state.questionNum === 7 && 
-                        <QuestionAnswer 
-                            category={currentQuestion.category}
-                            lastQuestion={lastQuestion}
-                            question={currentQuestion}
-                            prev={this.questionPrev} 
-                            next={this.questionNext} 
-                            addAnswer={this.props.addAnswer} 
-                            resetFeedbackForm={this.props.resetFeedbackForm}
-                        />}
-                    {this.state.questionNum === 6 && 
-                        <QuestionAnswer 
-                            category={currentQuestion.category}
-                            lastQuestion={lastQuestion}
-                            question={currentQuestion}
-                            prev={this.questionPrev} 
-                            next={this.questionNext} 
-                            addAnswer={this.props.addAnswer} 
-                            resetFeedbackForm={this.props.resetFeedbackForm}
-                        />}
-                    {this.state.questionNum === 5 && 
-                        <QuestionAnswer 
-                            category={currentQuestion.category}
-                            lastQuestion={lastQuestion}
-                            question={currentQuestion}
-                            prev={this.questionPrev} 
-                            next={this.questionNext} 
-                            addAnswer={this.props.addAnswer} 
-                            resetFeedbackForm={this.props.resetFeedbackForm}
-                        />}
-                    {this.state.questionNum === 4 && 
-                        <QuestionAnswer 
-                            category={currentQuestion.category}
-                            lastQuestion={lastQuestion}
-                            question={currentQuestion}
-                            prev={this.questionPrev} 
-                            next={this.questionNext} 
-                            addAnswer={this.props.addAnswer} 
-                            resetFeedbackForm={this.props.resetFeedbackForm}
-                        />}
-                    {this.state.questionNum === 3 && 
-                        <QuestionAnswer 
-                            category={currentQuestion.category}
-                            lastQuestion={lastQuestion}
-                            question={currentQuestion}
-                            prev={this.questionPrev} 
-                            next={this.questionNext} 
-                            addAnswer={this.props.addAnswer} 
-                            resetFeedbackForm={this.props.resetFeedbackForm}
-                        />}
-                    {this.state.questionNum === 2 && 
-                        <QuestionAnswer 
-                            category={currentQuestion.category}
-                            lastQuestion={lastQuestion}
-                            question={currentQuestion}
-                            prev={this.questionPrev} 
-                            next={this.questionNext} 
-                            addAnswer={this.props.addAnswer} 
-                            resetFeedbackForm={this.props.resetFeedbackForm}
-                        />}
-                    {this.state.questionNum === 1 && 
-                        <QuestionAnswer 
-                            category={currentQuestion.category}
-                            lastQuestion={lastQuestion}
-                            question={currentQuestion}
-                            prev={this.questionPrev} 
-                            next={this.questionNext} 
-                            addAnswer={this.props.addAnswer} 
-                            resetFeedbackForm={this.props.resetFeedbackForm}
-                        />}
-                    {this.state.questionNum === 0 && 
-                        <QuestionAnswer 
-                            category={currentQuestion.category}
-                            lastQuestion={lastQuestion}
-                            question={currentQuestion}
-                            prev={this.questionPrev} 
-                            next={this.questionNext} 
-                            addAnswer={this.props.addAnswer} 
-                            resetFeedbackForm={this.props.resetFeedbackForm}
-                        />}
-                </Fragment>
-            );
-        }
+        return (
+            <Fragment>
+                 {this.state.questionNum === 11 && 
+                    <QuestionAnswer 
+                        category={currentQuestion.category}
+                        lastQuestion={lastQuestion}
+                        question={currentQuestion}
+                        prev={this.questionPrev} 
+                        next={this.questionNext} 
+                        addAnswer={this.props.addAnswer} 
+                        resetFeedbackForm={this.props.resetFeedbackForm}
+                    />}
+                {this.state.questionNum === 10 && 
+                    <QuestionAnswer 
+                        category={currentQuestion.category}
+                        lastQuestion={lastQuestion}
+                        question={currentQuestion}
+                        prev={this.questionPrev} 
+                        next={this.questionNext} 
+                        addAnswer={this.props.addAnswer} 
+                        resetFeedbackForm={this.props.resetFeedbackForm}
+                    />}
+                {this.state.questionNum === 9 && 
+                    <QuestionAnswer 
+                        category={currentQuestion.category}
+                        lastQuestion={lastQuestion}
+                        question={currentQuestion}
+                        prev={this.questionPrev} 
+                        next={this.questionNext} 
+                        addAnswer={this.props.addAnswer} 
+                        resetFeedbackForm={this.props.resetFeedbackForm}
+                    />}
+                {this.state.questionNum === 8 && 
+                    <QuestionAnswer 
+                        category={currentQuestion.category}
+                        lastQuestion={lastQuestion}
+                        question={currentQuestion}
+                        prev={this.questionPrev} 
+                        next={this.questionNext} 
+                        addAnswer={this.props.addAnswer} 
+                        resetFeedbackForm={this.props.resetFeedbackForm}
+                    />}
+                {this.state.questionNum === 7 && 
+                    <QuestionAnswer 
+                        category={currentQuestion.category}
+                        lastQuestion={lastQuestion}
+                        question={currentQuestion}
+                        prev={this.questionPrev} 
+                        next={this.questionNext} 
+                        addAnswer={this.props.addAnswer} 
+                        resetFeedbackForm={this.props.resetFeedbackForm}
+                    />}
+                {this.state.questionNum === 6 && 
+                    <QuestionAnswer 
+                        category={currentQuestion.category}
+                        lastQuestion={lastQuestion}
+                        question={currentQuestion}
+                        prev={this.questionPrev} 
+                        next={this.questionNext} 
+                        addAnswer={this.props.addAnswer} 
+                        resetFeedbackForm={this.props.resetFeedbackForm}
+                    />}
+                {this.state.questionNum === 5 && 
+                    <QuestionAnswer 
+                        category={currentQuestion.category}
+                        lastQuestion={lastQuestion}
+                        question={currentQuestion}
+                        prev={this.questionPrev} 
+                        next={this.questionNext} 
+                        addAnswer={this.props.addAnswer} 
+                        resetFeedbackForm={this.props.resetFeedbackForm}
+                    />}
+                {this.state.questionNum === 4 && 
+                    <QuestionAnswer 
+                        category={currentQuestion.category}
+                        lastQuestion={lastQuestion}
+                        question={currentQuestion}
+                        prev={this.questionPrev} 
+                        next={this.questionNext} 
+                        addAnswer={this.props.addAnswer} 
+                        resetFeedbackForm={this.props.resetFeedbackForm}
+                    />}
+                {this.state.questionNum === 3 && 
+                    <QuestionAnswer 
+                        category={currentQuestion.category}
+                        lastQuestion={lastQuestion}
+                        question={currentQuestion}
+                        prev={this.questionPrev} 
+                        next={this.questionNext} 
+                        addAnswer={this.props.addAnswer} 
+                        resetFeedbackForm={this.props.resetFeedbackForm}
+                    />}
+                {this.state.questionNum === 2 && 
+                    <QuestionAnswer 
+                        category={currentQuestion.category}
+                        lastQuestion={lastQuestion}
+                        question={currentQuestion}
+                        prev={this.questionPrev} 
+                        next={this.questionNext} 
+                        addAnswer={this.props.addAnswer} 
+                        resetFeedbackForm={this.props.resetFeedbackForm}
+                    />}
+                {this.state.questionNum === 1 && 
+                    <QuestionAnswer 
+                        category={currentQuestion.category}
+                        lastQuestion={lastQuestion}
+                        question={currentQuestion}
+                        prev={this.questionPrev} 
+                        next={this.questionNext} 
+                        addAnswer={this.props.addAnswer} 
+                        resetFeedbackForm={this.props.resetFeedbackForm}
+                    />}
+                {this.state.questionNum === 0 && 
+                    <QuestionAnswer 
+                        category={currentQuestion.category}
+                        lastQuestion={lastQuestion}
+                        question={currentQuestion}
+                        prev={this.questionPrev} 
+                        next={this.questionNext} 
+                        addAnswer={this.props.addAnswer} 
+                        resetFeedbackForm={this.props.resetFeedbackForm}
+                    />}
+            </Fragment>
+        );
     }
 
     render() {
