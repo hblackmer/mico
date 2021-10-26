@@ -49,6 +49,12 @@ class Results extends Component {
                         <br />
                         {answer}
                     </p>
+                    {source && <Button 
+                        className="resources-button"
+                        color="success"
+                        href={source}
+                        target="_blank"
+                     >Resources</Button>}
                     <hr size="10" width="100%" color="grey" />
                 </Col>
             </Fade>
