@@ -124,7 +124,7 @@ class Test extends Component {
             }
         }
 
-        for (let q=0; q <= (this.props.length === "long" ? 12 :
+        for (let q=0; q < (this.props.length === "long" ? 12 :
                             this.props.length === "medium" ? 8 :
                             this.props.length === "short" ? 4 : 8); q++) {
             let randomQuestionIdx = Math.floor(Math.random()*questionList.length);
@@ -178,7 +178,7 @@ class Test extends Component {
                         addAnswer={this.props.addAnswer} 
                         resetFeedbackForm={this.props.resetFeedbackForm}
                     />}
-                {this.state.questionNum === 8 && 
+                {!lastQuestion && this.state.questionNum === 8 && 
                     <QuestionAnswer 
                         category={currentQuestion.category}
                         lastQuestion={lastQuestion}
@@ -218,7 +218,7 @@ class Test extends Component {
                         addAnswer={this.props.addAnswer} 
                         resetFeedbackForm={this.props.resetFeedbackForm}
                     />}
-                {this.state.questionNum === 4 && 
+                {!lastQuestion && this.state.questionNum === 4 && 
                     <QuestionAnswer 
                         category={currentQuestion.category}
                         lastQuestion={lastQuestion}
