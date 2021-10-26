@@ -4,6 +4,7 @@ import {
     Container, Row, Col,
 } from 'reactstrap';
 import Timecode from 'react-timecode';
+import { FadeTransform, Fade, Stagger } from 'react-animation-components';
 import './Results.css';
 
 class Results extends Component {
@@ -13,18 +14,20 @@ class Results extends Component {
 
     createQuestion = ({ id, question, answer, micoAnswer, source}, idx) => {
         return (
-            <Col xs={12}>
-                <h4 className="text-primary">Question #{idx+1}</h4>
-                <p className="text-white">
-                    {question}
-                </p>
-                <p className="text-white">
-                    <strong>Your Answer: </strong>
-                    <br />
-                    {answer}
-                </p>
-                <hr size="10" width="100%" color="grey" />
-            </Col>
+            <Fade in key={idx}>
+                <Col xs={12}>
+                    <h4 className="text-primary">Question #{idx+1}</h4>
+                    <p className="text-white">
+                        {question}
+                    </p>
+                    <p className="text-white">
+                        <strong>Your Answer: </strong>
+                        <br />
+                        {answer}
+                    </p>
+                    <hr size="10" width="100%" color="grey" />
+                </Col>
+            </Fade>
         );
     }
 
@@ -32,18 +35,26 @@ class Results extends Component {
         return (
             <Container>
                 <h2 className="text-white text-center" id="results-header">Results</h2>
-                <Row>
-                    <Col className="text-green h3 mt-3 text-right">
-                        <i className="fas fa-stopwatch" /> <Timecode time={this.props.time} />
-                    </Col>
-                    <Col>
-                        <Button className="print-button mb-3 text-center text-white mx-5" onClick={this.handleClick}>Print
-                            <span className="print-icon"></span>
-                        </Button>
-                    </Col>
-                </Row>
+                <FadeTransform
+                in
+                transformProps={{
+                    exitTransform: 'scale(0.5) translateY(-50%)'
+                }}>
+                    <Row>
+                        <Col className="text-green h3 mt-3 text-right">
+                            <i className="fas fa-stopwatch" /> <Timecode time={this.props.time} />
+                        </Col>
+                        <Col>
+                            <Button className="print-button mb-3 text-center text-white mx-5" onClick={this.handleClick}>Print
+                                <span className="print-icon"></span>
+                            </Button>
+                        </Col>
+                    </Row>
+                </FadeTransform>
                 <Row id="results" className="justify-content-center">
-                    {this.props.test.map(this.createQuestion)}
+                    <Stagger in>
+                        {this.props.test.map(this.createQuestion)}
+                    </Stagger>
                 </Row>
             </Container>
         );
