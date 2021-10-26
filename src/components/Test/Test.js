@@ -16,8 +16,7 @@ import './Test.css';
 
 const mapStateToProps = state => {
     return {
-        css: state.css,
-        html: state.html,
+        htmlcss: state.htmlcss,
         javascript: state.javascript,
         programming: state.programming,
         react: state.react,
