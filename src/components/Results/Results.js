@@ -37,6 +37,8 @@ class Results extends Component {
                 <h2 className="text-white text-center" id="results-header">Results</h2>
                 <FadeTransform
                 in
+                duration={300}
+                timingFn='ease-in-out'
                 transformProps={{
                     exitTransform: 'scale(0.5) translateY(-50%)'
                 }}>
@@ -52,7 +54,7 @@ class Results extends Component {
                     </Row>
                 </FadeTransform>
                 <Row id="results" className="justify-content-center">
-                    <Stagger in>
+                    <Stagger in duration={600} timingFn='ease-in-out'>
                         {this.props.test.map(this.createQuestion)}
                     </Stagger>
                 </Row>
