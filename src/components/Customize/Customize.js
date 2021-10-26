@@ -7,7 +7,7 @@ import {
 import { Link } from 'react-router-dom';
 import './Customize.css';
 
-class Categories extends Component {
+class Customize extends Component {    
     constructor(props) {
         super(props);
         this.state = {
@@ -45,11 +45,16 @@ class Categories extends Component {
         ev.dataTransfer.setData("id", id);
     }
 
+    handleClick = () => {
+        this.props.toggleModal();
+    }
+
     render() {
-        var tasks = {
+        let tasks = {
             list1: [],
             list2: []
         }
+        const { isModalOpen, toggleModal } = this.props;
 
         this.state.tasks.forEach ((t) => {
             tasks[t.category].push(
@@ -65,29 +70,6 @@ class Categories extends Component {
         });
 
         return (
-            <div className="container-drag">
-                <div className="list1"
-                    onDragOver={(e)=>this.onDragOver(e)}
-                    onDrop={(e)=>{this.onDrop(e, "list1")}}>
-                    <span className="task-header">Not Selected</span>
-                    {tasks.list1}
-                </div>
-                <div className="list2" 
-                    onDrop={(e)=>this.onDrop(e, "list2")}
-                    onDragOver={(ev)=>this.onDragOver(ev)}>
-                    <span className="task-header">Selected</span>
-                    {tasks.list2}
-                </div>
-            </div>
-        );
-    }
-}
-
-class Customize extends Component {    
-    render() {
-        const { isModalOpen, toggleModal } = this.props;
-
-        return (
             <Modal isOpen={isModalOpen} toggleModal={toggleModal}>
                 <ModalHeader toggle={toggleModal}> 
                     Test Customization
@@ -97,7 +79,20 @@ class Customize extends Component {
                         <div className="customize-section">
                             <h4 className="categories-header">CATEGORIES</h4>
                             <p className="categories-subtitle">Drag and drop item(s) to be tested on:</p>
-                            <Categories />
+                            <div className="container-drag">
+                                <div className="list1"
+                                    onDragOver={(e)=>this.onDragOver(e)}
+                                    onDrop={(e)=>{this.onDrop(e, "list1")}}>
+                                    <span className="task-header">Not Selected</span>
+                                    {tasks.list1}
+                                </div>
+                                <div className="list2" 
+                                    onDrop={(e)=>this.onDrop(e, "list2")}
+                                    onDragOver={(ev)=>this.onDragOver(ev)}>
+                                    <span className="task-header">Selected</span>
+                                    {tasks.list2}
+                                </div>
+                            </div>
                         </div>
                         <div className="customize-section">
                             <h4 className="length-header">LENGTH</h4>
@@ -139,7 +134,7 @@ class Customize extends Component {
                                 <Button 
                                     color="primary"
                                     id="customize-button"
-                                    onClick={toggleModal}
+                                    onClick={this.handleClick}
                                 >Start</Button>
                             </Link>
                         </div>
