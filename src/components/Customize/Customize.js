@@ -17,8 +17,7 @@ class Customize extends Component {
                 {name:"JavaScript", category:"list1", bgcolor: "#96D1CD"},
                 {name:"React", category:"list1", bgcolor: "#96D1CD"},
                 {name:"Programming", category:"list1", bgcolor: "#96D1CD"}
-            ],
-            categories: []
+            ]
         }
     }
 
@@ -50,7 +49,7 @@ class Customize extends Component {
         let selectedCategories = this.state.tasks.filter(state => 
             state.category === "list2"
         ).map(state => state.name);
-        //this.props.categories = selectedCategories;
+        this.props.categories(selectedCategories);
     }
 
     render() {
