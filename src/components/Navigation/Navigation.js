@@ -22,7 +22,7 @@ const createNavItem = ({ key, href, text }) => (
 
 class Navigation extends Component {
     render() {
-        const { isNavOpen, toggleNav, isModalOpen, toggleModal } = this.props;
+        const { isNavOpen, toggleNav, isModalOpen, toggleModal, categories} = this.props;
         return (
             <Fragment>
                 <Navbar dark expand="md">
@@ -44,7 +44,7 @@ class Navigation extends Component {
                         </Nav>
                     </Collapse>
                 </Navbar>
-                <Customize isModalOpen={isModalOpen} toggleModal={toggleModal}/>
+                <Customize isModalOpen={isModalOpen} toggleModal={toggleModal} categories={categories}/>
             </Fragment>
         );
     }

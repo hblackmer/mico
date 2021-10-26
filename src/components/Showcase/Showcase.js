@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Customize from '../Customize/Customize';
 import './Showcase.css';
 
-export default function Showcase ({toggleModal, isModalOpen}) {
+export default function Showcase ({toggleModal, isModalOpen, categories}) {
     return (
         <div className="Showcase">
             <div id="overlay"></div>
@@ -15,7 +15,7 @@ export default function Showcase ({toggleModal, isModalOpen}) {
                     <Button className="test-button" onClick={toggleModal}>Get Started</Button>
                 </Link>
             </div>
-            <Customize isModalOpen={isModalOpen} toggleModal={toggleModal}/>
+            <Customize isModalOpen={isModalOpen} toggleModal={toggleModal} categories={categories}/>
         </div>
     );
 }

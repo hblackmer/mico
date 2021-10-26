@@ -18,10 +18,7 @@ class Customize extends Component {
                 {name:"React", category:"list1", bgcolor: "#96D1CD"},
                 {name:"Programming", category:"list1", bgcolor: "#96D1CD"}
             ],
-            lists : {
-                list1: [],
-                list2: []
-            }
+            categories: []
         }
     }
 
@@ -45,21 +42,28 @@ class Customize extends Component {
     }
 
     onDragStart = (ev, id) => {
-        console.log('dragstart:',id);
         ev.dataTransfer.setData("id", id);
     }
 
     handleClick = () => {
         this.props.toggleModal();
+        let selectedCategories = this.state.tasks.filter(state => 
+            state.category === "list2"
+        ).map(state => state.name);
+        //this.props.categories = selectedCategories;
     }
 
     render() {
+        let tasks = {
+            list1: [],
+            list2: []
+        }
         const { isModalOpen, toggleModal } = this.props;
 
         this.state.tasks.forEach ((t) => {
-            this.state.lists[t.category].push(
+            tasks[t.category].push(
                 <div key={t.name} 
-                    onDragStart = {e => this.onDragStart(e, t.name)}
+                    onDragStart = {(e) => this.onDragStart(e, t.name)}
                     draggable
                     className="draggable"
                     style = {{backgroundColor: t.bgcolor}}
@@ -84,13 +88,13 @@ class Customize extends Component {
                                     onDragOver={(e)=>this.onDragOver(e)}
                                     onDrop={(e)=>{this.onDrop(e, "list1")}}>
                                     <span className="task-header">Not Selected</span>
-                                    {this.state.lists.list1}
+                                    {tasks.list1}
                                 </div>
                                 <div className="list2" 
                                     onDrop={(e)=>this.onDrop(e, "list2")}
                                     onDragOver={(ev)=>this.onDragOver(ev)}>
                                     <span className="task-header">Selected</span>
-                                    {this.state.lists.list2}
+                                    {tasks.list2}
                                 </div>
                             </div>
                         </div>

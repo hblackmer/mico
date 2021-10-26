@@ -15,12 +15,14 @@ class Main extends Component {
             isNavOpen: false,
             isModalOpen: false,
             time: 0,
-            test: []
+            test: [],
+            categories: []
         };
         this.toggleNav = this.toggleNav.bind(this);
         this.toggleModal = this.toggleModal.bind(this);
         this.timer = this.timer.bind(this);
         this.test = this.test.bind(this);
+        this.categories = this.categories.bind(this);
     }
 
     toggleNav() {
@@ -45,17 +47,23 @@ class Main extends Component {
         this.setState({
             test: test
         });
-        console.log(test);
+    }
+
+    categories(categories) {
+        this.setState({
+            categories: categories
+        });
     }
 
     render() {
         return (
             <div className="Main">
                 <Navigation 
-                    sNavOpen={this.state.isNavOpen}
+                    isNavOpen={this.state.isNavOpen}
                     isModalOpen={this.state.isModalOpen}
                     toggleNav={this.toggleNav}
                     toggleModal={this.toggleModal}
+                    categories={this.categories}
                 />
                     <Switch>
                         <Route exact path='/mico/'
@@ -63,6 +71,7 @@ class Main extends Component {
                                 <Showcase 
                                     toggleNav={this.toggleNav}
                                     toggleModal={this.toggleModal}
+                                    categories={this.categories}
                                 />
                             } />
                         <Route exact path='/mico/about' component={About} />
