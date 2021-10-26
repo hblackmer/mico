@@ -38,7 +38,6 @@ class Test extends Component {
           showAnswer: false,
           timerActive: false,
           time: 0,
-          questionList: [],
           questionNum: 0,
           questionMax: 7
         };
@@ -58,7 +57,7 @@ class Test extends Component {
     testSubmitted() {
         this.props.resetFeedbackForm();
         this.props.timer(this.state.time);
-        this.props.test(this.state.questionList);
+        this.props.test(this.props.questions);
     }
 
     questionPrev() {
@@ -90,17 +89,21 @@ class Test extends Component {
             showAnswer: !this.state.showAnswer,
             timerActive: true,
         });
+    }
+
+    componentDidMount() {
         this.generateQuestions();
     }
 
     generateQuestions = () => {
         let key=0;
-        while (this.state.questionList.length < this.state.questionMax) {
+        let questionsGenerated=0;
+        while (questionsGenerated < this.state.questionMax) {
             let randomQuestionIdx = Math.floor(Math.random()*this.props.programming.length);
-            let randomQuestion = this.props.programming[randomQuestionIdx];
-            if (this.state.questionList.indexOf(randomQuestion) === -1) {
+            let randomQuestion = Object.assign({}, this.props.programming[randomQuestionIdx]);
+            if (this.props.questions.indexOf(this.props.programming[randomQuestionIdx]) === -1) {
                 key++;
-                this.state.questionList.push(this.props.programming[randomQuestionIdx]);
+                questionsGenerated++;
                 this.props.addQuestion(
                     key, 
                     randomQuestion.question,
@@ -114,9 +117,10 @@ class Test extends Component {
 
     allQuestions = (category) => {
         let lastQuestion = this.state.questionNum === this.state.questionMax;
-        let question = !lastQuestion && this.state.questionList[this.state.questionNum].question;
-        let id = !lastQuestion && this.state.questionList[this.state.questionNum].id;
-        let answer = !lastQuestion && this.props.programming[this.props.programming.findIndex((obj => obj.id === id))].answer;
+        let currentQuestion = this.props.questions[this.state.questionNum];
+        let question = !lastQuestion && currentQuestion.question;
+        let id = !lastQuestion && currentQuestion.id;
+        let answer = !lastQuestion && currentQuestion.answer;
 
         if (this.state.questionMax === 7) {
             return (
