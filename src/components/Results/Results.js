@@ -3,11 +3,24 @@ import {
     Button,
     Container, Row, Col,
 } from 'reactstrap';
+import { Accordion } from 'react-bootstrap'
 import Timecode from 'react-timecode';
 import './Results.css';
 
 class Results extends Component {
+    createQuestion = ({ id, question, answer, micoAnswer, source}) => {
+        return (
+            <Accordion.Item eventKey={id}>
+                <Accordion.Header>{question}</Accordion.Header>
+                <Accordion.Body className="text-white">
+                    {answer}
+                </Accordion.Body>
+            </Accordion.Item>
+        );
+    }
+
     render() {
+
         return (
             <Container id="results">
                 <h2 className="text-white text-center" id="results-header">Results</h2>
@@ -20,6 +33,11 @@ class Results extends Component {
                             <span className="print-icon"></span>
                         </Button>
                     </Col>
+                </Row>
+                <Row>
+                    <Accordion>
+                        {this.props.test.map(this.createQuestion)}
+                    </Accordion>
                 </Row>
             </Container>
         );

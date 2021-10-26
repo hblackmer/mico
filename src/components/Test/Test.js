@@ -223,7 +223,6 @@ class Test extends Component {
 
     render() {
         const { showAnswer, timerActive, questionMax, questionNum } = this.state;
-        let time = 0;
 
         return (
             <div className="test">

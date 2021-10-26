@@ -78,6 +78,7 @@ class Main extends Component {
                             render={() => 
                                 <Results
                                     time={this.state.time}
+                                    test={this.state.test}
                                 />
                             } />
                         <Redirect to='/mico/' />
