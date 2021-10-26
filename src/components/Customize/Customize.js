@@ -46,12 +46,16 @@ class Customize extends Component {
     }
 
     handleClick = () => {
-        this.props.toggleModal();
         let selectedCategories = this.state.tasks.filter(state => 
             state.category === "list2"
         ).map(state => state.name);
+        if (selectedCategories.length === 0) {
+            alert("No categories were selected. Defaulted to all categories.");
+            selectedCategories = ["HTML/CSS", "JavaScript", "React", "Programming"];
+        }
         this.props.categories(selectedCategories);
         this.props.length(this.state.length);
+        this.props.toggleModal();
     }
 
     handleLengthChange(event) {
