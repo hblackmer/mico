@@ -8,19 +8,21 @@ import Timecode from 'react-timecode';
 import './Results.css';
 
 class Results extends Component {
-    createQuestion = ({ id, question, answer, micoAnswer, source}) => {
+    createQuestion = ({ id, question, answer, micoAnswer, source}, idx) => {
         return (
-            <Accordion.Item eventKey={id}>
-                <Accordion.Header>{question}</Accordion.Header>
+            <Accordion.Item eventKey={idx}>
+                <Accordion.Header>Question #{idx+1}</Accordion.Header>
                 <Accordion.Body className="text-white">
-                    {answer}
+                    <strong>Question: </strong>{question}
+                    <br/>
+                    <strong>Answer: </strong> {answer}
                 </Accordion.Body>
             </Accordion.Item>
         );
     }
 
     render() {
-
+        let key=0; 
         return (
             <Container id="results">
                 <h2 className="text-white text-center" id="results-header">Results</h2>
