@@ -124,7 +124,9 @@ class Test extends Component {
             }
         }
 
-        for (let questionNum=0; questionNum <= this.state.questionMax; questionNum++) {
+        for (let q=0; q <= (this.props.length === "long" ? 12 :
+                            this.props.length === "medium" ? 8 :
+                            this.props.length === "short" ? 4 : 8); q++) {
             let randomQuestionIdx = Math.floor(Math.random()*questionList.length);
             let randomQuestion = Object.assign({}, questionList[randomQuestionIdx]);
             key++;
