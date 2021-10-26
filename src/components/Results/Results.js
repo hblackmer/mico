@@ -12,12 +12,33 @@ class Results extends Component {
         alert("Sorry, not yet available!");
     }
 
-    createQuestion = ({ id, question, answer, micoAnswer, source}, idx) => {
+    createQuestion = ({ id, question, answer, micoAnswer, source, category}, idx) => {
         return (
             <Fade in key={idx}>
                 <Col xs={12}>
-                    <h4 className="text-primary">Question #{idx+1}</h4>
-                    <p className="text-white">
+                    <h4 className="text-primary">Question #{idx+1} (
+                        {(category === "css") ?
+                            <span className="h5">
+                                <i className="fab fa-css3-alt" /> CSS
+                            </span> : 
+                        (category === "html") ?
+                            <span className="h5">
+                                <i className="fa-html5" /> HTML
+                            </span> :
+                        (category === "javascript") ?
+                            <span className="h5">
+                                <i className="fab fa-js-square" /> JavaScript
+                            </span> :
+                        (category === "programming") ?
+                            <span className="h5">
+                                <i className="fab fa-js-square" /> Programming
+                            </span> : 
+                        (category === "react") ?
+                            <span className="h5">
+                                <i className="fab fa-react" /> React
+                            </span> : '' })
+                    </h4>
+                    <p className="text-success">
                         {question}
                     </p>
                     <p className="text-white">
