@@ -11,6 +11,9 @@ class Results extends Component {
     handleClick = () => {
         alert("Sorry, not yet available!");
     }
+    handleNewClick = () => {
+        alert("Sorry, not yet available! Please refresh to reset!");
+    }
 
     createQuestion = ({ id, question, answer, micoAnswer, source, category}, idx) => {
         return (
@@ -58,7 +61,7 @@ class Results extends Component {
                 <h2 className="text-white text-center" id="results-header">Results</h2>
                 <FadeTransform
                 in
-                duration={300}
+                duration={200}
                 timingFn='ease-in-out'
                 transformProps={{
                     exitTransform: 'scale(0.5) translateY(-50%)'
@@ -82,12 +85,12 @@ class Results extends Component {
                         <Button
                             className="results-button"
                             color="primary"
-                            onClick={this.handleClick}
+                            onClick={this.handleNewClick}
                         >Retake Test</Button>
                         <Button 
                             className="results-button"
                             color="primary"
-                            onClick={this.handleClick}
+                            onClick={this.handleNewClick}
                         >New Test</Button>
                     </Col>
                 </Row>
