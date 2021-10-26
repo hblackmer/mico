@@ -52,10 +52,13 @@ class Customize extends Component {
             state.category === "list2"
         ).map(state => state.name);
         this.props.categories(selectedCategories);
+        this.props.length(this.state.length);
     }
 
     handleLengthChange(event) {
-        this.setState({length: event.target.value})    
+        this.setState({
+            length: event.target.value
+        });
     }
 
     render() {

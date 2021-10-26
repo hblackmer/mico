@@ -16,13 +16,15 @@ class Main extends Component {
             isModalOpen: false,
             time: 0,
             test: [],
-            categories: []
+            categories: [],
+            length: "medium"
         };
         this.toggleNav = this.toggleNav.bind(this);
         this.toggleModal = this.toggleModal.bind(this);
         this.timer = this.timer.bind(this);
         this.test = this.test.bind(this);
         this.categories = this.categories.bind(this);
+        this.length = this.length.bind(this);
     }
 
     toggleNav() {
@@ -55,6 +57,12 @@ class Main extends Component {
         });
     }
 
+    length(length) {
+        this.setState({
+            length: length
+        });
+    }
+
     render() {
         return (
             <div className="Main">
@@ -64,6 +72,7 @@ class Main extends Component {
                     toggleNav={this.toggleNav}
                     toggleModal={this.toggleModal}
                     categories={this.categories}
+                    length={this.length}
                 />
                     <Switch>
                         <Route exact path='/mico/'
@@ -72,6 +81,7 @@ class Main extends Component {
                                     toggleNav={this.toggleNav}
                                     toggleModal={this.toggleModal}
                                     categories={this.categories}
+                                    length={this.length}
                                 />
                             } />
                         <Route exact path='/mico/about' component={About} />
@@ -80,6 +90,7 @@ class Main extends Component {
                                 <Test 
                                     timer={this.timer}
                                     test={this.test}
+                                    length={this.state.length}
                                 />
                             } />
                         <Route exact path='/mico/contribute' component={Contribute} />

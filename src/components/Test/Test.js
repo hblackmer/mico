@@ -92,7 +92,7 @@ class Test extends Component {
     }
 
     componentDidMount() {
-        this.generateQuestions();
+        this.generateQuestions(this.props.length);
     }
 
     generateQuestions = () => {
