@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {
     Button,
     Container, Row, Col,
@@ -7,15 +7,16 @@ import Timecode from 'react-timecode';
 import { FadeTransform, Fade, Stagger } from 'react-animation-components';
 import './Results.css';
 
-class Results extends Component {
-    handleClick = () => {
+export default function Results ({time, test}) {
+    const handleClick = () => {
         alert("Sorry, not yet available!");
     }
-    handleNewClick = () => {
+
+    const handleNewClick = () => {
         alert("Sorry, not yet available! Please refresh to reset!");
     }
 
-    createQuestion = ({ id, question, answer, micoAnswer, source, category}, idx) => {
+    const createQuestion = ({ id, question, answer, micoAnswer, source, category}, idx) => {
         return (
             <Fade in key={idx}>
                 <Col xs={12}>
@@ -61,48 +62,44 @@ class Results extends Component {
         );
     }
 
-    render() {
-        return (
-            <Container>
-                <h2 className="text-white text-center" id="results-header">Results</h2>
-                <FadeTransform
-                in
-                duration={200}
-                timingFn='ease-in-out'
-                transformProps={{
-                    exitTransform: 'scale(0.5) translateY(-50%)'
-                }}>
-                    <Row>
-                        <Col className="text-green h3 mt-3 text-right">
-                            <i className="fas fa-stopwatch" /> <Timecode time={this.props.time} />
-                        </Col>
-                        <Col>
-                            <Button className="print-button mb-3 text-center text-white mx-5" onClick={this.handleClick}>Print
-                                <span className="print-icon"></span>
-                            </Button>
-                        </Col>
-                    </Row>
-                </FadeTransform>
-                <Row id="results" className="justify-content-center">
-                    <Stagger in duration={600} timingFn='ease-in-out'>
-                        {this.props.test.map(this.createQuestion)}
-                    </Stagger>
-                    <Col xs={12} className="justify-content-center d-flex">
-                        <Button
-                            className="results-button"
-                            color="primary"
-                            onClick={this.handleNewClick}
-                        >Retake Test</Button>
-                        <Button 
-                            className="results-button"
-                            color="primary"
-                            onClick={this.handleNewClick}
-                        >New Test</Button>
+    return (
+        <Container>
+            <h2 className="text-white text-center" id="results-header">Results</h2>
+            <FadeTransform
+            in
+            duration={200}
+            timingFn='ease-in-out'
+            transformProps={{
+                exitTransform: 'scale(0.5) translateY(-50%)'
+            }}>
+                <Row>
+                    <Col className="text-green h3 mt-3 text-right">
+                        <i className="fas fa-stopwatch" /> <Timecode time={time} />
+                    </Col>
+                    <Col>
+                        <Button className="print-button mb-3 text-center text-white mx-5" onClick={handleClick}>Print
+                            <span className="print-icon"></span>
+                        </Button>
                     </Col>
                 </Row>
-            </Container>
-        );
-    }
+            </FadeTransform>
+            <Row id="results" className="justify-content-center">
+                <Stagger in duration={600} timingFn='ease-in-out'>
+                    {test.map(createQuestion)}
+                </Stagger>
+                <Col xs={12} className="justify-content-center d-flex">
+                    <Button
+                        className="results-button"
+                        color="primary"
+                        onClick={handleNewClick}
+                    >Retake Test</Button>
+                    <Button 
+                        className="results-button"
+                        color="primary"
+                        onClick={handleNewClick}
+                    >New Test</Button>
+                </Col>
+            </Row>
+        </Container>
+    );
 }
-  
-export default Results;

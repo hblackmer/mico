@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import Question from '../Question/Question';
 import Answer from '../Answer/Answer';
 
-function QuestionAnswer ({lastQuestion, question, prev, next, addAnswer, resetFeedbackForm}) {
+export default function QuestionAnswer ({lastQuestion, question, prev, next, addAnswer, resetFeedbackForm}) {
 
     const categoryDisplay = (category, lastQuestion) => {
         return (
@@ -52,5 +52,3 @@ function QuestionAnswer ({lastQuestion, question, prev, next, addAnswer, resetFe
         </Fragment>
     )
 }
-  
-export default QuestionAnswer;

@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Fragment } from 'react';
 import {
     Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem,
     Button
@@ -20,34 +20,29 @@ const createNavItem = ({ key, href, text }) => (
     </NavItem>
 );
 
-class Navigation extends Component {
-    render() {
-        const { isNavOpen, toggleNav, isModalOpen, toggleModal, categories, length} = this.props;
-        return (
-            <Fragment>
-                <Navbar dark expand="md">
-                    <NavbarBrand className="text-primary ml-2 font-weight-bold">
-                        <NavTo to="/mico/">
-                            MICO
-                        </NavTo>
-                    </NavbarBrand>
-                    <NavbarToggler onClick={toggleNav} />
-                    <Collapse isOpen={isNavOpen} navbar>
-                        <Button 
-                            outline
-                            onClick={toggleModal}
-                            id="start-button"
-                            className="text-primary ml-auto"
-                        >Start</Button>
-                        <Nav navbar>
-                            {links.map(createNavItem)}
-                        </Nav>
-                    </Collapse>
-                </Navbar>
-                <Customize isModalOpen={isModalOpen} toggleModal={toggleModal} categories={categories} length={length} />
-            </Fragment>
-        );
-    }
+export default function Navigation ({ isNavOpen, toggleNav, isModalOpen, toggleModal, categories, length}) {
+    return (
+        <Fragment>
+            <Navbar dark expand="md">
+                <NavbarBrand className="text-primary ml-2 font-weight-bold">
+                    <NavTo to="/mico/">
+                        MICO
+                    </NavTo>
+                </NavbarBrand>
+                <NavbarToggler onClick={toggleNav} />
+                <Collapse isOpen={isNavOpen} navbar>
+                    <Button 
+                        outline
+                        onClick={toggleModal}
+                        id="start-button"
+                        className="text-primary ml-auto"
+                    >Start</Button>
+                    <Nav navbar>
+                        {links.map(createNavItem)}
+                    </Nav>
+                </Collapse>
+            </Navbar>
+            <Customize isModalOpen={isModalOpen} toggleModal={toggleModal} categories={categories} length={length} />
+        </Fragment>
+    );
 }
-  
-export default Navigation;  
