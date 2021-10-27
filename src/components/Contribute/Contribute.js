@@ -18,7 +18,7 @@ export default class Contribute extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            Name: '',
+            name: '',
             email: '',
             question: '',
             answer: '',
