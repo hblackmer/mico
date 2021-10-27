@@ -24,10 +24,8 @@ export default function Navigation ({ isNavOpen, toggleNav, isModalOpen, toggleM
     return (
         <Fragment>
             <Navbar dark expand="md">
-                <NavbarBrand className="text-primary ml-2 font-weight-bold">
-                    <NavTo to="/mico/">
-                        MICO
-                    </NavTo>
+                <NavbarBrand className="text-primary ml-2 font-weight-bold" href="/mico/">
+                    MICO
                 </NavbarBrand>
                 <NavbarToggler onClick={toggleNav} />
                 <Collapse isOpen={isNavOpen} navbar>
