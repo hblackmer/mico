@@ -30,10 +30,18 @@ export default function About () {
                         <Card className="about-card">
                             <CardBody className="about-body">
                                 <div className="about-icons">
-                                    <img src={flashImg} className="about-img" alt="A cartoon drawing of a girl sitting on a stool and picking different sticky notes."/>
+                                    <img 
+                                        src={flashImg}
+                                        className="about-img"
+                                        alt="A cartoon drawing of a girl sitting on a stool and picking different sticky notes."
+                                    />
                                 </div>
-                                <CardTitle tag="h2">A study tool</CardTitle>
-                                <CardSubtitle tag="h6">Interview style questions geared for web developers.</CardSubtitle>
+                                <CardTitle tag="h2">
+                                    A study tool
+                                </CardTitle>
+                                <CardSubtitle tag="h6">
+                                    Interview style questions geared for web developers.
+                                </CardSubtitle>
                             </CardBody>
                         </Card>
                     </Col>
@@ -41,10 +49,18 @@ export default function About () {
                         <Card className="about-card">
                             <CardBody className="about-body">
                                 <div className="about-icons">
-                                    <img src={testImg} className="about-img" alt="A cartoon character deciding between different notes."/>
+                                    <img 
+                                        src={testImg}
+                                        className="about-img"
+                                        alt="A cartoon character deciding between different notes."
+                                    />
                                 </div>
-                                <CardTitle tag="h2">Flash cards</CardTitle>
-                                <CardSubtitle tag="h6">Customizable and randomized flash card style questions.</CardSubtitle>
+                                <CardTitle tag="h2">
+                                    Flash cards
+                                </CardTitle>
+                                <CardSubtitle tag="h6">
+                                    Customizable and randomized flash card style questions.
+                                </CardSubtitle>
                             </CardBody>
                         </Card>
                     </Col>
@@ -52,27 +68,44 @@ export default function About () {
                         <Card className="about-card">
                             <CardBody className="about-body">
                                 <div className="about-icons">
-                                    <img src={selectImg} className="about-img" alt="A cartoon drawing of someone checking a list."/>
+                                    <img 
+                                        src={selectImg}
+                                        className="about-img"
+                                        alt="A cartoon drawing of someone checking a list."
+                                    />
                                 </div>
-                                <CardTitle tag="h2">Test report</CardTitle>
-                                <CardSubtitle tag="h6">Comprehensive report of your question/answers for review at the end of your test.</CardSubtitle>
+                                <CardTitle tag="h2">
+                                    Test report
+                                </CardTitle>
+                                <CardSubtitle tag="h6">
+                                    Comprehensive report of your question/answers for review at the end of your test.
+                                </CardSubtitle>
                             </CardBody>
                         </Card>
                     </Col>
                 </Row>
                 <Row className="align-items-center bio">
                     <Col md={6} className="justify-content-center">
-                        <img src={avatarImg} alt="Cartoon girl showing off her website design." className="avatar-img img-fluid mt-1" />
+                        <img 
+                            src={avatarImg}
+                            alt="Cartoon girl showing off her website design."
+                            className="avatar-img img-fluid mt-1"
+                        />
                     </Col>
                     <Col md={6} className="text-center">
                         <Row className="justify-content-center">
                             <Col className="blurb mb-5 mb-md-0 p-3 my-2 rounded">
                                 <Toast className="mw-100">
                                     <ToastHeader>
-                                        <h1 className="mt-1">About Me</h1>
+                                        <h1>About Me</h1>
                                     </ToastHeader>
                                     <ToastBody>
-                                        <p className="lead">Hi, my name is Helene! Having been a teaching assistant for various engineering classes at my university, I have always loved helping people learn and watching them succeed which is my inspiration for creating this website. Welcome to my personal project and <a href="https://www.linkedin.com/in/hblackmer/" rel="noopener noreferrer" target="_blank" className="text-dark font-weight-bold">connect with me on Linkedin!</a></p>
+                                        <p>
+                                            Hi, my name is Helene! Having been a teaching assistant for various engineering classes at my university, I have always loved helping people learn and watching them succeed which is my inspiration for creating this website. Welcome to my personal project and 
+                                            <a href="https://www.linkedin.com/in/hblackmer/" 
+                                                rel="noopener noreferrer" target="_blank" className="text-dark font-weight-bold"> connect with me on Linkedin!
+                                            </a>
+                                        </p>
                                     </ToastBody>
                                 </Toast>
                             </Col>
