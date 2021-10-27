@@ -1,7 +1,8 @@
 import React from 'react';
 import {
     Container, Row, Col,
-    Card, CardBody, CardTitle, CardSubtitle
+    Card, CardBody, CardTitle, CardSubtitle,
+    Toast, ToastBody, ToastHeader
 } from 'reactstrap';
 import { FadeTransform } from 'react-animation-components';
 import './About.css';
@@ -65,9 +66,15 @@ export default function About () {
                     </Col>
                     <Col md={6} className="text-center">
                         <Row className="justify-content-center">
-                            <Col claclas="blurb mb-5 mb-md-0">
-                                <h1 className="text-white mt-1">About Me</h1>
-                                <p className="lead">Hi, my name is Helene! I am a hardware and software engineer that had always wanted to but just started learning web development in August 2021. Having been a teaching assistant for various engineering classes at my university, I have always loved helping people learn and watching them succeed which is my inspiration for creating this website. Welcome to my personal project and <a href="https://www.linkedin.com/in/hblackmer/" rel="noopener noreferrer" target="_blank" className="text-dark font-weight-bold">connect with me on Linkedin!</a></p>
+                            <Col className="blurb mb-5 mb-md-0 p-3 my-2 rounded">
+                                <Toast className="mw-100">
+                                    <ToastHeader>
+                                        <h1 className="mt-1">About Me</h1>
+                                    </ToastHeader>
+                                    <ToastBody>
+                                        <p className="lead">Hi, my name is Helene! Having been a teaching assistant for various engineering classes at my university, I have always loved helping people learn and watching them succeed which is my inspiration for creating this website. Welcome to my personal project and <a href="https://www.linkedin.com/in/hblackmer/" rel="noopener noreferrer" target="_blank" className="text-dark font-weight-bold">connect with me on Linkedin!</a></p>
+                                    </ToastBody>
+                                </Toast>
                             </Col>
                         </Row>
                     </Col>
