@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import {
     Progress,
     Button,
@@ -31,101 +31,92 @@ const mapDispatchToProps = {
     resetFeedbackForm: () => (actions.reset('feedbackForm'))
 };
 
-class Test extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-          showAnswer: false,
-          timerActive: false,
-          time: 0,
-          questionNum: 0,
-          questionMax: 7
-        };
-    }
+function Test ({timer, test, categories, length, 
+                htmlcss, javascript, programming, react, questions,
+                addQuestion, addAnswer, resetFeedbackForm }) {
+    const [showAnswer, setShowAnswer] = useState(false);
+    const [timerActive, setTimerActive] = useState(false);
+    const [time, setTime] = useState(false);
+    const [questionNum, setQuestionNum] = useState(0);
+    const [questionMax, setQuestionMax] = useState(7);
 
-    onTimerTimeUpdate = ({time}) => {
-        this.setState({
+    useEffect(() => {
+        generateQuestions(length);
+    }, []);
+
+    const onTimerTimeUpdate = ({time}) => {
+        setTime ({
             time: time
         });
     }
 
-    testSubmitted = () => {
-        this.props.resetFeedbackForm();
-        this.props.timer(this.state.time);
-        this.props.test(this.props.questions);
+    const testSubmitted = () => {
+        resetFeedbackForm();
+        timer(time);
+        test(questions);
     }
 
-    questionPrev = () => {
-        if (this.state.questionNum > 0) {
-            this.setState(prevState => {
-                return {
-                    questionNum: prevState.questionNum - 1,
-                    timerActive: !this.state.timerActive
-                }
+    const questionPrev = () => {
+        if (questionNum > 0) {
+            setQuestionNum(prevQuestionNum => prevQuestionNum - 1);
+            setTimerActive({
+                timerActive: !timerActive
             });
         }
     }
 
-    hideComponent = () => {
-        this.setState({
-            showAnswer: !this.state.showAnswer,
-            timerActive: true,
+    const hideComponent = () => {
+        setShowAnswer({
+            showAnswer: !showAnswer
+        });
+        setTimerActive({
+            timerActive: true
         });
     }
 
-    questionNext = () => {
-        if (this.state.questionNum < this.state.questionMax) {
-            this.setState(prevState => {
-                return {questionNum: prevState.questionNum + 1}
-            });
+    const questionNext = () => {
+        if (questionNum < questionMax) {
+            setQuestionNum(prevQuestionNum => prevQuestionNum + 1);
         }
-        if (this.state.questionNum === this.state.questionMax-1) {
-            this.setState({
-                timerActive: !this.state.timerActive
+        if (questionNum === questionMax-1) {
+            setTimerActive({
+                timerActive: !timerActive
             });
         }
     }
 
-    componentDidMount() {
-        this.generateQuestions(this.props.length);
-    }
-
-    generateQuestions = () => {
+    const generateQuestions = () => {
         let key=0;
         let questionList=[];
 
-        this.setState({
-            questionMax: this.props.length === "long" ? 12 :
-                         this.props.length === "medium" ? 8 :
-                         this.props.length === "short" ? 4 : 8
-        });
+        setQuestionMax(length === "long" ? 12 : length === "medium" ? 8 : length === "short" ? 4 : 8);
 
-        for (let category of this.props.categories) {
+        for (let category of categories) {
             switch (category) {
                 case "HTML/CSS":
-                    questionList.push(...this.props.htmlcss);
+                    questionList.push(...htmlcss);
                     break;
                 case "JavaScript":
-                    questionList.push(...this.props.javascript);
+                    questionList.push(...javascript);
                     break;
                 case "React":
-                    questionList.push(...this.props.react);
+                    questionList.push(...react);
                     break;
                 case "Programming":
-                    questionList.push(...this.props.programming);
+                    questionList.push(...programming);
                     break;
                 default:
                     alert("No categories selected! Please start test again.");
             }
         }
 
-        for (let q=0; q < (this.props.length === "long" ? 12 :
-                            this.props.length === "medium" ? 8 :
-                            this.props.length === "short" ? 4 : 8); q++) {
+        for (let q=0; q < (length === "long" ? 12 :
+                            length === "medium" ? 8 :
+                            length === "short" ? 4 : 8); q++) {
             let randomQuestionIdx = Math.floor(Math.random()*questionList.length);
             let randomQuestion = Object.assign({}, questionList[randomQuestionIdx]);
             key++;
-            this.props.addQuestion(
+            addQuestion(
                 key, 
                 randomQuestion.question,
                 randomQuestion.answer,
@@ -137,207 +128,191 @@ class Test extends Component {
         };
     };
 
-    allQuestions = () => {
-        let lastQuestion = this.state.questionNum === this.state.questionMax;
-        let currentQuestion = this.props.questions[this.state.questionNum];
+    const allQuestions = () => {
+        let lastQuestion = questionNum === questionMax;
+        let currentQuestion = questions[questionNum];
 
         return (
             <Fragment>
-                 {this.state.questionNum === 11 && 
+                 {questionNum === 11 && 
                     <QuestionAnswer 
-                        category={currentQuestion.category}
                         lastQuestion={lastQuestion}
                         question={currentQuestion}
-                        prev={this.questionPrev} 
-                        next={this.questionNext} 
-                        addAnswer={this.props.addAnswer} 
-                        resetFeedbackForm={this.props.resetFeedbackForm}
+                        prev={questionPrev} 
+                        next={questionNext} 
+                        addAnswer={addAnswer} 
+                        resetFeedbackForm={resetFeedbackForm}
                     />}
-                {this.state.questionNum === 10 && 
+                {questionNum === 10 && 
                     <QuestionAnswer 
-                        category={currentQuestion.category}
                         lastQuestion={lastQuestion}
                         question={currentQuestion}
-                        prev={this.questionPrev} 
-                        next={this.questionNext} 
-                        addAnswer={this.props.addAnswer} 
-                        resetFeedbackForm={this.props.resetFeedbackForm}
+                        prev={questionPrev} 
+                        next={questionNext} 
+                        addAnswer={addAnswer} 
+                        resetFeedbackForm={resetFeedbackForm}
                     />}
-                {this.state.questionNum === 9 && 
+                {questionNum === 9 && 
                     <QuestionAnswer 
-                        category={currentQuestion.category}
                         lastQuestion={lastQuestion}
                         question={currentQuestion}
-                        prev={this.questionPrev} 
-                        next={this.questionNext} 
-                        addAnswer={this.props.addAnswer} 
-                        resetFeedbackForm={this.props.resetFeedbackForm}
+                        prev={questionPrev} 
+                        next={questionNext} 
+                        addAnswer={addAnswer} 
+                        resetFeedbackForm={resetFeedbackForm}
                     />}
-                {!lastQuestion && this.state.questionNum === 8 && 
+                {!lastQuestion && questionNum === 8 && 
                     <QuestionAnswer 
-                        category={currentQuestion.category}
                         lastQuestion={lastQuestion}
                         question={currentQuestion}
-                        prev={this.questionPrev} 
-                        next={this.questionNext} 
-                        addAnswer={this.props.addAnswer} 
-                        resetFeedbackForm={this.props.resetFeedbackForm}
+                        prev={questionPrev} 
+                        next={questionNext} 
+                        addAnswer={addAnswer} 
+                        resetFeedbackForm={resetFeedbackForm}
                     />}
-                {this.state.questionNum === 7 && 
+                {questionNum === 7 && 
                     <QuestionAnswer 
-                        category={currentQuestion.category}
                         lastQuestion={lastQuestion}
                         question={currentQuestion}
-                        prev={this.questionPrev} 
-                        next={this.questionNext} 
-                        addAnswer={this.props.addAnswer} 
-                        resetFeedbackForm={this.props.resetFeedbackForm}
+                        prev={questionPrev} 
+                        next={questionNext} 
+                        addAnswer={addAnswer} 
+                        resetFeedbackForm={resetFeedbackForm}
                     />}
-                {this.state.questionNum === 6 && 
+                {questionNum === 6 && 
                     <QuestionAnswer 
-                        category={currentQuestion.category}
                         lastQuestion={lastQuestion}
                         question={currentQuestion}
-                        prev={this.questionPrev} 
-                        next={this.questionNext} 
-                        addAnswer={this.props.addAnswer} 
-                        resetFeedbackForm={this.props.resetFeedbackForm}
+                        prev={questionPrev} 
+                        next={questionNext} 
+                        addAnswer={addAnswer} 
+                        resetFeedbackForm={resetFeedbackForm}
                     />}
-                {this.state.questionNum === 5 && 
+                {questionNum === 5 && 
                     <QuestionAnswer 
-                        category={currentQuestion.category}
                         lastQuestion={lastQuestion}
                         question={currentQuestion}
-                        prev={this.questionPrev} 
-                        next={this.questionNext} 
-                        addAnswer={this.props.addAnswer} 
-                        resetFeedbackForm={this.props.resetFeedbackForm}
+                        prev={questionPrev} 
+                        next={questionNext} 
+                        addAnswer={addAnswer} 
+                        resetFeedbackForm={resetFeedbackForm}
                     />}
-                {!lastQuestion && this.state.questionNum === 4 && 
+                {!lastQuestion && questionNum === 4 && 
                     <QuestionAnswer 
-                        category={currentQuestion.category}
                         lastQuestion={lastQuestion}
                         question={currentQuestion}
-                        prev={this.questionPrev} 
-                        next={this.questionNext} 
-                        addAnswer={this.props.addAnswer} 
-                        resetFeedbackForm={this.props.resetFeedbackForm}
+                        prev={questionPrev} 
+                        next={questionNext} 
+                        addAnswer={addAnswer} 
+                        resetFeedbackForm={resetFeedbackForm}
                     />}
-                {this.state.questionNum === 3 && 
+                {questionNum === 3 && 
                     <QuestionAnswer 
-                        category={currentQuestion.category}
                         lastQuestion={lastQuestion}
                         question={currentQuestion}
-                        prev={this.questionPrev} 
-                        next={this.questionNext} 
-                        addAnswer={this.props.addAnswer} 
-                        resetFeedbackForm={this.props.resetFeedbackForm}
+                        prev={questionPrev} 
+                        next={questionNext} 
+                        addAnswer={addAnswer} 
+                        resetFeedbackForm={resetFeedbackForm}
                     />}
-                {this.state.questionNum === 2 && 
+                {questionNum === 2 && 
                     <QuestionAnswer 
-                        category={currentQuestion.category}
                         lastQuestion={lastQuestion}
                         question={currentQuestion}
-                        prev={this.questionPrev} 
-                        next={this.questionNext} 
-                        addAnswer={this.props.addAnswer} 
-                        resetFeedbackForm={this.props.resetFeedbackForm}
+                        prev={questionPrev} 
+                        next={questionNext} 
+                        addAnswer={addAnswer} 
+                        resetFeedbackForm={resetFeedbackForm}
                     />}
-                {this.state.questionNum === 1 && 
+                {questionNum === 1 && 
                     <QuestionAnswer 
-                        category={currentQuestion.category}
                         lastQuestion={lastQuestion}
                         question={currentQuestion}
-                        prev={this.questionPrev} 
-                        next={this.questionNext} 
-                        addAnswer={this.props.addAnswer} 
-                        resetFeedbackForm={this.props.resetFeedbackForm}
+                        prev={questionPrev} 
+                        next={questionNext} 
+                        addAnswer={addAnswer} 
+                        resetFeedbackForm={resetFeedbackForm}
                     />}
-                {this.state.questionNum === 0 && 
+                {questionNum === 0 && 
                     <QuestionAnswer 
-                        category={currentQuestion.category}
                         lastQuestion={lastQuestion}
                         question={currentQuestion}
-                        prev={this.questionPrev} 
-                        next={this.questionNext} 
-                        addAnswer={this.props.addAnswer} 
-                        resetFeedbackForm={this.props.resetFeedbackForm}
+                        prev={questionPrev} 
+                        next={questionNext} 
+                        addAnswer={addAnswer} 
+                        resetFeedbackForm={resetFeedbackForm}
                     />}
             </Fragment>
         );
     }
 
-    render() {
-        const { showAnswer, timerActive, questionMax, questionNum } = this.state;
-
-        return (
-            <div className="test">
-                <Container>
-                    <div className="dark-overlay"></div>
-                    <FadeTransform
-                    in
-                    duration = {300}
-                    transformProps={{
-                        exitTransform: 'scale(0.5) translateY(50%)'
-                    }}>
-                        <Row>
-                            <Col sm={{ size: 10, offset: 1 }}>
-                                <Row>
-                                    <Col className="test-timer">
-                                        <Timer 
-                                            active={timerActive} 
-                                            duration={null} 
-                                            className="h4"
-                                            onTimeUpdate={this.onTimerTimeUpdate}
-                                        >
-                                                <i className="fas fa-stopwatch" />
-                                                <span>  </span>
-                                                <Timecode />
-                                        </Timer>
+    return (
+        <div className="test">
+            <Container>
+                <div className="dark-overlay"></div>
+                <FadeTransform
+                in
+                duration = {300}
+                transformProps={{
+                    exitTransform: 'scale(0.5) translateY(50%)'
+                }}>
+                    <Row>
+                        <Col sm={{ size: 10, offset: 1 }}>
+                            <Row>
+                                <Col className="test-timer">
+                                    <Timer 
+                                        active={timerActive} 
+                                        duration={null} 
+                                        className="h4"
+                                        onTimeUpdate={onTimerTimeUpdate}
+                                    >
+                                            <i className="fas fa-stopwatch" />
+                                            <span>  </span>
+                                            <Timecode />
+                                    </Timer>
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col sm={{ size: 10, offset: 1 }}>
+                                    <Progress animated className="progress" color="success" value={(questionNum / questionMax) * 100}>{questionNum}/{questionMax}</Progress>
+                                </Col>
+                            </Row>
+                            { showAnswer ? 
+                                <Fragment>
+                                    {allQuestions()}
+                                </Fragment> : 
+                                <Button color="primary" onClick={() => 
+                                    hideComponent()
+                                }>START</Button>
+                            }
+                            { questionNum === questionMax ?
+                                <Fragment>
+                                    <Col xs={12} className="justify-content-center d-flex mt-5">
+                                        <Button 
+                                            type="button"
+                                            outline
+                                            id="answer-back"
+                                            onClick={questionPrev}
+                                        >Go Back</Button>
                                     </Col>
-                                </Row>
-                                <Row>
-                                    <Col sm={{ size: 10, offset: 1 }}>
-                                        <Progress animated className="progress" color="success" value={(questionNum / questionMax) * 100}>{questionNum}/{questionMax}</Progress>
-                                    </Col>
-                                </Row>
-                                { showAnswer ? 
-                                    <Fragment>
-                                        {this.allQuestions()}
-                                    </Fragment> : 
-                                    <Button color="primary" onClick={() => 
-                                        this.hideComponent()
-                                    }>START</Button>
-                                }
-                                { questionNum === questionMax ?
-                                    <Fragment>
-                                        <Col xs={12} className="justify-content-center d-flex mt-5">
+                                    <Col xs={12} className="justify-content-center d-flex">
+                                        <Link to="/mico/results">
                                             <Button 
                                                 type="button"
-                                                outline
-                                                id="answer-back"
-                                                onClick={this.questionPrev}
-                                            >Go Back</Button>
-                                        </Col>
-                                        <Col xs={12} className="justify-content-center d-flex">
-                                            <Link to="/mico/results">
-                                                <Button 
-                                                    type="button"
-                                                    color="primary"
-                                                    id="answer-submit"
-                                                    onClick={this.testSubmitted}
-                                                >Submit Test</Button>
-                                            </Link>
-                                        </Col>
-                                    </Fragment>  : ''
-                                }
-                            </Col>
-                        </Row>
-                    </FadeTransform>
-                </Container>
-            </div>
-        );
-    }
+                                                color="primary"
+                                                id="answer-submit"
+                                                onClick={testSubmitted}
+                                            >Submit Test</Button>
+                                        </Link>
+                                    </Col>
+                                </Fragment>  : ''
+                            }
+                        </Col>
+                    </Row>
+                </FadeTransform>
+            </Container>
+        </div>
+    );
 }
   
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Test));
