@@ -17,11 +17,9 @@ const validEmail = val => /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val);
 export default class Contribute extends Component {
     constructor(props) {
         super(props);
-
         this.state = {
             Name: '',
             email: '',
-            agree: false,
             question: '',
             answer: '',
             source: '',
@@ -34,12 +32,9 @@ export default class Contribute extends Component {
                 source: false
             }
         };
-      
-        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    // Placeholder
-    handleSubmit(values) {
+    handleSubmit = (values) => {
         //console.log("Current state is: " + JSON.stringify(values));
         //alert("Current state is: " + JSON.stringify(values));
         alert("Sorry, functionality is not yet implemented!");
@@ -51,12 +46,6 @@ export default class Contribute extends Component {
             visible: false
         });
     }
-
-    toggle() {
-        this.setState({
-          popoverOpen: !this.state.popoverOpen
-        });
-      }
 
     render() {
         return (
