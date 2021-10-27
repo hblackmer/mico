@@ -38,16 +38,14 @@ function Test ({timer, test, categories, length,
     const [timerActive, setTimerActive] = useState(false);
     const [time, setTime] = useState(false);
     const [questionNum, setQuestionNum] = useState(0);
-    const [questionMax, setQuestionMax] = useState(7);
+    const [questionMax, setQuestionMax] = useState(8);
 
     useEffect(() => {
         generateQuestions(length);
     }, []);
 
     const onTimerTimeUpdate = ({time}) => {
-        setTime ({
-            time: time
-        });
+        setTime (time);
     }
 
     const testSubmitted = () => {
@@ -59,19 +57,13 @@ function Test ({timer, test, categories, length,
     const questionPrev = () => {
         if (questionNum > 0) {
             setQuestionNum(prevQuestionNum => prevQuestionNum - 1);
-            setTimerActive({
-                timerActive: !timerActive
-            });
+            setTimerActive(!timerActive);
         }
     }
 
     const hideComponent = () => {
-        setShowAnswer({
-            showAnswer: !showAnswer
-        });
-        setTimerActive({
-            timerActive: true
-        });
+        setShowAnswer(!showAnswer);
+        setTimerActive(true);
     }
 
     const questionNext = () => {
@@ -79,9 +71,7 @@ function Test ({timer, test, categories, length,
             setQuestionNum(prevQuestionNum => prevQuestionNum + 1);
         }
         if (questionNum === questionMax-1) {
-            setTimerActive({
-                timerActive: !timerActive
-            });
+            setTimerActive(!timerActive);
         }
     }
 
@@ -110,9 +100,7 @@ function Test ({timer, test, categories, length,
             }
         }
 
-        for (let q=0; q < (length === "long" ? 12 :
-                            length === "medium" ? 8 :
-                            length === "short" ? 4 : 8); q++) {
+        for (let q=0; q < (length === "long" ? 12 : length === "medium" ? 8 : length === "short" ? 4 : 8); q++) {
             let randomQuestionIdx = Math.floor(Math.random()*questionList.length);
             let randomQuestion = Object.assign({}, questionList[randomQuestionIdx]);
             key++;
