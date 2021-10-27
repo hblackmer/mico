@@ -269,8 +269,11 @@ function Test ({timer, test, categories, length,
                                 <Fragment>
                                     {allQuestions()}
                                 </Fragment> : 
-                                <Button color="primary" onClick={() => 
-                                    hideComponent()
+                                <Button 
+                                    color="primary" 
+                                    type="button"
+                                    onClick={() => 
+                                        hideComponent()
                                 }>START</Button>
                             }
                             { questionNum === questionMax ?

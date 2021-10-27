@@ -43,7 +43,7 @@ export default function Answer ({id, answer, prev, next, submit, lastQuestion, a
                             ><i className="far fa-caret-square-left" />
                         </Button>
                         <Button
-                            type="submit"
+                            type="button"
                             className="answer-arrow bg-transparent text-success"
                             onClick={next}
                             ><i className="far fa-caret-square-right" />
