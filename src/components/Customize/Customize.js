@@ -73,7 +73,7 @@ export default function Customize ({ isModalOpen, toggleModal, categories, lengt
     });
 
     return (
-        <Modal isOpen={isModalOpen} toggleModal={toggleModal}>
+        <Modal isOpen={isModalOpen} toggle={toggleModal}>
             <ModalHeader toggle={toggleModal}> 
                 Test Customization
             </ModalHeader>

@@ -68,7 +68,6 @@ export default function Results ({time, test}) {
             <FadeTransform
             in
             duration={200}
-            timingFn='ease-in-out'
             transformProps={{
                 exitTransform: 'scale(0.5) translateY(-50%)'
             }}>
@@ -84,7 +83,7 @@ export default function Results ({time, test}) {
                 </Row>
             </FadeTransform>
             <Row id="results" className="justify-content-center">
-                <Stagger in duration={600} timingFn='ease-in-out'>
+                <Stagger in duration={600}>
                     {test.map(createQuestion)}
                 </Stagger>
                 <Col xs={12} className="justify-content-center d-flex">
