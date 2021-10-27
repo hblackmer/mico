@@ -41,26 +41,21 @@ class Test extends Component {
           questionNum: 0,
           questionMax: 7
         };
-        this.testSubmitted = this.testSubmitted.bind(this);
-        this.questionPrev = this.questionPrev.bind(this);
-        this.questionNext = this.questionNext.bind(this);
-        this.hideComponent = this.hideComponent.bind(this);
-        this.onTimerTimeUpdate = this.onTimerTimeUpdate.bind(this);
     }
 
-    onTimerTimeUpdate({time}) {
+    onTimerTimeUpdate = ({time}) => {
         this.setState({
             time: time
         });
     }
 
-    testSubmitted() {
+    testSubmitted = () => {
         this.props.resetFeedbackForm();
         this.props.timer(this.state.time);
         this.props.test(this.props.questions);
     }
 
-    questionPrev() {
+    questionPrev = () => {
         if (this.state.questionNum > 0) {
             this.setState(prevState => {
                 return {
@@ -71,7 +66,14 @@ class Test extends Component {
         }
     }
 
-    questionNext() {
+    hideComponent = () => {
+        this.setState({
+            showAnswer: !this.state.showAnswer,
+            timerActive: true,
+        });
+    }
+
+    questionNext = () => {
         if (this.state.questionNum < this.state.questionMax) {
             this.setState(prevState => {
                 return {questionNum: prevState.questionNum + 1}
@@ -82,13 +84,6 @@ class Test extends Component {
                 timerActive: !this.state.timerActive
             });
         }
-    }
-
-    hideComponent() {
-        this.setState({
-            showAnswer: !this.state.showAnswer,
-            timerActive: true,
-        });
     }
 
     componentDidMount() {
