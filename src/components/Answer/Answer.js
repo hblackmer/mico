@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { useState } from 'react';
 import {
     Button,
     Row, Col,
@@ -7,7 +7,7 @@ import {
 import { Control, Form } from 'react-redux-form';
 import './Answer.css';
 
-function Answer ({id, answer, prev, next, submit, lastQuestion, addAnswer}) {
+export default function Answer ({id, answer, prev, next, submit, lastQuestion, addAnswer}) {
     const [value, setValue] = useState(answer);
 
     const handleInputChange = (event) => {
@@ -53,6 +53,4 @@ function Answer ({id, answer, prev, next, submit, lastQuestion, addAnswer}) {
             </Row>
         </Form>
     );
-}
-  
-export default Answer;  
+} 
