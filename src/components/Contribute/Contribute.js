@@ -3,6 +3,7 @@ import {
     Button,
     Label,
     Container, Row, Col,
+    Alert,
 } from 'reactstrap';
 import { Control, LocalForm, Errors } from 'react-redux-form';
 import { FadeTransform } from 'react-animation-components';
@@ -24,6 +25,7 @@ export default class Contribute extends Component {
             question: '',
             answer: '',
             source: '',
+            visible : 'true',
             touched: {
                 name: false,
                 email: false,
@@ -43,12 +45,31 @@ export default class Contribute extends Component {
         alert("Sorry, functionality is not yet implemented!");
     }
 
+
+    onDismiss = () => {
+        this.setState({
+            visible: false
+        });
+    }
+
+    toggle() {
+        this.setState({
+          popoverOpen: !this.state.popoverOpen
+        });
+      }
+
     render() {
         return (
             <Container className="Contribute px-lg-5">
                 <h2 className="text-white text-center" id="contribute">Contribute</h2>
                 <p className="text-center" id="contribute-subtitle">Support Mico by contributing questions, thank you!</p>
-                <p className="text-danger text-center">[Sorry, feature not yet supported. Please <a href="https://www.linkedin.com/in/hblackmer/" rel="noopener noreferrer" target="_blank" className="text-danger font-weight-bold">contact me via LinkedIn</a> in the meantime!]</p>
+                <Row>
+                    <Col md={{size: 6, offset:3}}>
+                        <Alert color="danger text-center" isOpen={this.state.visible} toggle={this.onDismiss}>
+                            Sorry, feature not yet supported. <br/> Please <a href="https://www.linkedin.com/in/hblackmer/" className="alert-link">contact me via LinkedIn</a> in the meantime!
+                        </Alert>
+                    </Col>
+                </Row>
                 <FadeTransform
                 in
                 duration = {300}
@@ -168,11 +189,11 @@ export default class Contribute extends Component {
                                     </Col>
                                 </Row>
                                 <Row className="form-group">
-                                    <Col md={{size: 10, offset: 2}}>
+                                    <Col md={{size: 10, offset: 2}} className="justify-content-center d-flex">
                                         <Button
                                             type="submit"
                                             color="primary">
-                                            Send Question
+                                            Submit Question
                                         </Button>
                                     </Col>
                                 </Row>
