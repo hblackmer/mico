@@ -7,6 +7,13 @@ import Timecode from 'react-timecode';
 import { FadeTransform, Fade, Stagger } from 'react-animation-components';
 import './Results.css';
 import ReactToPrint from 'react-to-print';
+import { connect } from 'react-redux';
+
+const mapStateToProps = state => {
+    return {
+        test: state.questions
+    };
+};
 
 const PrintQuestions = React.forwardRef(({test}, ref) => {
     return (
@@ -101,7 +108,7 @@ const CreateQuestion = ({test}) => {
 };
 
 
-export default function Results ({time, test}) {
+function Results ({time, test}) {
     const componentRef = useRef();
 
     const handleNewClick = () => {
@@ -155,3 +162,5 @@ export default function Results ({time, test}) {
         </Container>
     );
 }
+
+export default connect(mapStateToProps, null)(Results);

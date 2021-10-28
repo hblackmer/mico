@@ -31,7 +31,7 @@ const mapDispatchToProps = {
     resetFeedbackForm: () => (actions.reset('feedbackForm'))
 };
 
-function Test ({timer, test, categories, length, 
+function Test ({timer, categories, length, 
                 htmlcss, javascript, programming, react, questions,
                 addQuestion, addAnswer, resetFeedbackForm }) {
     const [showAnswer, setShowAnswer] = useState(false);
@@ -51,7 +51,6 @@ function Test ({timer, test, categories, length,
     const testSubmitted = () => {
         resetFeedbackForm();
         timer(time);
-        test(questions);
     }
 
     const questionPrev = () => {

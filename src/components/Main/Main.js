@@ -15,14 +15,12 @@ class Main extends Component {
             isNavOpen: false,
             isModalOpen: false,
             time: 0,
-            test: [],
             categories: [],
             length: "medium"
         };
         this.toggleNav = this.toggleNav.bind(this);
         this.toggleModal = this.toggleModal.bind(this);
         this.timer = this.timer.bind(this);
-        this.test = this.test.bind(this);
         this.categories = this.categories.bind(this);
         this.length = this.length.bind(this);
     }
@@ -42,12 +40,6 @@ class Main extends Component {
     timer(time) {
         this.setState({
             time: time
-        });
-    }
-
-    test(test) {
-        this.setState({
-            test: test
         });
     }
 
@@ -89,7 +81,6 @@ class Main extends Component {
                             render={() =>
                                 <Test 
                                     timer={this.timer}
-                                    test={this.test}
                                     length={this.state.length}
                                     categories={this.state.categories}
                                 />
@@ -99,7 +90,6 @@ class Main extends Component {
                             render={() => 
                                 <Results
                                     time={this.state.time}
-                                    test={this.state.test}
                                 />
                             } />
                         <Redirect to='/mico/' />
