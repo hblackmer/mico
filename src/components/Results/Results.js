@@ -18,39 +18,20 @@ const mapStateToProps = state => {
 const PrintQuestions = React.forwardRef(({test}, ref) => {
     return (
         <div ref={ref}>
-            {test.map(({question, answer, category}, idx) =>
-                <Col xs={12}>
-                    <h4 className="text-black">Question #{idx+1} (
-                        {(category === "css") ?
-                            <span className="h5">
-                                <i className="fab fa-css3-alt" /> CSS
-                            </span> : 
-                        (category === "html") ?
-                            <span className="h5">
-                                <i className="fa-html5" /> HTML
-                            </span> :
-                        (category === "javascript") ?
-                            <span className="h5">
-                                <i className="fab fa-js-square" /> JavaScript
-                            </span> :
-                        (category === "programming") ?
-                            <span className="h5">
-                                <i className="fab fa-js-square" /> Programming
-                            </span> : 
-                        (category === "react") ?
-                            <span className="h5">
-                                <i className="fab fa-react" /> React
-                            </span> : '' })
-                    </h4>
-                    <p className="text-text-black">
+            {test.map(({question, answer, category}) =>
+                <Col xs={12} className="text-black">
+                    <strong><span>
+                        {(category === "css") ? "CSS: " :
+                            (category === "html") ? "HTML: " : 
+                            (category === "javascript") ? "JavaScript: " :
+                            (category === "programming") ? "Programming: " :
+                            (category === "react") ? "React: " : ''}
                         {question}
-                    </p>
-                    <p className="text-text-black">
-                        <strong>Your Answer: </strong>
-                        <br />
+                    </span></strong>
+                    <p>
                         {answer}
+                        <br />
                     </p>
-                    <hr size="10" width="100%" color="grey" />
                 </Col>
             )}
         </div>
