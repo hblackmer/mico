@@ -8,6 +8,7 @@ import { HtmlCss } from './htmlcss';
 import { Javascript } from './javascript';
 import { Programming } from './programming';
 import { Questions } from './questions';
+import { Customization } from './customization';
 
 export const ConfigureStore = () => {
     const store = createStore(
@@ -17,6 +18,7 @@ export const ConfigureStore = () => {
             programming: Programming,
             react: React,
             questions: Questions,
+            customization: Customization,
             ...createForms({
                 feedbackForm: InitialFeedback
             })

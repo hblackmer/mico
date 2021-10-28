@@ -15,19 +15,21 @@ const links = [
 const createNavItem = ({ key, href, text }) => (
     <NavItem key={key}>
         <NavTo className="nav-link" to={"/mico"+href}>
-                {text}
+            {text}
         </NavTo>
     </NavItem>
 );
 
-export default function Navigation ({ isNavOpen, toggleNav, isModalOpen, toggleModal, categories, length}) {
+export default function Navigation ({ isNavOpen, toggleNav, isModalOpen, toggleModal }) {
     return (
         <Fragment>
             <Navbar dark expand="md">
                 <NavbarBrand className="text-primary ml-2 font-weight-bold" href="/mico/">
                     MICO
                 </NavbarBrand>
-                <NavbarToggler onClick={toggleNav} />
+                <NavbarToggler
+                    onClick={toggleNav}
+                />
                 <Collapse isOpen={isNavOpen} navbar>
                     <Button 
                         outline
@@ -40,7 +42,10 @@ export default function Navigation ({ isNavOpen, toggleNav, isModalOpen, toggleM
                     </Nav>
                 </Collapse>
             </Navbar>
-            <Customize isModalOpen={isModalOpen} toggleModal={toggleModal} categories={categories} length={length} />
+            <Customize 
+                isModalOpen={isModalOpen}
+                toggleModal={toggleModal}
+            />
         </Fragment>
     );
 }

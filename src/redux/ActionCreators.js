@@ -19,3 +19,11 @@ export const addQuestion = (id, question, answer, micoAnswer, source, category) 
         category: category
     }
 });
+
+export const addCustomization = (categories, length) => ({
+    type: ActionTypes.ADD_CUSTOMIZATION,
+    payload: {
+        categories: categories,
+        length: length
+    }
+});

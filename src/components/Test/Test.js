@@ -20,7 +20,8 @@ const mapStateToProps = state => {
         javascript: state.javascript,
         programming: state.programming,
         react: state.react,
-        questions: state.questions
+        questions: state.questions,
+        customization: state.customization
     };
 };
 
@@ -31,8 +32,8 @@ const mapDispatchToProps = {
     resetFeedbackForm: () => (actions.reset('feedbackForm'))
 };
 
-function Test ({timer, categories, length, 
-                htmlcss, javascript, programming, react, questions,
+function Test ({timer,
+                htmlcss, javascript, programming, react, questions, customization,
                 addQuestion, addAnswer, resetFeedbackForm }) {
     const [showAnswer, setShowAnswer] = useState(false);
     const [timerActive, setTimerActive] = useState(false);
@@ -41,7 +42,7 @@ function Test ({timer, categories, length,
     const [questionMax, setQuestionMax] = useState(8);
 
     useEffect(() => {
-        generateQuestions(length);
+        generateQuestions(customization.length);
     }, []);
 
     const onTimerTimeUpdate = ({time}) => {
@@ -77,6 +78,8 @@ function Test ({timer, categories, length,
     const generateQuestions = () => {
         let key=0;
         let questionList=[];
+        let length=customization.length;
+        let categories=customization.categories;
 
         setQuestionMax(length === "long" ? 12 : length === "medium" ? 8 : length === "short" ? 4 : 8);
 

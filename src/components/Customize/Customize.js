@@ -5,9 +5,15 @@ import {
     Form, Input, Label,
 } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import { addCustomization } from '../../redux/ActionCreators';
+import { connect } from 'react-redux';
 import './Customize.css';
 
-export default function Customize ({ isModalOpen, toggleModal, categories, length }) {
+const mapDispatchToProps = {
+    addCustomization: (categories, length) => addCustomization(categories, length)
+};
+
+function Customize ({ isModalOpen, toggleModal, addCustomization }) {
     const [tasks, setTasks] = useState([
         {name:"HTML/CSS",category:"list1", bgcolor: "#96D1CD"},
         {name:"JavaScript", category:"list1", bgcolor: "#96D1CD"},
@@ -50,8 +56,7 @@ export default function Customize ({ isModalOpen, toggleModal, categories, lengt
             alert("No categories were selected. Defaulted to all categories.");
             selectedCategories = ["HTML/CSS", "JavaScript", "React", "Programming"];
         }
-        categories(selectedCategories);
-        length(testLength);
+        addCustomization(selectedCategories, testLength);
         toggleModal();
     }
 
@@ -151,3 +156,5 @@ export default function Customize ({ isModalOpen, toggleModal, categories, lengt
         </Modal>
     );
 }
+
+export default connect(null, mapDispatchToProps)(Customize);

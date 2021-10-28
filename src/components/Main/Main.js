@@ -12,8 +12,6 @@ function Main () {
     const [isNavOpen, setIsNavOpen] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [time, setTime] = useState(0);
-    const [categories, setCategories] = useState(["HTML/CSS", "JavaScript", "React", "Programming"]);
-    const [length, setLength] = useState("medium");
 
     const toggleNav = () => {
         setIsNavOpen(!isNavOpen);
@@ -27,14 +25,6 @@ function Main () {
         setTime(time);
     }
 
-    const handleCategories = (categories) => {
-        setCategories(categories);
-    }
-
-    const handleLength = (length) => {
-        setLength(length);
-    }
-
     return (
         <div className="Main">
             <Navigation 
@@ -42,8 +32,6 @@ function Main () {
                 isModalOpen={isModalOpen}
                 toggleNav={toggleNav}
                 toggleModal={toggleModal}
-                categories={handleCategories}
-                length={handleLength}
             />
                 <Switch>
                     <Route exact path='/mico/'
@@ -51,8 +39,6 @@ function Main () {
                             <Showcase 
                                 toggleNav={toggleNav}
                                 toggleModal={toggleModal}
-                                categories={handleCategories}
-                                length={handleLength}
                             />
                         } />
                     <Route exact path='/mico/about' component={About} />
@@ -60,8 +46,6 @@ function Main () {
                         render={() =>
                             <Test 
                                 timer={timer}
-                                categories={categories}
-                                length={length}
                             />
                         } />
                     <Route exact path='/mico/contribute' component={Contribute} />
