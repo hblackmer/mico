@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import Navigation from '../Navigation/Navigation';
 import Showcase from '../Showcase/Showcase';
@@ -8,97 +8,75 @@ import Test from '../Test/Test';
 import Contribute from '../Contribute/Contribute';
 import Results from '../Results/Results';
 
-class Main extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            isNavOpen: false,
-            isModalOpen: false,
-            time: 0,
-            categories: [],
-            length: "medium"
-        };
-        this.toggleNav = this.toggleNav.bind(this);
-        this.toggleModal = this.toggleModal.bind(this);
-        this.timer = this.timer.bind(this);
-        this.categories = this.categories.bind(this);
-        this.length = this.length.bind(this);
+function Main () {
+    const [isNavOpen, setIsNavOpen] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [time, setTime] = useState(0);
+    const [categories, setCategories] = useState(["HTML/CSS", "JavaScript", "React", "Programming"]);
+    const [length, setLength] = useState("medium");
+
+    const toggleNav = () => {
+        setIsNavOpen(!isNavOpen);
     }
 
-    toggleNav() {
-        this.setState({
-            isNavOpen: !this.state.isNavOpen
-        });
+    const toggleModal = () => {
+        setIsModalOpen(!isModalOpen);
     }
 
-    toggleModal() {
-        this.setState({
-            isModalOpen: !this.state.isModalOpen
-        });
+    const timer = () => {
+        setTime(time);
     }
 
-    timer(time) {
-        this.setState({
-            time: time
-        });
+    const handleCategories = (categories) => {
+        setCategories(categories);
     }
 
-    categories(categories) {
-        this.setState({
-            categories: categories
-        });
+    const handleLength = (length) => {
+        setLength(length);
     }
 
-    length(length) {
-        this.setState({
-            length: length
-        });
-    }
-
-    render() {
-        return (
-            <div className="Main">
-                <Navigation 
-                    isNavOpen={this.state.isNavOpen}
-                    isModalOpen={this.state.isModalOpen}
-                    toggleNav={this.toggleNav}
-                    toggleModal={this.toggleModal}
-                    categories={this.categories}
-                    length={this.length}
-                />
-                    <Switch>
-                        <Route exact path='/mico/'
-                            render={() =>
-                                <Showcase 
-                                    toggleNav={this.toggleNav}
-                                    toggleModal={this.toggleModal}
-                                    categories={this.categories}
-                                    length={this.length}
-                                />
-                            } />
-                        <Route exact path='/mico/about' component={About} />
-                        <Route exact path='/mico/test'
-                            render={() =>
-                                <Test 
-                                    timer={this.timer}
-                                    length={this.state.length}
-                                    categories={this.state.categories}
-                                />
-                            } />
-                        <Route exact path='/mico/contribute' component={Contribute} />
-                        <Route exact path='/mico/results' 
-                            render={() => 
-                                <Results
-                                    time={this.state.time}
-                                />
-                            } />
-                        <Redirect to='/mico/' />
-                        <Showcase />
-                    </Switch>
-                <Footer />
-            </div>
-        );
-    }
+    return (
+        <div className="Main">
+            <Navigation 
+                isNavOpen={isNavOpen}
+                isModalOpen={isModalOpen}
+                toggleNav={toggleNav}
+                toggleModal={toggleModal}
+                categories={handleCategories}
+                length={handleLength}
+            />
+                <Switch>
+                    <Route exact path='/mico/'
+                        render={() =>
+                            <Showcase 
+                                toggleNav={toggleNav}
+                                toggleModal={toggleModal}
+                                categories={handleCategories}
+                                length={handleLength}
+                            />
+                        } />
+                    <Route exact path='/mico/about' component={About} />
+                    <Route exact path='/mico/test'
+                        render={() =>
+                            <Test 
+                                timer={timer}
+                                categories={categories}
+                                length={length}
+                            />
+                        } />
+                    <Route exact path='/mico/contribute' component={Contribute} />
+                    <Route exact path='/mico/results' 
+                        render={() => 
+                            <Results
+                                time={time}
+                            />
+                        } />
+                    <Redirect to='/mico/' />
+                    <Showcase />
+                </Switch>
+            <Footer />
+        </div>
+    );
 }
   
 export default withRouter(Main);  
