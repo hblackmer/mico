@@ -26,6 +26,7 @@
     "react-scripts": "^4.0.3",
     "react-timecode": "^1.2.0",
     "react-timer-wrapper": "^0.4.1",
+    "react-to-print": "^2.14.0",
     "react-transition-group": "4.4.1",
     "reactstrap": "8.5.1",
     "redux": "4.0.5",

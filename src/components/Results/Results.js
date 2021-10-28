@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useRef } from 'react';
 import {
     Button,
     Container, Row, Col,
@@ -6,13 +6,14 @@ import {
 import Timecode from 'react-timecode';
 import { FadeTransform, Fade, Stagger } from 'react-animation-components';
 import './Results.css';
+import ReactToPrint from 'react-to-print';
 
-function CreateQuestion ( {test} ) {
+const PrintQuestions = React.forwardRef(({test}, ref) => {
     return (
-        <Fragment>
-            {test.map(({question, answer, source, category}, idx) =>
+        <div ref={ref}>
+            {test.map(({question, answer, category}, idx) =>
                 <Col xs={12}>
-                    <h4 className="text-primary">Question #{idx+1} (
+                    <h4 className="text-black">Question #{idx+1} (
                         {(category === "css") ?
                             <span className="h5">
                                 <i className="fab fa-css3-alt" /> CSS
@@ -34,31 +35,74 @@ function CreateQuestion ( {test} ) {
                                 <i className="fab fa-react" /> React
                             </span> : '' })
                     </h4>
-                    <p className="text-success">
+                    <p className="text-text-black">
                         {question}
                     </p>
-                    <p className="text-white">
+                    <p className="text-text-black">
                         <strong>Your Answer: </strong>
                         <br />
                         {answer}
                     </p>
-                    {source && <Button 
-                        className="resources-button"
-                        color="success"
-                        href={source}
-                        target="_blank"
-                    >Resources</Button>}
                     <hr size="10" width="100%" color="grey" />
                 </Col>
             )}
+        </div>
+    );
+});
+
+const CreateQuestion = ({test}) => {
+    return (
+        <Fragment>
+            {test.map(({question, answer, source, category}, idx) =>
+                <Fade in key={idx}>
+                    <Col xs={12}>
+                        <h4 className="text-primary">Question #{idx+1} (
+                            {(category === "css") ?
+                                <span className="h5">
+                                    <i className="fab fa-css3-alt" /> CSS
+                                </span> : 
+                            (category === "html") ?
+                                <span className="h5">
+                                    <i className="fa-html5" /> HTML
+                                </span> :
+                            (category === "javascript") ?
+                                <span className="h5">
+                                    <i className="fab fa-js-square" /> JavaScript
+                                </span> :
+                            (category === "programming") ?
+                                <span className="h5">
+                                    <i className="fab fa-js-square" /> Programming
+                                </span> : 
+                            (category === "react") ?
+                                <span className="h5">
+                                    <i className="fab fa-react" /> React
+                                </span> : '' })
+                        </h4>
+                        <p className="text-success">
+                            {question}
+                        </p>
+                        <p className="text-white">
+                            <strong>Your Answer: </strong>
+                            <br />
+                            {answer}
+                        </p>
+                        {source && <Button 
+                            className="resources-button"
+                            color="success"
+                            href={source}
+                            target="_blank"
+                        >Resources</Button>}
+                        <hr size="10" width="100%" color="grey" />
+                    </Col>
+                </Fade>
+            )}
         </Fragment>
     );
-}
+};
+
 
 export default function Results ({time, test}) {
-    const handleClick = () => {
-        alert("Sorry, not yet available!");
-    }
+    const componentRef = useRef();
 
     const handleNewClick = () => {
         alert("Sorry, not yet available! Please refresh to reset!");
@@ -78,19 +122,23 @@ export default function Results ({time, test}) {
                         <i className="fas fa-stopwatch" /> <Timecode time={time} />
                     </Col>
                     <Col>
-                        <Button className="print-button mb-3 text-center text-white mx-5" onClick={handleClick}>Print
-                            <span className="print-icon"></span>
-                        </Button>
+                        <ReactToPrint
+                            trigger={() => 
+                                <Button className="print-button mb-3 text-center text-white mx-5">Print
+                                    <span className="print-icon"></span>
+                                </Button>}
+                            content={() => componentRef.current}
+                        />
                     </Col>
                 </Row>
             </FadeTransform>
             <Row id="results" className="justify-content-center">
                 <Stagger in duration={600}>
-                    <CreateQuestion 
-                        test={test}
-                        
-                    />
+                    <CreateQuestion ref={componentRef} test={test} />
                 </Stagger>
+                <div style={{ display: "none" }}>
+                    <PrintQuestions ref={componentRef} test={test} />
+                </div>
                 <Col xs={12} className="justify-content-center d-flex">
                     <Button
                         className="results-button"
