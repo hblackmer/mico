@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import {
     Button,
     Container, Row, Col,
@@ -7,18 +7,10 @@ import Timecode from 'react-timecode';
 import { FadeTransform, Fade, Stagger } from 'react-animation-components';
 import './Results.css';
 
-export default function Results ({time, test}) {
-    const handleClick = () => {
-        alert("Sorry, not yet available!");
-    }
-
-    const handleNewClick = () => {
-        alert("Sorry, not yet available! Please refresh to reset!");
-    }
-
-    const createQuestion = ({ id, question, answer, micoAnswer, source, category}, idx) => {
-        return (
-            <Fade in key={idx}>
+function CreateQuestion ( {test} ) {
+    return (
+        <Fragment>
+            {test.map(({question, answer, source, category}, idx) =>
                 <Col xs={12}>
                     <h4 className="text-primary">Question #{idx+1} (
                         {(category === "css") ?
@@ -55,11 +47,21 @@ export default function Results ({time, test}) {
                         color="success"
                         href={source}
                         target="_blank"
-                     >Resources</Button>}
+                    >Resources</Button>}
                     <hr size="10" width="100%" color="grey" />
                 </Col>
-            </Fade>
-        );
+            )}
+        </Fragment>
+    );
+}
+
+export default function Results ({time, test}) {
+    const handleClick = () => {
+        alert("Sorry, not yet available!");
+    }
+
+    const handleNewClick = () => {
+        alert("Sorry, not yet available! Please refresh to reset!");
     }
 
     return (
@@ -84,7 +86,10 @@ export default function Results ({time, test}) {
             </FadeTransform>
             <Row id="results" className="justify-content-center">
                 <Stagger in duration={600}>
-                    {test.map(createQuestion)}
+                    <CreateQuestion 
+                        test={test}
+                        
+                    />
                 </Stagger>
                 <Col xs={12} className="justify-content-center d-flex">
                     <Button
