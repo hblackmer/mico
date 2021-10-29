@@ -136,7 +136,8 @@ function Results ({time, test}) {
                     <Button 
                         className="results-button"
                         color="primary"
-                        onClick={handleNewClick}
+                        type="button"
+                        href="/"
                     >New Test</Button>
                 </Col>
             </Row>
