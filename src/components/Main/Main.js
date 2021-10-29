@@ -21,7 +21,7 @@ function Main () {
         setIsModalOpen(!isModalOpen);
     }
 
-    const timer = () => {
+    const timer = (time) => {
         setTime(time);
     }
 
