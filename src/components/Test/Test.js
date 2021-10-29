@@ -37,7 +37,7 @@ function Test ({timer,
                 addQuestion, addAnswer, resetFeedbackForm }) {
     const [showAnswer, setShowAnswer] = useState(false);
     const [timerActive, setTimerActive] = useState(false);
-    const [time, setTime] = useState(false);
+    const [time, setTime] = useState(0);
     const [questionNum, setQuestionNum] = useState(0);
     const [questionMax, setQuestionMax] = useState(8);
 
