@@ -3,6 +3,7 @@ import {
     Button,
     Row, Col,
     Label,
+    UncontrolledTooltip
 } from 'reactstrap';
 import { Control, Form } from 'react-redux-form';
 import './Answer.css';
@@ -40,9 +41,13 @@ export default function Answer ({id, answer, prev, next, submit, lastQuestion, a
                             <Button 
                                 type="button" 
                                 className="answer-arrow bg-transparent text-success"
+                                id="helpToolTip"
                                 onClick={null}
                                 ><i className="far fa-question-circle" />
                             </Button>
+                            <UncontrolledTooltip placement="right" target="helpToolTip">
+                                Need help answering this question? <br/> Click here for a hint!
+                            </UncontrolledTooltip>
                         </div>
                         <div>
                             <Button
