@@ -30,7 +30,7 @@ code {
   padding: 0;
 }
 body {
-  background: linear-gradient( var(--color-extra-dark-blue) 30%, #9fa3aa);
+  background-color: var(--color-extra-dark-blue) !important;
 }
 
 /* 

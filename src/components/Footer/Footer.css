@@ -4,7 +4,7 @@
 ========================
 */
 .media_icons {
-    font-size: 3em;
+    font-size: 2em;
     color: var(--color-pink);
     margin-top: 5px;
     margin-right: 25px;
@@ -12,7 +12,7 @@
 }
 
 .hb_logo {
-    max-width: 55px;
+    max-width: 35px;
     margin-top: 5px;
     margin-right: 25px;
     transition: transform 0.5s ease 0s;

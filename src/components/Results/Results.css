@@ -3,11 +3,6 @@
         RESULTS
 ========================
 */
-#results {
-    padding: 20px;
-    background-color: var(--color-extra-dark-blue);
-}
-
 #results-header {
     font-size: 4em;
     margin-top: 50px;
