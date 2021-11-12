@@ -35,19 +35,29 @@ export default function Answer ({id, answer, prev, next, submit, lastQuestion, a
             </Row>
             <Row className="form-group mt-3">
                 {!lastQuestion &&
-                    <Col xs={12} className="justify-content-center d-flex">
-                        <Button 
-                            type="button" 
-                            className="answer-arrow bg-transparent text-success"
-                            onClick={prev}
-                            ><i className="far fa-caret-square-left" />
-                        </Button>
-                        <Button
-                            type="button"
-                            className="answer-arrow bg-transparent text-success"
-                            onClick={next}
-                            ><i className="far fa-caret-square-right" />
-                        </Button>
+                    <Col xs={12} className="d-flex justify-content-between">
+                        <div>
+                            <Button 
+                                type="button" 
+                                className="answer-arrow bg-transparent text-success"
+                                onClick={null}
+                                ><i className="far fa-question-circle" />
+                            </Button>
+                        </div>
+                        <div>
+                            <Button
+                                type="button"
+                                className="answer-arrow bg-transparent text-success"
+                                onClick={next}
+                                ><i className="far fa-caret-square-right" />
+                            </Button>
+                            <Button 
+                                type="button" 
+                                className="answer-arrow bg-transparent text-success"
+                                onClick={prev}
+                                ><i className="far fa-caret-square-left" />
+                            </Button>
+                        </div>
                     </Col>
                 }
             </Row>
