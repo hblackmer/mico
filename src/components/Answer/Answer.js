@@ -36,8 +36,8 @@ export default function Answer ({id, answer, prev, next, submit, lastQuestion, a
             </Row>
             <Row className="form-group mt-3">
                 {!lastQuestion &&
-                    <Col xs={12} className="d-flex justify-content-between">
-                        <div>
+                    <Col xs={12} className={source ? "d-flex justify-content-between" : "d-flex justify-content-end"}>
+                        { source ? <div>
                             <Button 
                                 type="button" 
                                 className="answer-arrow bg-transparent text-success"
@@ -49,7 +49,7 @@ export default function Answer ({id, answer, prev, next, submit, lastQuestion, a
                             <UncontrolledTooltip placement="right" target="helpToolTip">
                                 Need help answering this question? <br/> Click here for a hint!
                             </UncontrolledTooltip>
-                        </div>
+                        </div> : ''}
                         <div>
                             <Button
                                 type="button"
