@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/mico/static/css/main.341d24ab.chunk.css",
-    "main.js": "/mico/static/js/main.202a32c0.chunk.js",
-    "main.js.map": "/mico/static/js/main.202a32c0.chunk.js.map",
+    "main.js": "/mico/static/js/main.c846e654.chunk.js",
+    "main.js.map": "/mico/static/js/main.c846e654.chunk.js.map",
     "runtime-main.js": "/mico/static/js/runtime-main.bf3ae7b3.js",
     "runtime-main.js.map": "/mico/static/js/runtime-main.bf3ae7b3.js.map",
     "static/css/2.05cf3275.chunk.css": "/mico/static/css/2.05cf3275.chunk.css",
-    "static/js/2.33777b00.chunk.js": "/mico/static/js/2.33777b00.chunk.js",
-    "static/js/2.33777b00.chunk.js.map": "/mico/static/js/2.33777b00.chunk.js.map",
+    "static/js/2.93ef6d93.chunk.js": "/mico/static/js/2.93ef6d93.chunk.js",
+    "static/js/2.93ef6d93.chunk.js.map": "/mico/static/js/2.93ef6d93.chunk.js.map",
     "index.html": "/mico/index.html",
     "static/css/2.05cf3275.chunk.css.map": "/mico/static/css/2.05cf3275.chunk.css.map",
     "static/css/main.341d24ab.chunk.css.map": "/mico/static/css/main.341d24ab.chunk.css.map",
-    "static/js/2.33777b00.chunk.js.LICENSE.txt": "/mico/static/js/2.33777b00.chunk.js.LICENSE.txt",
+    "static/js/2.93ef6d93.chunk.js.LICENSE.txt": "/mico/static/js/2.93ef6d93.chunk.js.LICENSE.txt",
     "static/media/avatar.6cfd4463.png": "/mico/static/media/avatar.6cfd4463.png",
     "static/media/Test.css": "/mico/static/media/chalkboard.cd853fda.jpg",
     "static/media/Showcase.css": "/mico/static/media/desktop.f5d8b7ef.jpeg",
@@ -23,8 +23,8 @@
   "entrypoints": [
     "static/js/runtime-main.bf3ae7b3.js",
     "static/css/2.05cf3275.chunk.css",
-    "static/js/2.33777b00.chunk.js",
+    "static/js/2.93ef6d93.chunk.js",
     "static/css/main.341d24ab.chunk.css",
-    "static/js/main.202a32c0.chunk.js"
+    "static/js/main.c846e654.chunk.js"
   ]
 }
