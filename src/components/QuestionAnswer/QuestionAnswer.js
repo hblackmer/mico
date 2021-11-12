@@ -42,6 +42,7 @@ export default function QuestionAnswer ({lastQuestion, question, prev, next, add
             />
             <Answer 
                 lastQuestion={lastQuestion}
+                source={question.source}
                 prev={prev} 
                 next={next} 
                 addAnswer={addAnswer} 

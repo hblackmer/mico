@@ -8,7 +8,7 @@ import {
 import { Control, Form } from 'react-redux-form';
 import './Answer.css';
 
-export default function Answer ({id, answer, prev, next, submit, lastQuestion, addAnswer}) {
+export default function Answer ({id, answer, prev, next, submit, lastQuestion, addAnswer, source}) {
     const [value, setValue] = useState(answer);
 
     const handleInputChange = (event) => {
@@ -42,7 +42,8 @@ export default function Answer ({id, answer, prev, next, submit, lastQuestion, a
                                 type="button" 
                                 className="answer-arrow bg-transparent text-success"
                                 id="helpToolTip"
-                                onClick={null}
+                                href={source}
+                                target="_blank"
                                 ><i className="far fa-question-circle" />
                             </Button>
                             <UncontrolledTooltip placement="right" target="helpToolTip">
