@@ -3,18 +3,30 @@
    CUSTOMIZATION MODAL
 ========================
 */
+.modal {
+    margin-bottom: -100px !important;
+}
+
+.close {
+    text-shadow: none !important;
+    color: white !important;
+}
+
 .modal-header {
-    background-color: var(--color-extra-dark-blue); 
+    background-color: #003366; 
     color: white;
+    border-bottom-color: black !important;
+    font-family: Menlo;
 }
 
 .modal-body {
-    background: linear-gradient( var(--color-light-blue) 10%, var(--color-extra-dark-blue));
+    background-color: #406E8E;
 }
 
 .customize-section {
     text-align: center;
     color: white;
+    font-family: Monaco;
 }
 
 .categories-header {
@@ -23,6 +35,7 @@
 }
 
 .categories-subtitle {
+    font-size: 0.8em;
     color: black;
 }
 
@@ -35,8 +48,7 @@
 #regForm {
     margin: 0px auto;
     font-family: Raleway;
-    padding: 40px;
-    border-radius: 10px
+    padding-top: 20px;
 }
 
 .toggle-radio{
@@ -60,7 +72,8 @@
 }
 
 .toggle-radio label{
-    color: rgba(255,255,255,.9);
+    font-family: Raleway;
+    color: rgba(0,0,0,.9);
     z-index: 0;
     display: block;
     width: 100px;
@@ -98,6 +111,10 @@
 
 #customize-button {
     font-size: 1.25rem;
+    background-color: #003366;
+    padding-left: 30px;
+    padding-right: 30px;
+    border: black;
 }
 
 /* 
@@ -135,13 +152,13 @@
 .task-header {
     display: inline-block;
     background-color: var(--color-light-blue);
-    color: white;
+    color: black;
     font-family: sans-serif;
     width:100%;
     height: 30px;
     padding-top: 5px;
     font-weight: bold;
-    border-bottom-style: #45597E solid;
+    border-bottom-style: #969ca7 solid;
     border-width: 2px;
 }
 

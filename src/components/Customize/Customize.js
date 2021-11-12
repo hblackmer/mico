@@ -78,14 +78,14 @@ function Customize ({ isModalOpen, toggleModal, addCustomization }) {
     });
 
     return (
-        <Modal isOpen={isModalOpen} toggle={toggleModal}>
+        <Modal isOpen={isModalOpen} toggle={toggleModal} portalClassName="modal">
             <ModalHeader toggle={toggleModal}> 
                 Test Customization
             </ModalHeader>
             <ModalBody>
                 <Form id="regForm">
                     <div className="customize-section">
-                        <h4 className="categories-header">CATEGORIES</h4>
+                        <h4 className="categories-header">Categories</h4>
                         <p className="categories-subtitle">Drag and drop item(s) to be tested on:</p>
                         <div className="container-drag">
                             <div className="list1"
@@ -103,9 +103,9 @@ function Customize ({ isModalOpen, toggleModal, addCustomization }) {
                         </div>
                     </div>
                     <div className="customize-section">
-                        <h4 className="length-header">LENGTH</h4>
+                        <h4 className="length-header">Length</h4>
                         <fieldset onChange={handleLengthChange}>
-                            <div className="toggle-radio mb-5">
+                            <div className="toggle-radio mb-4">
                                 <Label htmlFor="first-toggle">
                                     <h5>Short</h5>
                                 </Label>
@@ -145,7 +145,6 @@ function Customize ({ isModalOpen, toggleModal, addCustomization }) {
                     <div className="tab text-center">
                         <Link to="/mico/test">
                             <Button 
-                                color="primary"
                                 id="customize-button"
                                 onClick={handleClick}
                             >Start</Button>
