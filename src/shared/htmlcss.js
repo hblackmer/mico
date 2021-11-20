@@ -94,5 +94,29 @@ export const HTMLCSS = [
         micoAnswer: "The CSS box model describes the rectangular boxes that are generated for elements in the document tree and laid out according to the visual formatting model. Each box has a content area (e.g. text, an image, etc.) and an optional surrounding padding, border, and margin areas.",
         source: "https://www.w3schools.com/css/css_boxmodel.asp",
         category: "css"
-    }
+    },
+    {
+        id: 12,
+        question: "What are tags in HTML?",
+        answer: "",
+        micoAnswer: "Content is placed in between HTML tags in order to properly format it. It makes use of the less than symbol (<) and the greater than symbol (>). A slash symbol is also used as a closing tag.",
+        source: "https://www.w3schools.com/tags/tag_html.asp",
+        category: "html"
+    },
+    {
+        id: 13,
+        question: "What are some ways to separate sections of text?",
+        answer: "",
+        micoAnswer: "A <br> tag, <p> tag, and a <blockquote> tag can separate sections of text.",
+        source: "https://shashankrai.gitbooks.io/ui/content/chapter1/how-many-tags-can-be-used-to-separate-section-of-texts.html",
+        category: "html"
+    },
+    {
+        id: 14,
+        question: "How do you insert a copyright symbol on a browser page?",
+        answer: "",
+        micoAnswer: "",
+        source: "https://www.w3schools.com/html/html_symbols.asp",
+        category: "html"
+    },
 ];
