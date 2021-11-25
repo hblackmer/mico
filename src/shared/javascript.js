@@ -94,5 +94,13 @@ export const JAVASCRIPT = [
         micoAnswer: "In JavaScript, primitive data types are passed by value and non-primitive data types are passed by reference.",
         source: "https://pediaa.com/what-is-the-difference-between-pass-by-value-and-pass-by-reference/",
         category: "javascript"
+    },
+    {
+        id: 12,
+        question: "What is one way to determine what data type an operand belongs to?",
+        answer: "",
+        micoAnswer: "The typeof operator returns a string indicating the type of the unevaluated operand.",
+        source: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof",
+        category: "javascript"
     }
 ];
