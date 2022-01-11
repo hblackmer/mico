@@ -1,0 +1,58 @@
+export const WEBDEV = [
+    {
+        id: 0,
+        question: "What are the responsibilities of a front-end developer compared to a back-end developer?",
+        answer: "Front-end developers build the visual features of an application that a user sees and directly interacts with. Back-end developers build the parts of an application that allow it to function, and store and retrieve data.",
+        micoAnswer: "",
+        source: "",
+        category: "webdev"
+    },
+    {
+        id: 1,
+        question: "How do the front-end and the back-end of a website communicate with each other over HTTP?",
+        answer: "The front-end and back-end of a web app communicate via an HTTP request/response cycle.",
+        micoAnswer: "",
+        source: "",
+        category: "webdev"
+    },
+    {
+        id: 2,
+        question: "What are some examples of data that the back-end sends as a response to the front-end?",
+        answer: "The back-end typically sends HTML documents, formatted data, and assets like stylesheets, JavaScript files, and images in its response to browser requests.",
+        micoAnswer: "",
+        source: "",
+        category: "webdev"
+    },
+    {
+        id: 3,
+        question: "How does client-side rendering differ from server-side rendering?",
+        answer: "With client-side rendering, content is dynamically generated in the browser. With server-side rendering content is generated on the server, then sent to the browser to be rendered.",
+        micoAnswer: "",
+        source: "",
+        category: "webdev"
+    },
+    {
+        id: 4,
+        question: "When is client-side rendering preferred and why? When is server-side rendering preferred and why?",
+        answer: "Client-side rendering is preferred for highly interactive web applications because of its quick rendering time after the initial page load. Server-side rendering is preferred for mostly static sites because the content is generated on the server and is quickly viewable after it is sent to the browser.",
+        micoAnswer: "",
+        source: "",
+        category: "webdev"
+    },
+    {
+        id: 5,
+        question: "What are the pros and cons of client-side rendering? What are the pros and cons of server-side rendering?",
+        answer: "The main advantage of client-side rendering is the fast speed, after the initial page load. The biggest disadvantages are poor SEO performance and the possibility of poor user experience on slower devices. The main advantages of server-side rendering are that visual elements of the page load quickly, and it offers better SEO performance compared with client-side rendering. The primary disadvantage is the time it takes for interactive elements of the page to load can be slow and depends largely on factors outside of the developer's control.",
+        micoAnswer: "",
+        source: "",
+        category: "webdev"
+    },
+    {
+        id: 6,
+        question: "What are the respective roles of the browser and server in client-side rendering?",
+        answer: "The server sends a boilerplate HTML document to the browser, along with JavaScript code. The browser uses JavaScript sent from the server to dynamically generate content as the user navigates the site.",
+        micoAnswer: "",
+        source: "",
+        category: "webdev"
+    }
+];
